@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobuTIC</title>
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="/demo/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/hover/hover-min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/styles.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+
+    <!-- Footer Scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/moment/moment-with-locales.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-sm-9 logo">
+                <img src="/demo/Content/images/logo.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-3 headerUser text-right">
+                <div class="d-block d-sm-none mobileMenu" data-toggle="collapse" href="#navBar">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="homeBtn">
+                    
+                </div>
+                <div class="notifBtn">
+                    
+                </div>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <div class="dropdownMenuUser collapse" id="collapseExample">
+                    <ul>
+                        <li><a href="#">Mi perfil</a></li>
+                        
+                        <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
+                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid menubar collapse dont-collapse-sm" id="navBar">
+        <ul>
+
+
+
+                <li>
+                    <a href="#">ADMINISTRACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACTURACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
+                        <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
+                        <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NOTA CRÉDITO</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMPRAS</a>
+                    <ul>
+                        
+                        <li><a href="/demo/Compras/Inicio">Recepción</a></li>
+                        <li><a href="/demo/Compras/SoportesBorrador">Soportes borrador</a></li>
+                        <li><a href="/demo/Compras/SoportesFinalizadas">Soportes finalizadas</a></li>
+
+                        <li><a href="/demo/Compras/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFORMES</a>
+                    <ul>
+                        <li><a href="/demo/Informes/Informe01">Consulta por cliente</a></li>
+                        <li><a href="/demo/Informes/Informe02">Consulta por articulo</a></li>
+                        <li><a href="/demo/Informes/Informe03">Clientes frecuentes</a></li>
+                        <li><a href="/demo/Informes/Informe04">Items mas vendidos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NÓMINA</a>
+                    <ul>
+                        <li><a href="/demo/Nomina/Nominas">Nómina</a></li>
+                    </ul>
+                </li>
+
+
+
+
+
+        </ul>
+    </div>
+    
+    <div class="container-fluid content">
+
+        <div class="row">
+
+            <div class="col-sm">
+
+                
+
+
+
+
+
+<form class="col-md-12" method="post">
+
+
+    <div class="row">
+
+        <div class="col-md-8">
+
+            <h3>Tipo de unidades</h3>
+            <hr />
+
+        </div>
+
+        <div class="col-md-8" style="text-align: right;">
+
+            <input id="BtnAgregar" type="button" onclick="oForm.NuevoTipoUnidad();" class="btn btn-primary" value="Nuevo tipo de unidad" />
+
+        </div>
+
+    </div>
+    <br />
+
+    <div id="loader" class="spinner-border text-success text-center" style="width: 3rem; height: 3rem; text-align:center;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-8">
+
+            <table id='tblTipoUnidades' class='table table-bordered table-striped' style='width:100%'>
+                <thead>
+                    <tr>
+                        <th style='width:5%; text-align:center' >#</th>
+                        <th style='width:95%' >Tipo de unidad</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+
+    </div>
+    <br />
+
+</form>
+
+
+
+
+
+<div id="mNuevo" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Nuevo tipo de unidad</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Descripción</label>
+                        <input class="form-control" name="Descripcion" id="Descripcion" type="text" maxlength="50">
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="notification alert-danger col-md-12" id="vErrores" hidden>
+                        <div class="row">
+                            <div class="col-md-1 text-center"><i class="material-icons">warning</i></div>
+                            <div id="ErrorMessage" class="col-md-11">
+                                <span class="h4">¡Alerta!</span>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarModal();">
+                    Cerrar
+                </button>
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="oForm.validate();">
+                    Aceptar
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        oForm.init();
+
+    });
+
+
+    var oForm = new function () {
+
+
+        this.lstUnidades = [];
+        this.Url = null;
+        this.UrlLoader = null;
+
+
+
+        this.init = function () {
+
+            this.mostrarUnidades();
+
+        };
+
+        this.mostrarUnidades = function () {
+
+
+            var table = $('#tblTipoUnidades').DataTable();
+            table.destroy(); 
+
+
+            $("#loader").hide();
+
+            var htmlContent = "";
+
+            if (this.lstUnidades.length > 0) {
+
+                for (var i = 0; i < this.lstUnidades.length; i++) {
+
+                    var item = this.lstUnidades[i];
+
+                    htmlContent += "<tr>";
+
+                    htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
+                    htmlContent += "<td>" + item.Descripcion + "</td>";
+
+                    htmlContent += "</tr>";
+
+                }
+
+                htmlContent += "</tbody></table>";
+
+            } else {
+
+                htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+            }
+
+
+
+            $("#tblTipoUnidades tbody").html(htmlContent);
+
+            $("#tblTipoUnidades").DataTable({
+                searching:true,
+                ordering:true,
+                paging:true,
+                responsive:true,
+                "language": {
+                    "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                }
+            });
+
+
+        };
+
+        this.NuevoTipoUnidad = function (){
+
+            $("#vErrores").hide();
+
+            $("#Descripcion").val("");
+            
+            $("#mNuevo").modal({ show: true });
+
+        };
+
+        this.Guardar = function (){
+        
+            $("#mNuevo").modal("hide");
+
+            var jsData = '{"d":"' + $("#Descripcion").val() + '" }';
+
+            $.ajax({
+                url: this.Url + "NuevoTipoUnidad",
+                dataType: 'json',
+                contentType: "application/json",
+                type: "POST",
+                data: jsData,
+                success: function (data) {
+
+                    oForm.lstUnidades = data;
+                    oForm.mostrarUnidades();
+
+                }
+            });
+
+
+
+
+        
+        };
+
+        this.cerrarModal = function (){
+
+            $("#mNuevo").modal("hide");
+
+        };
+
+        this.validate = function () {
+
+
+           var htmlContent = "";
+
+
+           if ($('#Descripcion').val().trim().length == 0) {
+
+                htmlContent += "<li>El campo descripción es obligatorio.</li>";
+
+            }
+
+           if (htmlContent.length > 0) {
+
+               this.showError(htmlContent);
+
+           }
+           else {
+
+               this.Guardar();
+           
+           }
+
+
+        };
+
+        this.showError = function (m) {
+
+            $("#ErrorMessage").html("<h5>¡Alerta!</h5>" + m);
+            $("#vErrores").show();
+
+        };
+
+
+    }
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    oForm.lstUnidades = [{"IdTipoUnidad":4,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO","Consecutivo":1},{"IdTipoUnidad":6,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO CUADRADO","Consecutivo":2},{"IdTipoUnidad":7,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO CUBICO","Consecutivo":3},{"IdTipoUnidad":11,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"GALON","Consecutivo":4},{"IdTipoUnidad":2,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"GRAMO","Consecutivo":5},{"IdTipoUnidad":3,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"KILOGRAMO","Consecutivo":6},{"IdTipoUnidad":12,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"LIBRAS","Consecutivo":7},{"IdTipoUnidad":1,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"LITRO","Consecutivo":8},{"IdTipoUnidad":9,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"METRO","Consecutivo":9},{"IdTipoUnidad":10,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"MILILITROS","Consecutivo":10},{"IdTipoUnidad":5,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"PULGADA","Consecutivo":11},{"IdTipoUnidad":8,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"UNIDAD","Consecutivo":12}];
+    oForm.Url = "/demo/Gestion/";
+    oForm.UrlLoader = "/demo/Content/img/loader.gif";
+
+</script>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-sm-2 logo">
+                <img src="/demo/Content/images/logo-footer.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-4 info">
+                <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
+                <p>COLOMBIA</p>
+                <p>&copy; Todos los derechos reservados.</p>
+            </div>
+            <div class="col-sm-3 redes">
+                <p>Síguenos en:</p>
+                <div class="redesLogos">
+                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-3 copy">
+                <a href="#" target="_blank">
+                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

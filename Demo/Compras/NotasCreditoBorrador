@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobuTIC</title>
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="/demo/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/hover/hover-min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/styles.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+
+    <!-- Footer Scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/moment/moment-with-locales.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-sm-9 logo">
+                <img src="/demo/Content/images/logo.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-3 headerUser text-right">
+                <div class="d-block d-sm-none mobileMenu" data-toggle="collapse" href="#navBar">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="homeBtn">
+                    
+                </div>
+                <div class="notifBtn">
+                    
+                </div>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <div class="dropdownMenuUser collapse" id="collapseExample">
+                    <ul>
+                        <li><a href="#">Mi perfil</a></li>
+                        
+                        <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
+                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid menubar collapse dont-collapse-sm" id="navBar">
+        <ul>
+
+
+
+                <li>
+                    <a href="#">ADMINISTRACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACTURACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
+                        <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
+                        <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NOTA CRÉDITO</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMPRAS</a>
+                    <ul>
+                        
+                        <li><a href="/demo/Compras/Inicio">Recepción</a></li>
+                        <li><a href="/demo/Compras/SoportesBorrador">Soportes borrador</a></li>
+                        <li><a href="/demo/Compras/SoportesFinalizadas">Soportes finalizadas</a></li>
+
+                        <li><a href="/demo/Compras/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFORMES</a>
+                    <ul>
+                        <li><a href="/demo/Informes/Informe01">Consulta por cliente</a></li>
+                        <li><a href="/demo/Informes/Informe02">Consulta por articulo</a></li>
+                        <li><a href="/demo/Informes/Informe03">Clientes frecuentes</a></li>
+                        <li><a href="/demo/Informes/Informe04">Items mas vendidos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NÓMINA</a>
+                    <ul>
+                        <li><a href="/demo/Nomina/Nominas">Nómina</a></li>
+                    </ul>
+                </li>
+
+
+
+
+
+        </ul>
+    </div>
+    
+    <div class="container-fluid content">
+
+        <div class="row">
+
+            <div class="col-sm">
+
+                
+
+
+
+
+
+
+<form id="formBorrador" name="formBorrador" class="col-md-12" method="post">
+
+    <input id="mes" name="mes" type="hidden" />
+    <input id="anio" name="anio" type="hidden" />
+    <input id="IdNota" name="IdNota" value="0" type="hidden" />
+    <input id="Referencia" name="Referencia" value="0" type="hidden" />
+    <input id="IdCompra" name="IdCompra" value="0" type="hidden" />
+
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <h3>Notas crédito borrador</h3>
+            <hr />
+
+        </div>
+
+
+    </div>
+    <br />
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <label for="ddlMes">Mes</label>
+        </div>
+
+        <div class="col-md-2">
+            <label for="ddlAnio">Año</label>
+        </div>
+
+        <div class="col-md-8">
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <select id="ddlMes" class="form-control">
+                <option value="0">Seleccione</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <select id="ddlAnio" class="form-control">
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+
+        
+
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div id="dvTable" class="col-md-12">
+
+            <table id='tblCompracion' class='table table-striped table-bordered no-footer dtr-inline collapsed' style='width:100%'>
+                <thead>
+                    <tr>
+                        <th style="width:5%; text-align:center">#</th>
+                        <th style="width:15%">Referencia</th>
+                        <th style="width:45%">Tercero</th>
+                        <th style="width:15%; text-align:right">Valor</th>
+                        <th style="width:5%" class="text-center">Editar</th>
+                        <th style="width:5%" class="text-center">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+    </div>
+    <br />
+
+</form>
+
+
+
+
+
+<div id="mDetalles" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal"><label id="Referencia"></label></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="vDetalle">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <input type="button" id="btnCancelar" Onclick="return oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="mEliminar" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">¿Estas seguro que quieres eliminar la Nota?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="vDetalleEliminar">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <input type="button" id="btnCancelar" Onclick="return oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <button  class="btn btn-primary" type="submit" name="action" onclick="return oForm.Eliminar();">
+                    Aceptar
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        oForm.init();
+
+    });
+
+
+    var oForm = new function () {
+
+        this.lstCompras = [];
+        this.Url = null;
+        this.UrlPDF = null;
+        this.IdNota = null;
+
+
+        this.init = function () {
+
+
+
+
+            var now = new Date();
+            var date = new Date(now.getFullYear() - ((now.getMonth() + 1) > 0 ? 0 : 1), ((now.getMonth() + 1) - 1 + 12) % 12, 1);
+
+            $("#ddlMes").val(date.getMonth() + 1);
+            $("#ddlAnio").val(date.getFullYear());
+
+            $("#ddlAnio").change(function () {
+
+                oForm.ObtenerCompras();
+
+            });
+
+            $("#ddlMes").change(function () {
+
+                oForm.ObtenerCompras();
+
+            });
+
+            $("#GenerarCompracion").click(function () {
+
+                $("#anio").val($("#ddlAnio").val());
+                $("#mes").val($("#ddlMes").val());
+                document.getElementById("formCompracion").submit();
+
+            });
+
+            this.mostrarCompras();
+
+        };
+        
+        this.mostrarCompras = function () {
+
+            var table = $('#tblCompracion').DataTable();
+            table.destroy();
+
+            var htmlContent = "";
+
+            if (this.lstCompras.length > 0) {
+
+                for (var i = 0; i < this.lstCompras.length; i++) {
+
+                    var item = this.lstCompras[i];
+
+                    htmlContent += "<tr>";
+                    htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
+                    htmlContent += "<td>" + item.Referencia + "</td>";
+                    htmlContent += "<td>" + item.sProveedor + "</td>";
+                    htmlContent += "<td style='text-align:right' >" + item.sValorTotal + "</td>";
+                    htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.Editar(this);' oData='" + JSON.stringify(item) + "' href='#' title='Editar'><i class='fa fa-pencil-square' aria-hidden='true'></i></a></td>";
+                    htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.mostrarEliminar("+ item.IdNota +");' href='#' title='Eliminar'><i class='text-danger fa fa-trash' aria-hidden='true'></i></a></td>";
+
+                    htmlContent += "</tr>";
+
+                }
+
+            } else {
+
+                htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+            }
+
+            this.cerrarloader();
+
+            $("#tblCompracion tbody").html(htmlContent);
+
+            $("#tblCompracion").DataTable({
+                searching:true,
+                ordering:true,
+                paging:true,
+                responsive:true,
+                "language": {
+                    "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                }
+            });
+
+        };
+
+        this.Detalle = function (b) {
+
+            var oCompra = JSON.parse($(b).attr("oData"));
+
+            $("#Referencia").html("Compra : " + oCompra.Referencia);
+
+            var htmlContent = "";
+
+            var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5' style='width:100%'>";
+            htmlContent += "<thead>";
+
+            htmlContent += "<th style='text-align:center' >#</th>";
+            htmlContent += "<th>Producto</th>";
+            htmlContent += "<th style='text-align:right' >Unidades</th>";
+            htmlContent += "<th style='text-align:right' >Valor por unidad</th>";
+            htmlContent += "<th style='text-align:right' >Descuento</th>";
+            htmlContent += "<th style='text-align:right' >IVA</th>";
+            htmlContent += "<th style='text-align:right' >Valor total</th>";
+
+            htmlContent += "</thead><tbody>";
+
+            var TotalValor = 0;
+            for (var i = 0; i < oCompra.lstCompraDetalle.length; i++) {
+
+                var item = oCompra.lstCompraDetalle[i];
+
+                htmlContent += "<tr>";
+
+                htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
+                htmlContent += "<td>" + item.sProducto + "</td>";
+                htmlContent += "<td style='text-align:right' >" + this.formatear(item.Unidades) + "</td>";
+                htmlContent += "<td style='text-align:right' >" + item.sValorUnitario + "</td>";
+                htmlContent += "<td style='text-align:right' >" + item.sValorDescuento + "</td>";
+                htmlContent += "<td style='text-align:right' >" + item.sImpuestoVentas + "</td>";
+
+                var SubTotal = (item.ValorUnitario * item.Unidades)
+
+                var total = (SubTotal -  item.ValorDescuento ) + item.ImpuestoVentas;
+
+                htmlContent += "<td style='text-align:right' >" + this.formatear(total)  + "</td>";
+
+                htmlContent += "</tr>";
+
+                TotalValor += total;
+
+            }
+
+            htmlContent += "<tr>";
+
+            htmlContent += "<td></td>";
+            htmlContent += "<td></td>";
+            htmlContent += "<td></td>";
+            htmlContent += "<td></td>";
+            htmlContent += "<td></td>";
+            htmlContent += "<td style='text-align:right' ><b>TOTAL</b></td>";
+            htmlContent += "<td style='text-align:right' ><b>" + this.formatear(TotalValor) + "</b></td>";
+
+            htmlContent += "</tr>";
+
+            htmlContent += "</tbody></table>";
+
+            $("#vDetalle").html(htmlContent);
+
+            $("#mDetalles").modal({ show: true });
+
+        };
+
+        this.cerrarAsistente = function () {
+
+            $("#mDetalles").modal("hide");
+            $("#mEliminar").modal("hide");
+            
+
+        };
+
+        this.ObtenerCompras = function () {
+
+            $("#vDatos").html("");
+
+            this.mostrarloader();
+
+            if ($("#ddlMes").val() != 0 && $("#ddlAnio").val() != 0) {
+
+                var jsData = '{"m":"' + $("#ddlMes").val() + '", "a":"' + $("#ddlAnio").val() + '"  }';
+
+                $.ajax({
+                    url: this.Url + "BuscarNotasBorrador",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstCompras = data;
+                        oForm.mostrarCompras();
+
+                    }
+                });
+
+            }
+
+        };
+
+        this.formatear = function (valor) {
+
+            var signo = "";
+
+            if(valor < 0){
+
+                signo = "-";
+
+            }
+
+            var num = valor.toString().replace('-', '');
+
+            if (!isNaN(num)) {
+                num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+                num = num.split('').reverse().join('').replace(/^[\.]/, '');
+                control = num;
+            }
+
+            return signo + num;
+
+        };
+
+        this.mostrarloader = function () {
+
+            $("#loader").show();
+            $("#dvTable").hide();
+
+        };
+
+        this.cerrarloader = function () {
+
+            $("#loader").hide();
+            $("#dvTable").show();
+
+        };
+
+        this.mostrarEliminar = function (idnota) {
+
+            this.IdNota = idnota;
+
+            var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5' style='width:100%'>";
+            htmlContent += "<thead>";
+
+            htmlContent += "<th style='text-align:center' >#</th>";
+            htmlContent += "<th>Referencia</th>";
+            htmlContent += "<th>Tercero</th>";
+            htmlContent += "<th>Valor</th>";
+
+            htmlContent += "</thead><tbody>";
+
+            for (var i = 0; i < this.lstCompras.length; i++) {
+
+                var item = this.lstCompras[i];
+
+                if(item.IdNota == idnota){
+                
+                    htmlContent += "<tr>";
+                    htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
+                    htmlContent += "<td>" + item.Referencia + "</td>";
+                    htmlContent += "<td>" + item.sProveedor + "</td>";
+                    htmlContent += "<td style='text-align:right' >" + item.sValorTotal + "</td>";
+                    htmlContent += "</tr>";
+                
+                }
+
+
+            }
+
+            $("#vDetalleEliminar").html(htmlContent);
+
+            $("#mEliminar").modal({ show: true });
+
+        };
+
+        this.Eliminar = function () {
+
+                this.cerrarAsistente();
+                this.mostrarloader();
+
+                var jsData = '{"i":"' + this.IdNota + '" , "m":"' + $("#ddlMes").val() + '", "a":"' + $("#ddlAnio").val() + '"  }';
+
+                $.ajax({
+                    url: this.Url + "EliminarNotasBorrador",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstCompras = data;
+                        oForm.mostrarCompras();
+
+                    }
+                });
+
+        };
+
+        this.Editar = function (a) {
+
+            var oCompra = JSON.parse($(a).attr("oData"));
+
+            $("#IdNota").val(oCompra.IdNota);
+            $("#Referencia").val(oCompra.ReferenciaCompra);
+            $("#IdCompra").val(oCompra.IdCompra);
+
+            document.getElementById("formBorrador").submit();
+
+        };
+
+    }
+
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    oForm.lstCompras = [];
+    oForm.Url = "/demo/Compras/";
+    oForm.UrlPDF = "/demo/Reportes/Compra01.aspx?f=";
+
+</script>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-sm-2 logo">
+                <img src="/demo/Content/images/logo-footer.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-4 info">
+                <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
+                <p>COLOMBIA</p>
+                <p>&copy; Todos los derechos reservados.</p>
+            </div>
+            <div class="col-sm-3 redes">
+                <p>Síguenos en:</p>
+                <div class="redesLogos">
+                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-3 copy">
+                <a href="#" target="_blank">
+                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

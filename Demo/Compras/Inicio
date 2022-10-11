@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobuTIC</title>
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="/demo/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/hover/hover-min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/styles.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+
+    <!-- Footer Scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/moment/moment-with-locales.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-sm-9 logo">
+                <img src="/demo/Content/images/logo.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-3 headerUser text-right">
+                <div class="d-block d-sm-none mobileMenu" data-toggle="collapse" href="#navBar">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="homeBtn">
+                    
+                </div>
+                <div class="notifBtn">
+                    
+                </div>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <div class="dropdownMenuUser collapse" id="collapseExample">
+                    <ul>
+                        <li><a href="#">Mi perfil</a></li>
+                        
+                        <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
+                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid menubar collapse dont-collapse-sm" id="navBar">
+        <ul>
+
+
+
+                <li>
+                    <a href="#">ADMINISTRACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACTURACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
+                        <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
+                        <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NOTA CRÉDITO</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMPRAS</a>
+                    <ul>
+                        
+                        <li><a href="/demo/Compras/Inicio">Recepción</a></li>
+                        <li><a href="/demo/Compras/SoportesBorrador">Soportes borrador</a></li>
+                        <li><a href="/demo/Compras/SoportesFinalizadas">Soportes finalizadas</a></li>
+
+                        <li><a href="/demo/Compras/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFORMES</a>
+                    <ul>
+                        <li><a href="/demo/Informes/Informe01">Consulta por cliente</a></li>
+                        <li><a href="/demo/Informes/Informe02">Consulta por articulo</a></li>
+                        <li><a href="/demo/Informes/Informe03">Clientes frecuentes</a></li>
+                        <li><a href="/demo/Informes/Informe04">Items mas vendidos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NÓMINA</a>
+                    <ul>
+                        <li><a href="/demo/Nomina/Nominas">Nómina</a></li>
+                    </ul>
+                </li>
+
+
+
+
+
+        </ul>
+    </div>
+    
+    <div class="container-fluid content">
+
+        <div class="row">
+
+            <div class="col-sm">
+
+                
+
+
+
+
+
+<link href="/demo/Content/css/Validaciones.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<form id="formCompra" name="formCompra" class="col-md-12" method="post">
+
+
+
+
+    <input id="mes" name="mes" type="hidden" />
+    <input id="anio" name="anio" type="hidden" />
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <h3>Compras</h3>
+            <hr />
+
+        </div>
+
+    </div>
+    <br />
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <label for="ddlMes">Mes</label>
+        </div>
+
+        <div class="col-md-2">
+            <label for="ddlAnio">Año</label>
+        </div>
+
+        <div class="col-md-8">
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <select id="ddlMes" class="form-control">
+                <option value="0">Seleccione</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <select id="ddlAnio" class="form-control">
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+
+        <div class="col-md-2" style="text-align: left;">
+            <a href="#" class="btn btn-primary" onclick="oForm.ObtenerCompras();">Consultar</a>
+        </div>
+
+
+
+
+        <div class="col-md-6" style="text-align: right;">
+
+
+                <a id="DvAgregarCompra" class='btnOption' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#' title='Opciones'>Opciones XML</a>
+                <div class='dropdown-menu' aria-labelledby='DvAgregarCompra'>
+                    <a class='dropdown-item' href="#" onclick="oForm.AbrirCargarXML();"  >Cargar XML de compra</a>
+                </div>
+
+        </div>
+
+    </div>
+    <br />
+
+
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <br />
+
+
+
+
+    <div class="row">
+        <div id="dvTable" class="col-md-12">
+
+            <table id='tblCompras' class='table table-striped table-bordered no-footer dtr-inline collapsed' style='width:100%'>
+                <thead>
+                    <tr>
+                        
+                        <th style="width:5%; text-align:center">#</th>
+                        <th style="width:5%">Recepción</th>
+                        <th style="width:25%">Nombre</th>
+                        <th style="width:10%">Tipo</th>
+                        <th style="width:10%">Número</th>
+                        <th style="width:10%">Emisión</th>
+                        <th style="width:10%; text-align:right">Monto</th>
+                        <th style="width:5%">Moneda</th>
+                        <th style="width:15%">Estado</th>
+                        <th style="width:5%" class="text-center">Opciones</th>
+
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+    </div>
+    <br />
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+<script src="/demo/Libs/Tools.js"></script>
+
+
+
+
+
+
+
+<div id="mXML" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="hTituloModal"></h5>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <div id="dvDocumentosDatos">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="documento" class="required"> Seleccionar el Documento </label>
+                            <input id="seleccionarDocumento" type="file" name="file" class="form-control" value="" accept="application/xml" />
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div id="vErroresM" class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageM">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                </div>
+
+                <div id="dvLoaderXML">
+
+                    <div class="row">
+
+                        <div id="loaderModal" class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="dvMensajeExitoXML">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-success" role="alert">
+                                <div id="ExitoMessageXML">
+                                    <p>El documento se cargo con éxito.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="dvMensajeErrorXML">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageXML">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="dvInformacion">
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <label>Información cargada</label>
+                        </div>
+
+                    </div>
+                    <br />
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label>Fecha de Emisión</label>
+                            <input id="sFechaEmision" readonly="readonly" class="form-control"/>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label>Moneda</label>
+                            <input id="Moneda" readonly="readonly" class="form-control" />
+                        </div>
+
+
+
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label>Nombre proveedor</label>
+                            <input id="NombreProveedor" readonly="readonly" class="form-control" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Nit del proveedor</label>
+                            <input id="NitProveedor" readonly="readonly" class="form-control" />
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label>Valor</label>
+                            <input id="sValorTotal" readonly="readonly" class="form-control" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Número</label>
+                            <input id="Numero" readonly="readonly" class="form-control" />
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+
+
+                        <div class="col-md-6">
+                            <label>Nombre del cliente</label>
+                            <input id="NombreCliente" readonly="readonly" class="form-control" />
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <label>Nit del cliente</label>
+                            <input id="NitCliente" readonly="readonly" class="form-control" />
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <label>CUFE</label>
+                            <input id="CUFE" readonly="readonly" class="form-control" />
+                        </div>
+
+                    </div>
+                    <br />
+
+                </div>
+
+            </div>
+
+
+
+
+            <div id="divBotones" class="modal-footer">
+
+                <input type="button" id="btnCancelar" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <input type="button" id="btnAceptar" onclick="oForm.CargarDocumento();" class="btn btn-primary" value="Cargar Información" />
+
+            </div>
+
+
+
+            <div id="divBotonesGuardar" class="modal-footer">
+
+                <input type="button" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <input type="button"  onclick="oForm.guardarDocumento();" class="btn btn-primary" value="Guardar" />
+            
+            </div>
+
+
+
+
+            <div id="divBotonesExito" class="modal-footer">
+
+                <input type="button" onclick="oForm.AceptarResultadoXML();" class="btn btn-secondary" value="Aceptar" />
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="mEliminar" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">¿Estas seguro que quieres eliminar la factura?</h4>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="vDetalleEliminar">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <input type="button" id="btnCancelar" Onclick="return oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.Eliminar();">
+                    Aceptar
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<div id="mProceso" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+
+
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content">
+
+
+
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <div id="loaderModal" class="col-md-12 text-center">
+
+                        <div class="spinner-border text-success" style="width: 5rem; height: 5rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <br />
+                        <br />
+                        <p id="pMensajeProceso" style="color:#17a2b8; font-size:15px"></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<div id="mDetalleEventos" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Eventos</h4>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="vDetalleEventos">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarAsistente();">
+                    Cerrar
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+    $(document).ready(function () {
+
+        oForm.init();
+
+    });
+
+
+
+
+
+
+    var oForm = new function () {
+
+
+
+
+
+        this.lstCompras = [];
+        this.Url = null;
+        this.oResultado = null;
+        this.IdCompra = null;
+
+
+        this.init = function () {
+
+
+
+            var now = new Date();
+            var date = new Date(now.getFullYear() - ((now.getMonth() + 1) > 0 ? 0 : 1), ((now.getMonth() + 1) - 1 + 12) % 12, 1);
+
+            $("#ddlMes").val(date.getMonth() + 1);
+            $("#ddlAnio").val(date.getFullYear());
+
+
+            this.ObtenerCompras();
+
+
+        };
+
+
+
+        this.mostrarCompras = function () {
+
+
+
+
+            var table = $('#tblCompras').DataTable();
+            table.destroy();
+
+
+
+
+            var htmlContent = "";
+
+            if (this.lstCompras.length > 0) {
+
+                for (var i = 0; i < this.lstCompras.length; i++) {
+
+                    var item = this.lstCompras[i];
+
+                    htmlContent += "<tr>";
+                    htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
+                    htmlContent += "<td>" + item.sFechaRecepcion + "</td>";
+                    htmlContent += "<td>" + item.NombreProveedor + "</td>";
+                    htmlContent += "<td>" + item.Tipo + "</td>";
+                    htmlContent += "<td>" + item.Numero + "</td>";
+                    htmlContent += "<td>" + item.sFechaEmision + "</td>";
+                    htmlContent += "<td style='text-align:right' >" + item.sValorTotal + "</td>";
+                    htmlContent += "<td>" + item.Moneda + "</td>";
+                        
+
+
+         
+
+
+
+                    if(item.IdEstado == 0){
+                        htmlContent += "<td>Sin acuse de recibo de la factura</td>";
+                    }
+
+
+                    if(item.IdEstado == 1){
+                        htmlContent += "<td>Acuse de recibo de la factura</td>";
+                    }
+
+
+                    if(item.IdEstado == 2){
+                        htmlContent += "<td>Recibo de la mercancia</td>";
+                    }
+
+
+                    if(item.IdEstado == 3){
+                        htmlContent += "<td>Aceptación expresa</td>";
+                    }
+
+
+
+                    
+
+
+               
+
+
+
+                    htmlContent += "<td class='text-center' >";
+                    htmlContent += "<a id='" + item.Consecutivo + "' class='btnOption' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#' title='Opciones'><i class='fa fa-bars' aria-hidden='true'></i></a>";
+                    htmlContent += "<div class='dropdown-menu' aria-labelledby='"+ item.Consecutivo +"'>";
+
+
+
+                    if(item.IdEstado == 0){
+                    
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.MostrarProceso(" + item.IdCompra + " , 1);' >Enviar acuse de recibo de la factura</a>";
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.MostrarEliminar(" + item.IdCompra + ");' >Eliminar</a>";
+                    
+                    }
+
+
+
+                    if(item.IdEstado == 1){
+                    
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.MostrarProceso(" + item.IdCompra + " , 2);' >Enviar recibo de la mercancia</a>";
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.MostrarEventos(" + item.IdCompra + ");' >Eventos</a>";
+                    
+                    }
+
+
+
+
+                    if(item.IdEstado == 2){
+                    
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.MostrarProceso(" + item.IdCompra + " , 3);' >Aceptación expresa</a>";
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.MostrarEventos(" + item.IdCompra + ");' >Eventos</a>";
+                    
+                    }
+
+
+                    if(item.IdEstado == 3){
+                    
+                        htmlContent += "<a class='dropdown-item' href='" + item.Ruta +  "' >Descargar</a>";
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.MostrarEventos(" + item.IdCompra + ");' >Eventos</a>";
+                    
+                    }
+
+
+                    
+                   
+
+
+                    htmlContent += "</div>";
+                    htmlContent += "</td>";
+
+                    
+                    
+                    htmlContent += "</tr>";
+
+                }
+
+            } else {
+
+                htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+            }
+
+            this.cerrarloader();
+
+            $("#tblCompras tbody").html(htmlContent);
+
+            $("#tblCompras").DataTable({
+                searching:true,
+                ordering:true,
+                paging:true,
+                responsive:true,
+                "language": {
+                    "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                }
+            });
+
+        };
+
+        this.ObtenerCompras = function () {
+
+            $("#vDatos").html("");
+
+            this.mostrarloader();
+
+            if ($("#ddlMes").val() != 0 && $("#ddlAnio").val() != 0) {
+
+                var jsData = '{"m":"' + $("#ddlMes").val() + '", "a":"' + $("#ddlAnio").val() + '"  }';
+
+                $.ajax({
+                    url: this.Url + "BuscarCompras",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstCompras = data;
+                        oForm.mostrarCompras();
+
+                    }
+                });
+
+            }
+
+        };
+
+        this.formatear = function (valor) {
+
+            var signo = "";
+
+            if(valor < 0){
+
+                signo = "-";
+
+            }
+
+            var num = valor.toString().replace('-', '');
+
+            if (!isNaN(num)) {
+                num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+                num = num.split('').reverse().join('').replace(/^[\.]/, '');
+                control = num;
+            }
+
+            return signo + num;
+
+        };
+
+        this.mostrarloader = function () {
+
+            $("#loader").show();
+            $("#dvTable").hide();
+
+        };
+
+        this.cerrarloader = function () {
+
+            $("#loader").hide();
+            $("#dvTable").show();
+
+        };
+
+
+
+        this.AbrirCargarXML = function () {
+
+
+            $("#hTituloModal").html("Cargar XML");
+
+
+            $("#dvDocumentosDatos").show();
+            $("#dvLoaderXML").hide();
+            $("#dvMensajeExitoXML").hide();
+            $("#dvMensajeErrorXML").hide();
+            $("#divBotones").show();
+            $("#divBotonesExito").hide();
+            $("#vErroresM").hide();
+            $("#dvInformacion").hide();
+            $("#divBotonesGuardar").hide();
+
+            $('#seleccionarDocumento').val("");
+
+
+
+            $("#mXML").modal({ show: true , backdrop:"static" });
+
+
+        };
+
+        this.CargarDocumento = function () {
+
+
+            $("#vErroresM").hide();
+
+
+            var htmlContent = "";
+
+
+            if ($("#seleccionarDocumento").val().length == 0) {
+
+                htmlContent += "<li>El campo <b>Seleccionar documento</b> es obligatorio.</li>";
+
+            }
+
+            if (htmlContent.length > 0) {
+
+
+                this.showErrorM(htmlContent);
+
+
+            } else {
+
+
+                this.mostrarLoaderModal();
+
+                var files = document.getElementById('seleccionarDocumento').files[0];
+
+                var data = new FormData();
+
+                data.append("file" + 0, files);
+
+                $.ajax({
+
+                    type: "POST",
+                    url: oForm.Url + "CargarXML",
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (result) {
+
+
+                        oForm.oResultado = result;
+                        
+
+                        if(oForm.oResultado.Codigo == "00"){
+
+                            $("#dvDocumentosDatos").hide();
+                            $("#dvLoaderXML").hide();
+                            $("#dvMensajeExitoXML").hide();
+                            $("#dvMensajeErrorXML").hide();
+                            $("#divBotones").hide();
+                            $("#divBotonesExito").hide();
+                            $("#divBotonesGuardar").show();
+
+                            $("#hTituloModal").html("Cargar XML de la factura : " +  oForm.oResultado.oDatosXML.Numero);
+                            $("#sFechaEmision").val(oForm.oResultado.oDatosXML.sFechaEmision);
+                            $("#NitProveedor").val(oForm.oResultado.oDatosXML.NitProveedor);
+                            $("#NombreProveedor").val(oForm.oResultado.oDatosXML.NombreProveedor);
+                            $("#Moneda").val(oForm.oResultado.oDatosXML.Moneda);
+                            $("#sValorTotal").val(oForm.oResultado.oDatosXML.sValorTotal);
+                            $("#Numero").val(oForm.oResultado.oDatosXML.Numero);
+                            $("#CUFE").val(oForm.oResultado.oDatosXML.CUFE);
+                            $("#NitCliente").val(oForm.oResultado.oDatosXML.NitCliente);
+                            $("#NombreCliente").val(oForm.oResultado.oDatosXML.NombreCliente);
+
+                            $("#dvInformacion").show();
+
+                        }else{
+                        
+                            $("#dvDocumentosDatos").show();
+                            $("#dvLoaderXML").hide();
+                            $("#dvMensajeExitoXML").hide();
+                            $("#dvMensajeErrorXML").show();
+                            $("#divBotones").show();
+                            $("#divBotonesExito").hide();
+                            $("#dvInformacion").hide();
+                            $("#divBotonesGuardar").hide();
+
+                            $("#ErrorMessageXML").html(oForm.oResultado.Mensaje);
+                            
+
+                        }
+
+
+                    }
+
+                });
+
+
+
+            }
+
+
+
+        };
+
+        this.guardarDocumento = function () {
+
+
+
+            $.ajax({
+
+                type: "POST",
+                url: oForm.Url + "ProcesarXML",
+                contentType: false,
+                processData: false,
+                data: null,
+                success: function (result) {
+
+                    oForm.oResultado = result;
+
+                    if(oForm.oResultado.Codigo == "00"){
+
+                        $("#dvDocumentosDatos").hide();
+                        $("#dvLoaderXML").hide();
+                        $("#dvMensajeExitoXML").show();
+                        $("#dvMensajeErrorXML").hide();
+                        $("#divBotones").hide();
+                        $("#divBotonesExito").show();
+                        $("#dvInformacion").hide();
+                        $("#divBotonesGuardar").hide();
+
+                    }else{
+                        
+                        $("#dvDocumentosDatos").show();
+                        $("#dvLoaderXML").hide();
+                        $("#dvMensajeExitoXML").hide();
+                        $("#dvMensajeErrorXML").show();
+                        $("#divBotones").show();
+                        $("#divBotonesExito").hide();
+                        $("#dvInformacion").hide();
+                        $("#divBotonesGuardar").hide();
+                        $("#ErrorMessageXML").html(oForm.oResultado.Mensaje);
+                        $("#divBotonesGuardar").hide();
+
+                    }
+
+
+                }
+
+            });
+
+
+
+
+
+
+        };
+
+        this.showErrorM = function (m) {
+
+            $("#ErrorMessageM").html(m);
+            $("#vErroresM").show();
+
+        };
+            
+        this.mostrarLoaderModal = function () {
+
+
+            $("#dvDocumentosDatos").hide();
+            $("#dvLoaderXML").show();
+            $("#dvMensajeExitoXML").hide();
+            $("#dvMensajeErrorXML").hide();
+            $("#divBotones").hide();
+            $("#divBotonesExito").hide();
+            $("#vErroresM").hide();
+
+
+        };
+
+        this.cerrarLoaderModal = function () {
+
+            $("#dvDocumentosDatos").show();
+            $("#divBotones").show();
+            $("#dvLoaderXML").hide();
+
+            $("#dvDocumentosDatos").show();
+            $("#dvLoaderXML").hide();
+            $("#dvMensajeExitoXML").hide();
+            $("#dvMensajeErrorXML").hide();
+            $("#divBotones").show();
+            $("#divBotonesExito").hide();
+
+
+        };
+
+        this.cerrarAsistente = function () {
+
+            $("#mXML").modal("hide");
+            $("#mEliminar").modal("hide");
+            $("#mDetalleEventos").modal("hide");
+
+        };
+
+        this.AceptarResultadoXML = function () {
+
+            $("#mXML").modal("hide");
+
+            this.ObtenerCompras();
+
+        };
+
+        this.MostrarEliminar = function (C) {
+
+          
+
+            this.IdCompra = C;
+
+
+
+            var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5' style='width:100%'>";
+            htmlContent += "<thead>";
+
+            htmlContent += "<th style='text-align:center' >#</th>";
+            htmlContent += "<th>Numero</th>";
+            htmlContent += "<th>Nombre</th>";
+            htmlContent += "<th>Valor</th>";
+
+            htmlContent += "</thead><tbody>";
+
+            for (var i = 0; i < this.lstCompras.length; i++) {
+
+                var item = this.lstCompras[i];
+
+                if(item.IdCompra == C){
+
+
+                    htmlContent += "<tr>";
+                    htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
+                    htmlContent += "<td>" + item.Numero + "</td>";
+                    htmlContent += "<td>" + item.NombreProveedor + "</td>";
+                    htmlContent += "<td style='text-align:right' >" + item.sValorTotal + "</td>";
+                    htmlContent += "</tr>";
+                
+                }
+
+
+            }
+
+            $("#vDetalleEliminar").html(htmlContent);
+
+            $("#mEliminar").modal({ show: true });
+
+        };
+
+        this.Eliminar = function () {
+
+            this.cerrarAsistente();
+            this.mostrarloader();
+
+            var jsData = '{"c":"' + this.IdCompra + '"  }';
+
+            $.ajax({
+                url: this.Url + "EliminarFactuaCompra",
+                dataType: 'json',
+                contentType: "application/json",
+                type: "POST",
+                data: jsData,
+                success: function (data) {
+
+                    oForm.lstCompras = data;
+                    oForm.mostrarCompras();
+
+                }
+            });
+
+        };
+
+        this.MostrarProceso = function (c,p) {
+            
+            
+            
+            
+            this.IdCompra = c;
+
+
+
+            
+            
+            if(p == 1){
+                $("#pMensajeProceso").html("Procesando : Acuse de recibo de la factura.");
+            }
+
+            if(p == 2){
+                $("#pMensajeProceso").html("Procesando : Recibo de la mercancia.");
+            }
+
+
+            if(p == 3){
+                $("#pMensajeProceso").html("Procesando : Aceptación expresa.");
+            }
+
+
+
+
+
+            $("#mProceso").modal({ show: true , backdrop:"static" });
+
+
+
+            var jsData = '{"c":"' + this.IdCompra + '" , "p":"' + p + '"  }';
+
+            $.ajax({
+                url: this.Url + "ProcesarCompra",
+                dataType: 'json',
+                contentType: "application/json",
+                type: "POST",
+                data: jsData,
+                success: function (data) {
+
+                    $("#mProceso").modal("hide");
+
+                    oForm.lstCompras = data;
+                    oForm.mostrarCompras();
+
+                }
+            });
+
+
+
+
+        };
+
+        this.MostrarEventos = function (C) {
+
+          
+
+            this.IdCompra = C;
+
+
+
+            var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5' style='width:100%'>";
+            htmlContent += "<thead>";
+
+            htmlContent += "<th style='text-align:center' >#</th>";
+            htmlContent += "<th>Evento</th>";
+            htmlContent += "<th>Fecha - Hora</th>";
+            
+            htmlContent += "</thead><tbody>";
+
+            for (var i = 0; i < this.lstCompras.length; i++) {
+
+                var item = this.lstCompras[i];
+
+                if(item.IdCompra == C){
+
+
+
+
+                    for (var e = 0; e < item.LstDetalleEventos.length; e++) {
+
+                        var itemEvento = item.LstDetalleEventos[e];
+
+                        htmlContent += "<tr>";
+                        htmlContent += "<td style='text-align:center'><b>" + itemEvento.Consecutivo + "</b></td>";
+                        htmlContent += "<td>" + itemEvento.sTipoEvento + "</td>";
+                        htmlContent += "<td>" + itemEvento.sFechaHora + "</td>";
+                        htmlContent += "</tr>";
+
+                    }
+
+                
+                }
+
+
+            }
+
+            $("#vDetalleEventos").html(htmlContent);
+
+            $("#mDetalleEventos").modal({ show: true });
+
+        };
+
+
+
+
+
+    }
+
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+    oForm.lstCompras = null;
+    oForm.Url = "/demo/Compras/";
+
+</script>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-sm-2 logo">
+                <img src="/demo/Content/images/logo-footer.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-4 info">
+                <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
+                <p>COLOMBIA</p>
+                <p>&copy; Todos los derechos reservados.</p>
+            </div>
+            <div class="col-sm-3 redes">
+                <p>Síguenos en:</p>
+                <div class="redesLogos">
+                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-3 copy">
+                <a href="#" target="_blank">
+                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
