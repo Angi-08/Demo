@@ -1,0 +1,5561 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobuTIC</title>
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="/demo/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/hover/hover-min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/styles.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+
+    <!-- Footer Scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/moment/moment-with-locales.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-sm-9 logo">
+                <img src="/demo/Content/images/logo.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-3 headerUser text-right">
+                <div class="d-block d-sm-none mobileMenu" data-toggle="collapse" href="#navBar">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="homeBtn">
+                    
+                </div>
+                <div class="notifBtn">
+                    
+                </div>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <div class="dropdownMenuUser collapse" id="collapseExample">
+                    <ul>
+                        <li><a href="#">Mi perfil</a></li>
+                        
+                        <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
+                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid menubar collapse dont-collapse-sm" id="navBar">
+        <ul>
+
+
+
+                <li>
+                    <a href="#">ADMINISTRACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACTURACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
+                        <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
+                        <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NOTA CRÉDITO</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMPRAS</a>
+                    <ul>
+                        
+                        <li><a href="/demo/Compras/Inicio">Recepción</a></li>
+                        <li><a href="/demo/Compras/SoportesBorrador">Soportes borrador</a></li>
+                        <li><a href="/demo/Compras/SoportesFinalizadas">Soportes finalizadas</a></li>
+
+                        <li><a href="/demo/Compras/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFORMES</a>
+                    <ul>
+                        <li><a href="/demo/Informes/Informe01">Consulta por cliente</a></li>
+                        <li><a href="/demo/Informes/Informe02">Consulta por articulo</a></li>
+                        <li><a href="/demo/Informes/Informe03">Clientes frecuentes</a></li>
+                        <li><a href="/demo/Informes/Informe04">Items mas vendidos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NÓMINA</a>
+                    <ul>
+                        <li><a href="/demo/Nomina/Nominas">Nómina</a></li>
+                    </ul>
+                </li>
+
+
+
+
+
+        </ul>
+    </div>
+    
+    <div class="container-fluid content">
+
+        <div class="row">
+
+            <div class="col-sm">
+
+                
+
+
+
+
+<script src="/demo/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/demo/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<script src="/demo/Scripts/expressive.annotations.validate.min.js" type="text/javascript"></script>
+<link href="/demo/Content/css/Validaciones.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+<script>
+
+    function filterFloat_3d(evt, input) {
+
+        // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+        var key = window.Event ? evt.which : evt.keyCode;
+        var chark = String.fromCharCode(key);
+        var tempValue = input.value + chark;
+        if (key >= 48 && key <= 57) {
+            if (filter_3d(tempValue) === false) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            if (key == 8 || key == 13 || key == 0) {
+                return true;
+            } else if (key == 44) {
+                if (filter_3d(tempValue) === false) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
+
+
+
+    function filter_3d(__val__) {
+        var preg = /^([0-9]+\,?[0-9]{0,3})$/;
+        if (preg.test(__val__) === true) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+</script>
+
+
+
+
+
+<form id="formCrearFactura" name="formCrearFactura" class="col-md-12" method="post">
+
+
+
+
+    <input id="pDescripcion" name="pDescripcion" type="hidden" />
+    <input id="SwBotonGuardar" name="SwBotonGuardar" hidden value="0" />
+    <input id="ValorTotal" name="ValorTotal" hidden type="text" />
+    <input id="Nota1" name="Nota1" value="" hidden type="text" />
+    <input id="Nota2" name="Nota2" value="" hidden type="text" />
+    <input id="ddlTipoMoneda" name="ddlTipoMoneda" value="1" hidden type="text" />
+
+    
+
+
+
+
+
+     <div class="row">
+        <div class="col-md-12">
+            <h3>Soporte de compra</h3>
+            <hr />
+        </div>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-5">
+            <label for="Tercero" class="required">Tercero</label>
+            <input id="IdProveedor" name="IdProveedor" value="0" hidden type="text" />
+            <input ReadOnly="true" class="form-control text-box single-line" id="sProveedor" name="sProveedor" onclick="oForm.MostrarTercero();" type="text" value="" />
+            <span class="field-validation-valid" data-valmsg-for="sProveedor" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="col-md-1">
+            <a id="AgregarTercero" class="btnOption BotonBuscar" href="#" title="Agregar tercero" onclick="oForm.MostrarTercero();"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="col-md-3">
+            <label for="datetimepicker1" class="required">Fecha Emisión</label>
+            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                <input onkeydown="return false" id="sFechaEmision" name="sFechaEmision" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" maxlength="10" />
+                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+            <span class="field-validation-valid" data-valmsg-for="sFechaEmision" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="col-md-3">
+            <label for="datetimepicker2" class="required">Fecha de vencimiento</label>
+            <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                <input onkeydown="return false" id="sFechaVencimiento" name="sFechaVencimiento" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2" maxlength="10" />
+                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br />
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <label for="Resolucion" class="required">Resolución</label>
+            <input id="IdResolucion" name="IdResolucion" value="0" hidden type="text" />
+            <input ReadOnly="true" class="form-control text-box single-line" id="sResolucion" name="sResolucion" onclick="oForm.MostrarResolucion();" type="text" value="" />
+
+        </div>
+
+        <div class="col-md-1">
+            <a id="AgregarResolucion" class="btnOption BotonBuscar" href="#" title="Agregar resolución" onclick="oForm.MostrarResolucion();"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+
+
+        <div class="col-md-2">
+
+            <label for="Numero" class="required">Número de Factura</label>
+            <input id="Numero" name="Numero" maxlength="20" class="form-control" />
+
+        </div>
+
+
+
+
+
+
+
+        <div class="col-md-3">
+
+            <label for="IdMetodoPago" class="required">Metodo de pago</label>
+            <select id="IdMetodoPago" name="IdMetodoPago" class="form-control">
+                    <option value="0">SELECCIONE</option>
+                    <option value="1">Efectivo</option>
+                    <option value="2">Tarjeta Cr&#233;dito</option>
+                    <option value="3">Tarjeta D&#233;bito</option>
+                    <option value="4">Cheque</option>
+                    <option value="5">Bonos</option>
+                    <option value="6">Vales</option>
+                    <option value="7">Cr&#233;dito</option>
+            </select>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <label for="IdTipoPago" class="required">Tipo de pago</label>
+            <select id="IdTipoPago" name="IdTipoPago" class="form-control">
+                <option value="0">Seleccione</option>
+                <option value="1">Contado</option>
+                <option value="2">Crédito</option>
+            </select>
+
+        </div>
+
+
+    </div>
+    <br />
+    <br />
+
+
+    <div class="row">
+        <div class="col-md-12" style="text-align: left;">
+            <button id="AgregarProducto" type="button" class="btn btn-primary" onclick="oForm.MostrarNuevoProducto();">Agregar producto o servicio</button>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div id="vProductosAgregados" class="col-md-12">
+        </div>
+
+    </div>
+    <br />
+
+
+    <div class="row">
+
+        <div class="col-md-8">
+
+            <div class="accordion" id="accordionExample">
+                
+                <div id="dvFacturaExportacion" class="card">
+
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="btnFacturaExportacion" class="btn btn-link collapsed" type="button" data-toggle="collapse"  aria-expanded="false" aria-controls="collapseOne">
+                                Factura exportación
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="opcion1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
+                        <div class="card-body">
+                          
+                            <div class="row">
+                                
+                                <div class="col-md-4">
+                                    <label for="TasaCambio" class="required">Tasa de cambio</label>
+                                    <input style="text-align:right" id="TasaCambio" name="TasaCambio" type="text" class="form-control" maxlength="10" onkeyup="Tools.Formatear_enteros_decimales(this);" onkeypress="return Tools.SoloNumeros_Enteros_Decimales(event);" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="datetimepicker1" class="required">Fecha de Negociación</label>
+                                    <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+                                        <input onkeydown="return false" id="FechaNegociacion" name="FechaNegociacion" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" maxlength="10" />
+                                        <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+
+                            </div>
+                            <br />
+
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <label for="Termino" class="active">Términos</label><label id="lblConteoTermino">&nbsp;( 200 caracteres )</label>
+                                    <textarea id="Termino" name="Termino"  onkeyup="oForm.contarcaracteres();" maxlength="200" class="form-control" style="height: 95px; margin-top: 0px; margin-bottom: 0px;"></textarea>
+                                </div>
+
+                            </div>
+                            <br />
+
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <label for="Riesgo" class="active">Riesgo de pérdida</label><label id="lblConteoRiesgo">&nbsp;( 200 caracteres )</label>
+                                    <textarea id="Riesgo" name="Riesgo"  onkeyup="oForm.contarcaracteres();" maxlength="200" class="form-control" style="height: 95px; margin-top: 0px; margin-bottom: 0px;"></textarea>
+                                </div>
+
+                            </div>
+
+
+
+                            <br />
+                         
+
+
+                        </div>
+                    </div>
+
+                </div>
+                
+                
+
+                <div class="card">
+                    
+                    
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Notas
+                            </button>
+                        </h2>
+                    </div>
+
+
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample" style="">
+                        <div class="card-body">
+
+
+
+                            <div id="dvNotasFactura">
+
+
+                                <div class="row">
+
+                                    <div style="text-align: right;" class="col-md-12">
+
+                                        <button type="button" class="btn btn-primary" onclick="oForm.mostrarAsistenteNota();">Agregar Nota</button>
+
+                                    </div>
+
+                                </div>
+                                <br />
+
+
+                                <div class="row">
+
+                                    <div id="vNotasAgregadas" class="col-md-12">
+                                    </div>
+
+                                </div>
+                                <br />
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                
+
+                <div >
+
+
+                    <div  class="card">
+
+
+                        <div id="dvMandantes" >
+
+
+                            <div class="card-header" id="headingFive">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Datos de los mandantes
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample" style="">
+                                <div class="card-body">
+
+
+                                    <div id="dvListaMandantes">
+
+                                        <div class="row">
+
+                                            <div style="text-align: right;" class="col-md-12">
+
+                                                <button type="button" class="btn btn-primary" onclick="oForm.mostrarAsistenteMandante();">Agregar</button>
+
+                                            </div>
+
+                                        </div>
+                                        <br />
+
+                                        <div class="row">
+
+                                            <div id="vDatosMandantes" class="col-md-12">
+                                            </div>
+
+                                        </div>
+                                        <br />
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4" style="text-align: right;">
+            <div id="vTotales"></div>
+        </div>
+
+    </div>
+    <br />
+
+
+
+    <div class="row">
+        <div id="eTipoPagos" class="col-md-12">
+            <div id="vErroresPost" class="alert alert-danger" role="alert">
+                <div id="ErrorMessagePost">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <a href="/demo/Compras/SoportesBorrador">Cancelar, regresar al listado</a>
+
+        </div>
+
+        <div class="col-md-6" style="text-align: right;">
+            
+            <a id="BtnGuardar" onclick="oForm.ValidarFactura();" class="btn btn-primary" href="#">Finalizar soporte</a>
+        </div>
+
+    </div>
+    <br />
+    <br />
+
+
+    </form>
+
+
+
+<script type="text/javascript">
+
+        function format(input) {
+            var num = input.value.replace(/\./g, '');
+            if (!isNaN(num)) {
+                num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+                num = num.split('').reverse().join('').replace(/^[\.]/, '');
+                input.value = num;
+            }
+
+            else {
+                alert('Solo se permiten numeros');
+                input.value = input.value.replace(/[^\d\.]*/g, '');
+            }
+        }
+
+</script>
+
+
+
+
+<div id="mTerceros" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terceros</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="divBusqueda">
+
+                    <label for="Descripcion" class="obligatorio">Buscar por NOMBRE o NIT</label>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input class="form-control tt-query" name="txtBuscar" id="txtBuscar" type="text" placeholder="">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary" onclick="oForm.BuscarTercero();">Buscar</button>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label id="Encontrados" class="active"></label>
+                            <div id="vTerceros">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label id="Mensaje" class="active"></label>
+                    </div>
+                </div>
+                <br />
+
+            </div>
+            <div class="modal-footer">
+                <input type="button" id="btnCancelar" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mProdcutos" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Agregar producto</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div id="dvBusqueda">
+
+                    <label>Buscar por NOMBRE o REFERENCIA</label>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <input class="form-control tt-query" name="Busqueda" id="Busqueda" type="text" autocomplete="off" />
+                        </div>
+
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary" onclick="oForm.BuscarProducto();">Buscar</button>
+                        </div>
+
+                     </div>
+                    <br />
+
+                    <div class="row">
+                        <div id="vProductos" class="col-md-12">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="dvValores">
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <b><label id="Titulo"></label></b>
+                        </div>
+                     
+                    </div>
+                    <hr />
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="Valor" class="active">Valor de la unidad</label>
+                            <input style="text-align:right" id="mValor" name="mValor" type="text" class="form-control" maxlength="13" onblur="oForm.CalcularTotal();" onkeyup="Tools.Formatear_enteros_decimales(this);" onkeypress="return Tools.SoloNumeros_Enteros_Decimales(event);" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Unidad" class="active">Unidades</label>
+                            <input style="text-align:right" id="Unidad" name="Unidad" type="text" class="form-control" maxlength="13" onblur="oForm.CalcularTotal();" onkeyup="Tools.Formatear_enteros_decimales(this);" onkeypress="return Tools.SoloNumeros_Enteros_Decimales(event);" />
+                        </div>
+
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="SubTotal" class="active">Sub total</label>
+                            <input style="text-align:right" id="SubTotal" name="SubTotal" type="text" class="form-control" maxlength="10" readonly="readonly" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="ValorDescuento" class="active">Valor de descuento</label>
+                            <input style="text-align:right" id="mValorDescuento" name="mValorDescuento" type="text" class="form-control" maxlength="10" onkeypress="return Tools.SoloNumeros_Enteros_Decimales(event);" onkeyup="Tools.Formatear_enteros_decimales(this);" onblur="oForm.CalcularTotal();" />
+                        </div>
+
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="ValorIVA" class="active">IVA</label>
+                            <input style="text-align:right" id="mValorIVA" name="mValorIVA" type="text" class="form-control" maxlength="10" readonly="readonly" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="ValorTotal" class="active">Valor total</label>
+                            <input style="text-align:right" id="mValorTotal" name="mValorTotal" type="text" class="form-control" maxlength="10" readonly="readonly" />
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+
+                            <div id="vErrores" class="alert alert-danger" role="alert">
+                                <div id="ErrorMessage">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <br />
+
+
+                </div>
+
+                <div id="dvProductoIncluyeIva">
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <b><label id="TituloI"></label></b>
+                        </div>
+
+                    </div>
+                    <hr />
+                    <br />
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="PrecioProducto" class="active">Valor Unitario (IVA Incluido)</label>
+                            <input style="text-align:right" id="mPrecioProducto" name="mPrecioProducto" type="text" class="form-control" maxlength="13" onblur="oForm.CalcularTotal_IncluyeIVA();" onkeyup="Tools.Formatear_enteros_decimales(this);" onkeypress="return Tools.SoloNumeros_Enteros_Decimales(event);" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="Unidad" class="active">Unidades</label>
+                            <input style="text-align:right" id="UnidadI" name="UnidadI" type="text" class="form-control" maxlength="13" onblur="oForm.CalcularTotal_IncluyeIVA();" onkeyup="Tools.Formatear_enteros_decimales(this);" onkeypress="return Tools.SoloNumeros_Enteros_Decimales(event);" />
+                        </div>
+
+                    </div>
+                    <br />
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="Valor" class="active">Valor base unitario</label>
+                            <input style="text-align:right" id="mValorI" name="mValorI" type="text" class="form-control" maxlength="10" readonly="readonly" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="SubTotal" class="active">Sub total</label>
+                            <input style="text-align:right" id="SubTotalI" name="SubTotalI" type="text" class="form-control" maxlength="10" readonly="readonly" />
+                        </div>
+
+                    </div>
+                    <br />
+
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="ValorIVA" class="active">IVA</label>
+                            <input style="text-align:right" id="mValorIVAI" name="mValorIVAI" type="text" class="form-control" maxlength="10" readonly="readonly" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="ValorTotal" class="active">Valor total</label>
+                            <input style="text-align:right" id="mValorTotalI" name="mValorTotalI" type="text" class="form-control" maxlength="10" readonly="readonly" />
+                        </div>
+
+                    </div>
+                    <br />
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+
+                            <div id="vErroresI" class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageI">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <br />
+
+
+
+
+                </div>
+
+                <div class="col-md-12 text-center">
+
+                    <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="modal-footer">
+
+                <div id="dvfooter">
+
+                    <input type="button" id="btnCancelar" Onclick="return oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                    <button id="BtnGuardarDocumento" class="btn btn-primary" type="submit" name="action" onclick="return oForm.GuardarProducto();">
+                        Guardar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mEliminar" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Remover producto</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div id="dvProductoEliminar" class="col-md-12">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarAsistente();">
+                    Cerrar
+                </button>
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.AceptarEliminar();">
+                    Aceptar
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mTiposPagos" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Medios de pagos</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            <div class="modal-body">
+
+                <div id="TiposPagos" class="col-md-8">
+                </div>
+
+                <div class="col-md-8">
+                    <div id="vErroresTipo" class="alert alert-danger" role="alert">
+                        <div id="ErrorMessageTipo">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarAsistente();">
+                    Cerrar
+                </button>
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.AceptarTipos();">
+                    Aceptar
+                </button>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div id="mGuardado" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="titModal">Finalizar soporte</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="alert alert-warning" role="alert">
+                            ¿Esta seguro que desea finalizar este soporte, despues de finalizada no podra editarla?
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarAsistente();">
+                    Cerrar
+                </button>
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.EnviarFactura();">
+                    Aceptar
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mResoluciones" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelr">Resoluciones</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="divBusquedaR">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="vResoluciones">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label id="MensajeR" class="active"></label>
+                    </div>
+                </div>
+                <br />
+
+            </div>
+            <div class="modal-footer">
+                <input type="button" id="btnCancelarR" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mCambiarTarifa" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelr">Asignar Tarifa de RETEICA configurada para el tercero</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="required">Tarifa ReteICA</label>
+                        <input id="txtTarifaReteICA" type="text" class="form-control" onkeypress="return filterFloat_3d(event,this);" maxlength="6" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="active">Total ReteICA</label><br />
+                        <b><label id="lblTotalReteICA"></label></b>
+                    </div>
+
+                    
+
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <a onclick="oForm.resetearTarifa(this);" href="#">Resetear Tarifa ReteICA por de defecto</a>
+                    </div>
+                </div>
+                <br />
+                <br />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="lblMensajeError"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+
+                <input type="button" id="btnCancelar" Onclick="return oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.ActualizarTarifa();">
+                    Guardar
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mProcesando" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Procesando</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center">
+                        <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mDocumentos" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Documento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div id="dvDocumentosDatos">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="documento" class="required"> Seleccionar el Documento </label>
+                            <input id="seleccionarDocumento" type="file" name="file" class="form-control" value="" accept="application/pdf" />
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="DescripcionDocumento" class="required">Descripción</label><label id="lblConteoDocumento">&nbsp;( 500 caracteres )</label>
+                            <textarea onkeyup="oForm.contarcaracteresDocumentos();" id="DescripcionDocumento" name="DescripcionDocumento" maxlength="500" class="form-control" style="height: 168px; margin-top: 0px; margin-bottom: 0px;"></textarea>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div id="vErroresM" class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageM">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                </div>
+
+                <div id="dvLoader">
+
+                    <div class="row">
+
+                        <div id="loaderModal" class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div id="divBotones" class="modal-footer">
+
+                <input type="button" id="btnCancelar" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <input type="button" id="btnAceptar" onclick="oForm.guardarDocumento();" class="btn btn-primary" value="Aceptar" />
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mEliminarDocumento" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Eliminar Documento</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div id="dvMensajeError">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label id="lblMensajeDocumento"></label>
+                        </div>
+                    </div>
+                    <br />
+
+                </div>
+
+
+
+
+                <div id="dvLoaderEliminar">
+
+                    <div class="row">
+
+                        <div id="loaderModal" class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div id="dvBotonesEliminar" class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarAsistente();">
+                    Cerrar
+                </button>
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.AceptarEliminarDocumento();">
+                    Aceptar
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="mNotas" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Nota</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+
+            <div class="modal-body">
+
+
+                <div id="dvDescripcionNota">
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="Nota" class="required"> Nota </label><label id="mlblNota"> &nbsp;( 250 caracteres )</label>
+                            <textarea onkeyup="oForm.ContarCaracteresNota();" id="DescripcionNota" maxlength="250" class="form-control" style="height: 97px; margin-top: 0px; margin-bottom: 0px;" ></textarea>
+                        </div>
+                    </div>
+                    <br />
+
+
+
+
+                    <div class="row">
+                        <div id="vErroresNotas" class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageNotas">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+
+                </div>
+
+
+
+
+                <div id="dvLoaderNota">
+
+                    <div class="row">
+
+                        <div class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div id="divBotonesNotas" class="modal-footer">
+
+                <input type="button" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <input type="button" onclick="oForm.guardarNota();" class="btn btn-primary" value="Aceptar" />
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mEliminarNota" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Eliminar Nota</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div id="dvMensajeNota">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label id="lblMensajeNota"></label>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label id="lblNotaEliminar"></label>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+                        <div id="vErroresEliminarNotas" class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageEliminarNotas">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+                </div>
+
+
+
+
+                <div id="dvLoaderEliminarNota">
+
+                    <div class="row">
+
+                        <div class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div id="dvBotonesEliminarNota" class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarAsistente();">
+                    Cerrar
+                </button>
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.AceptarEliminarNota();">
+                    Aceptar
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mEditarNota" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Nota</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+
+            <div class="modal-body">
+
+
+                <div id="dvDescripcionNotaE">
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="NotaE" class="required"> Nota </label><label id="mlblNotaE"> &nbsp;( 250 caracteres )</label>
+                            <textarea onkeyup="oForm.ContarCaracteresNotaE();" id="DescripcionNotaE" maxlength="250" class="form-control" style="height: 97px; margin-top: 0px; margin-bottom: 0px;"></textarea>
+                        </div>
+                    </div>
+                    <br />
+
+
+
+
+                    <div class="row">
+                        <div id="vErroresNotasE" class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageNotasE">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+
+                </div>
+
+
+
+
+                <div id="dvLoaderNotaE">
+
+                    <div class="row">
+
+                        <div class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div id="divBotonesNotasE" class="modal-footer">
+
+                <input type="button" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <input type="button" onclick="oForm.editarNota();" class="btn btn-primary" value="Aceptar" />
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="mMandantes" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Mandante</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div id="dvMandantesDatos">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="NombreMandante" class="required"> Nombre Completo </label>
+                            <input id="NombreMandante"  name="NombreMandante" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-11">
+                            <label for="IdentificacionMandante" class="required"> Identificación </label>
+                            <input id="IdentificacionMandante" name="IdentificacionMandante" type="text" class="form-control" onkeyup="oForm.GenerarDV('DVMandante');" onkeypress="if(event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" />
+                        </div>
+                  
+                        <div class="col-md-1">
+                            <label for="DVMandante" class="required"> DV </label>
+                            <input id="DVMandante" name="DVMandante" type="text" class="form-control" readOnly="true" />
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div id="vErroresMandantes" class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageMandantes">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                </div>
+
+                <div id="dvLoaderMandantes">
+
+                    <div class="row">
+
+                        <div id="loaderModalMandantes" class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div id="divBotonesMandantes" class="modal-footer">
+
+                <input type="button" id="btnCancelarMandante" onclick="oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+
+                <input type="button" id="btnAceptarMandante" onclick="oForm.guardarMandante();" class="btn btn-primary" value="Aceptar" />
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mEliminarMandantes" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="titModal">Eliminar Mandante</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div id="dvMensajeMandante">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label id="lblMensajeMandante"></label>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div id="vErroresEliminarMandantes" class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <div id="ErrorMessageEliminarMandantes">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+                </div>
+
+
+
+
+                <div id="dvLoaderEliminarMandante">
+
+                    <div class="row">
+
+                        <div class="col-md-12 text-center">
+
+                            <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <br />
+                            <br />
+                            <p style="color:#17a2b8; font-size:15px">Procesando...</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div id="dvBotonesEliminarMandante" class="modal-footer">
+
+                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarAsistente();">
+                    Cerrar
+                </button>
+
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.AceptarEliminarMandante();">
+                    Aceptar
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="mMensajeMandantes" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mandante</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info" role="alert">
+
+                            <p>El número de Mandantes permitidos deben ser igual al número de productos o servicios de la factura.</p>
+
+                            <p>Ya agrego el número maximo de Mandantes.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <input type="button" onclick="oForm.cerrarAsistente();" class="btn btn-primary" value="Aceptar" />
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="/demo/Libs/Tools.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+
+            oForm.init();
+
+        });
+
+
+
+        var oForm = new function () {
+
+            this.Url = null;
+            this.lstTerceros = [];
+            this.lstProductos = [];
+            this.lstProductosAgregados = [];
+            this.oProducto = null;
+            this.SwEditar = null;
+            this.IdProducto = null;
+            this.lstTiposPagos = [];
+            this.lstTiposPagosAgregados = [];
+            this.TotalFinal = null;
+            this.TotalPagado = null;
+            this.porcentajeIVA = null;
+            this.ValorIVA = null;
+            this.TotalNeto = null;
+            this.oDetalle = null;
+            this.IdFacturaDetalle = null;
+            this.lstTiposFormasPagos = [];
+            this.cadenaTipoPagos = null;
+            this.lstResoluciones = [];
+            this.TarifaReteICAFactura = null;
+            this.oFactura = null;
+            this.TarifaReteICATercero = null;
+            this.TotalReteICA = null;
+            this.oTotalesProducto = null;
+            this.IdProductoDetalle = null;
+            this.SwPrecioIncluidoImpuestos = null;
+            this.oTercero = null;
+
+            this.lstDocumentos = [];
+            this.IdDocumento = null;
+            
+            this.lstNotas = [];
+            this.IdNota = null;
+            this.oResultadoNota = null;
+
+            this.lstMandantes = [];
+            this.IdMandante = null;
+            this.oRespuestaMandantes = null;
+
+
+
+
+            this.oResultadoValidaciones = null;
+            
+
+
+
+
+            this.lstResolucionesFijar = [];
+
+
+
+
+
+
+            this.init = function () {
+
+                
+
+                $("#accordionExample").show();
+                $("#dvFacturaExportacion").hide();
+
+
+                $("#ddlTipoMoneda").change(function () {
+
+
+                    var control = document.getElementById("btnFacturaExportacion");
+
+                    if($("#ddlTipoMoneda").val() ==2 || $("#ddlTipoMoneda").val() == 3 ){
+                    
+                        $("#dvFacturaExportacion").show();
+
+                        control.setAttribute('data-target', '#opcion1');
+                        $("#opcion1").addClass("show");
+
+                    }else{
+                    
+                        $("#dvFacturaExportacion").hide();
+
+                        control.removeAttribute('data-target');
+                        $("#opcion1").removeClass("show");
+
+                    }
+
+                });
+
+
+
+
+                $("#ddlTipoOperacion").change(function () {
+
+
+                    if($("#ddlTipoOperacion").val() == 3 ){
+                    
+                        $("#dvMandantes").show();
+
+                    }else{
+                    
+                        $("#dvMandantes").hide();
+
+                    }
+
+                });
+
+
+
+
+                if($("#ddlTipoOperacion").val() == 3 ){
+                    
+                    $("#dvMandantes").show();
+
+                }else{
+                    
+                    $("#dvMandantes").hide();
+
+                }
+
+
+
+                this.TarifaReteICAFactura  = this.oFactura.TarifaReteICAFactura;
+                this.TarifaReteICATercero  = this.oFactura.TarifaReteICATercero;
+
+                $('#txtTarifaReteICA').val(this.TarifaReteICA );
+                
+
+                if($('#IdProveedor').val() == 0 ){
+                    $('#AgregarProducto').hide();
+                  
+                }else{
+                    $('#AgregarProducto').show();
+                   
+                }
+
+
+
+                $("#vErroresTipo").hide();
+                $("#vErrores").hide();
+                $("#BtnGuardar").hide();
+                $("#TipoDePagos").hide();
+                $("#vErroresPost").hide();
+                $("#agregarTipoPago").hide();
+                $("#dvNota1").hide();
+                $("#dvNota2").hide();
+                $("#dvDocumentosFactura").hide();
+                $("#dvNotasFactura").hide();
+                $("#dvListaMandantes").hide();
+
+                var now = new Date();
+                var date = new Date(now.getFullYear() - ((now.getMonth() + 1) > 0 ? 0 : 1), ((now.getMonth() + 1) - 1 + 12) % 12, 1);
+
+                var dd = now.getDate();
+                var mm = now.getMonth()+1;
+                var yyyy = now.getFullYear();
+
+                var formatDateComponent = function (dateComponent) {
+                    return (dateComponent < 10 ? '0' : '') + dateComponent;
+                };
+
+                $("#sFechaEmision").val(formatDateComponent(dd) + '/' + formatDateComponent(mm)+'/'+yyyy);
+                $("#sFechaVencimiento").val(formatDateComponent(dd) + '/' + formatDateComponent(mm)+'/'+yyyy);
+                $("#FechaNegociacion").val(formatDateComponent(dd) + '/' + formatDateComponent(mm)+'/'+yyyy);
+                
+
+                $("#ddlMes").val(date.getMonth() + 1);
+                $("#ddlAnio").val(date.getFullYear());
+
+
+                for (var t = 0; t < this.lstTiposPagos.length; t++) {
+
+                    var item = this.lstTiposPagos[t];
+
+                    if(item.Value > 0){
+
+                        var obj = { IdTipo: item.Value , sTipo: item.Text, sValor: "0" };
+
+                        this.lstTiposPagosAgregados.push(obj);
+
+                    }
+
+                }
+
+
+
+
+
+
+                if(this.oFactura.sFechaEmision != null && this.oFactura.sFechaEmision != ""){
+                    $("#sFechaEmision").val(this.oFactura.sFechaEmision);
+                }
+
+                if(this.oFactura.sFechaVencimiento != null && this.oFactura.sFechaVencimiento != ""){
+                    $("#sFechaVencimiento").val(this.oFactura.sFechaVencimiento);
+                }
+
+                if(this.oFactura.IdTipoMoneda != null && this.oFactura.IdTipoMoneda != ""){
+                    $("#ddlTipoMoneda").val(this.oFactura.IdTipoMoneda);
+
+
+                    var control = document.getElementById("btnFacturaExportacion");
+
+                    if($("#ddlTipoMoneda").val() ==2 ||  $("#ddlTipoMoneda").val() ==3){
+                    
+                        $("#dvFacturaExportacion").show();
+
+                        control.setAttribute('data-target', '#opcion1');
+                        $("#opcion1").addClass("show");
+
+                    }else{
+                    
+                        $("#dvFacturaExportacion").hide();
+
+                        control.removeAttribute('data-target');
+                        $("#opcion1").removeClass("show");
+
+                    }
+
+
+
+                }
+
+
+
+                if(this.oFactura.IdTipoOperacion != null && this.oFactura.IdTipoOperacion != ""){
+                  
+                    $("#ddlTipoOperacion").val(this.oFactura.IdTipoOperacion);
+
+
+                    if($("#ddlTipoOperacion").val() == 3 ){
+                    
+                        $("#dvMandantes").show();
+
+                    }else{
+                    
+                        $("#dvMandantes").hide();
+
+                    }
+
+
+                }
+
+                if(this.oFactura.sTasaCambio != null && this.oFactura.sTasaCambio != ""){
+                    $("#TasaCambio").val(this.oFactura.sTasaCambio);
+                }
+
+                if(this.oFactura.FechaNegociacion != null && this.oFactura.FechaNegociacion != ""){
+                    $("#FechaNegociacion").val(this.oFactura.FechaNegociacion);
+                }
+
+                if(this.oFactura.TipoCoondicionEntrega != null && this.oFactura.TipoCoondicionEntrega != ""){
+                    $("#TipoCoondicionEntrega").val(this.oFactura.TipoCoondicionEntrega);
+                }
+
+                if(this.oFactura.Termino != null && this.oFactura.Termino != ""){
+                    $("#Termino").val(this.oFactura.Termino);
+                }
+
+                if(this.oFactura.Riesgo != null && this.oFactura.Riesgo != ""){
+                    $("#Riesgo").val(this.oFactura.Riesgo);
+                }
+
+                if(this.oFactura.Numero != null && this.oFactura.Numero != ""){
+                    $("#Numero").val(this.oFactura.Numero);
+                }
+
+                if(this.oFactura.IdMetodoPago != null && this.oFactura.IdMetodoPago != ""){
+                    $("#IdMetodoPago").val(this.oFactura.IdMetodoPago);
+                }
+
+                if(this.oFactura.IdTipoPago != null && this.oFactura.IdTipoPago != ""){
+                    $("#IdTipoPago").val(this.oFactura.IdTipoPago);
+                }
+
+
+
+                if(this.oFactura.IdResolucion != null && this.oFactura.IdResolucion != ""){
+                    this.FijarResolucion(this.oFactura.IdResolucion);
+                }
+
+
+
+
+
+                if (this.oDetalle != null) {
+
+                    console.log("initttttttttttttttt");
+                    this.mostrarDetalle();
+                    //this.mostrarDocumentos();
+                    this.mostrarNotas();
+                    //this.mostrarMandantes();
+
+
+                }else{
+                
+                    this.mostrarDetalleVacio();
+                
+                }
+
+
+
+
+                
+
+            };
+
+
+
+
+
+            this.FijarResolucion = function (id) {
+
+
+                var jsData = '{"b":"' + "" + '" ,  "t":"' + "8" + '"}';
+
+                $.ajax({
+                    url: this.Url + "BuscarResoluciones",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstResolucionesFijar = data;
+                        oForm.fijar(id);
+
+                    }
+                });
+
+
+
+            };
+
+            this.fijar = function (id) {
+
+
+
+                for (var i = 0; i < this.lstResolucionesFijar.length; i++) {
+
+                    var item = this.lstResolucionesFijar[i];
+
+                    if(item.IdResolucion == id){
+                    
+
+
+                        $('#IdResolucion').val(item.IdResolucion);
+                        $('#sResolucion').val(item.sResolucion);
+
+
+
+
+                        if(item.IdTipoResolucion == 5){
+                
+                            $('#cardDocumentos').hide();
+                    
+                        }else{
+                
+                
+                            $('#cardDocumentos').show();
+                
+                        }
+
+
+
+                    
+                    }
+
+
+                }
+
+
+
+            };
+
+
+
+
+
+
+
+
+            this.mostrarAsistenteNota = function () {
+
+                $("#dvLoaderNota").hide();
+                $("#dvDescripcionNota").show();
+                $("#divBotonesNotas").show();
+
+                $("#vErroresNotas").hide();
+
+                $('#DescripcionNota').val("");
+
+                $("#mNotas").modal({ show: true  });
+
+            };
+
+            this.ContarCaracteresNota = function () {
+
+                var conteoDescripcion = parseInt(250) - parseInt($('#DescripcionNota').val().length) 
+                $('#mlblNota').html("&nbsp; ( " + conteoDescripcion + " caracteres )");
+
+
+            };
+
+            this.guardarNota = function () {
+
+
+                $("#vErroresNotas").hide();
+
+
+                var htmlContent = "";
+
+
+                if ($("#DescripcionNota").val().length == 0) {
+
+                    htmlContent += "<li>El campo <b>NOTA</b> es obligatorio.</li>";
+
+                }
+
+                if (htmlContent.length > 0) {
+
+
+                    this.showErrorNota(htmlContent);
+
+
+                } else {
+
+
+                    this.mostrarLoaderModalNota();
+
+
+
+                    var jsData = '{"P1":"' + $("#DescripcionNota").val().trim() + '" }';
+
+                    $.ajax({
+                        url: this.Url + "CrearDescripconNota",
+                        dataType: 'json',
+                        contentType: "application/json",
+                        type: "POST",
+                        data: jsData,
+                        success: function (data) {
+
+
+                            oForm.oResultadoNota = data;
+
+
+                            if(oForm.oResultadoNota.Codigo == "0000"){
+                            
+                                oForm.mostrarNotas();
+                            
+                            }else{
+                            
+
+                                oForm.cerrarLoaderModalNota();
+                                oForm.showErrorNota("<li>" + oForm.oResultadoNota.Mensaje + "</li>");
+
+                            
+                            }
+
+
+                        }
+
+
+                    });
+
+
+
+
+
+                }
+
+
+
+            };
+
+            this.showErrorNota = function (m) {
+
+                $("#ErrorMessageNotas").html(m);
+                $("#vErroresNotas").show();
+
+            };
+
+            this.mostrarLoaderModalNota = function () {
+
+                $("#dvDescripcionNota").hide();
+                $("#divBotonesNotas").hide();
+                $("#dvLoaderNota").show();
+
+                $("#dvLoaderEliminarNota").show();
+                $("#dvMensajeNota").hide();
+                $("#dvBotonesEliminarNota").hide();
+                $("#vErroresEliminarNotas").hide();
+
+
+                $("#dvDescripcionNotaE").hide();
+                $("#divBotonesNotasE").hide();
+                $("#dvLoaderNotaE").show();
+
+
+            };
+
+            this.cerrarLoaderModalNota = function () {
+
+                $("#dvDescripcionNota").show();
+                $("#divBotonesNotas").show();
+                $("#dvLoaderNota").hide();
+
+
+                $("#dvLoaderEliminarNota").hide();
+                $("#dvMensajeNota").show();
+                $("#dvBotonesEliminarNota").show();
+
+
+                $("#dvDescripcionNotaE").show();
+                $("#divBotonesNotasE").show();
+                $("#dvLoaderNotaE").hide();
+
+            };
+
+            this.mostrarNotas = function () {
+
+
+
+                $("#mNotas").modal("hide");
+                $("#mEliminarNota").modal("hide");
+                $("#mEditarNota").modal("hide");
+
+
+
+                var htmlContent = "";
+
+
+
+                if (this.oResultadoNota.lstNotas.length > 0) {
+
+
+
+
+                    htmlContent += "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+
+                    htmlContent += "<thead>";
+                    
+                    htmlContent += "<th style='width:5%' >#</th>";
+                    htmlContent += "<th style='width:85%' >Nota</th>";
+                    htmlContent += "<th style='width:5%;text-align:center' >Editar</th>";
+                    htmlContent += "<th style='width:5%;text-align:center' >Eliminar</th>";
+
+                    htmlContent += "</thead><tbody>";
+
+
+
+
+                    var consecutivo = 1;
+
+                    for (var i = 0; i < this.oResultadoNota.lstNotas.length; i++) {
+
+                        var item = this.oResultadoNota.lstNotas[i];
+
+                        htmlContent += "<tr>";
+                        
+                        htmlContent += "<td>" + consecutivo + "</td>";
+                        htmlContent += "<td>" + item.Nota + "</td>";
+                        htmlContent += "<td style='text-align:center'><a class='btnOption' onclick='oForm.EditarNota("+ item.IdNota +");' href='#' title='Editar'><i class='fa fa-pencil' aria-hidden='true'></i></a></td>";
+                        htmlContent += "<td style='text-align:center'><a class='btnOption' onclick='oForm.EliminarNota("+ item.IdNota +");' href='#' title='Eliminar'><i class='text-danger fa fa-trash' aria-hidden='true'></i></a></td>";
+
+                        htmlContent += "</tr>";
+                        
+                        consecutivo += 1;
+
+                    }
+
+
+
+                    htmlContent += "</tbody></table>";
+
+
+
+                } else {
+
+
+
+                    htmlContent = "<Strong>No se han encontrado registros.</Strong>"
+
+
+
+                }
+
+
+
+                $("#vNotasAgregadas").html(htmlContent);
+
+
+
+            };
+
+
+            this.EliminarNota = function (id) {
+
+                $("#dvLoaderEliminarNota").hide();
+                $("#dvMensajeNota").show();
+                $("#dvBotonesEliminarNota").show();
+                $("#vErroresEliminarNotas").hide();
+
+                for (var i = 0; i < this.oResultadoNota.lstNotas.length; i++) {
+
+                    var oNota = this.oResultadoNota.lstNotas[i];
+
+                    if(oNota.IdNota == id){
+
+                        this.IdNota = oNota.IdNota;
+
+                        $("#lblMensajeNota").html("¿Esta seguro que desea eliminar la siguiente nota ?");
+                        $("#lblNotaEliminar").html(oNota.Nota);
+
+                    }
+
+
+                }
+
+
+                $("#mEliminarNota").modal({ show: true , backdrop:"static" });
+
+            };
+
+            this.AceptarEliminarNota = function () {
+
+                this.mostrarLoaderModalNota();
+
+                var P1 = this.IdNota;
+
+
+                var jsData = '{"P1":"' + P1 + '" }';
+
+
+                $.ajax({
+                    url: this.Url + "EliminarFacturaNota",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oResultadoNota = data;
+
+                        if(oForm.oResultadoNota.Codigo == "0000"){
+                            
+                            oForm.mostrarNotas();
+                            
+                        }else{
+                            
+
+                            oForm.cerrarLoaderModalNota();
+                            oForm.showErrorEliminarNota("<li>" + oForm.oResultadoNota.Mensaje + "</li>");
+
+                            
+                        }
+
+
+                    }
+                });
+
+
+
+
+            };
+
+            this.showErrorEliminarNota = function (m) {
+
+                $("#ErrorMessageEliminarNotas").html(m);
+                $("#vErroresEliminarNotas").show();
+
+            };
+
+
+
+            this.EditarNota = function (id) {
+
+                $("#dvLoaderNotaE").hide();
+                $("#dvDescripcionNotaE").show();
+                $("#divBotonesNotasE").show();
+
+                $("#vErroresNotasE").hide();
+
+               
+
+                for (var i = 0; i < this.oResultadoNota.lstNotas.length; i++) {
+
+                    var oNota = this.oResultadoNota.lstNotas[i];
+
+                    if(oNota.IdNota == id){
+
+                        this.IdNota = oNota.IdNota;
+
+                        $('#DescripcionNotaE').val(oNota.Nota);
+
+                    }
+
+
+                }
+
+
+
+
+                var conteoDescripcion = parseInt(250) - parseInt($('#DescripcionNotaE').val().length) 
+                $('#mlblNotaE').html("&nbsp; ( " + conteoDescripcion + " caracteres )");
+
+
+                $("#mEditarNota").modal({ show: true , backdrop:"static" });
+
+            };
+
+            this.editarNota = function () {
+
+
+                $("#vErroresNotasE").hide();
+
+
+                var htmlContent = "";
+
+
+                if ($("#DescripcionNotaE").val().length == 0) {
+
+                    htmlContent += "<li>El campo <b>NOTA</b> es obligatorio.</li>";
+
+                }
+
+                if (htmlContent.length > 0) {
+
+
+                    this.showErrorNotaE(htmlContent);
+
+
+                } else {
+
+
+                    this.mostrarLoaderModalNota();
+
+
+
+                    var jsData = '{"P1":"' + $("#DescripcionNotaE").val().trim() + '" , "P2":"' +  this.IdNota + '" }';
+
+                    $.ajax({
+                        url: this.Url + "EditarDescripconNota",
+                        dataType: 'json',
+                        contentType: "application/json",
+                        type: "POST",
+                        data: jsData,
+                        success: function (data) {
+
+
+                            oForm.oResultadoNota = data;
+
+
+                            if(oForm.oResultadoNota.Codigo == "0000"){
+                            
+                                oForm.mostrarNotas();
+                            
+                            }else{
+                            
+
+                                oForm.cerrarLoaderModalNota();
+                                oForm.showErrorNotaE("<li>" + oForm.oResultadoNota.Mensaje + "</li>");
+
+                            
+                            }
+
+
+                        }
+
+
+                    });
+
+
+
+
+
+                }
+
+
+
+            };
+
+            this.showErrorNotaE = function (m) {
+
+                $("#ErrorMessageNotasE").html(m);
+                $("#vErroresNotasE").show();
+
+            };
+
+            this.ContarCaracteresNotaE = function () {
+
+                var conteoDescripcion = parseInt(250) - parseInt($('#DescripcionNotaE').val().length) 
+                $('#mlblNotaE').html("&nbsp; ( " + conteoDescripcion + " caracteres )");
+
+
+            };
+
+
+
+
+
+
+
+
+
+            this.mostrarLoaderModal = function () {
+
+                $("#dvDocumentosDatos").hide();
+                $("#divBotones").hide();
+                
+                $("#dvMensajeError").hide();
+                $("#dvBotonesEliminar").hide();
+
+                $("#dvLoaderEliminar").show();
+                $("#dvLoader").show();
+
+            };
+
+            this.cerrarLoaderModal = function () {
+
+                $("#dvDocumentosDatos").show();
+                $("#divBotones").show();
+                $("#dvLoader").hide();
+
+            };
+
+            this.mostrarAsistenteDocumento = function () {
+
+                $("#dvLoader").hide();
+                $("#dvDocumentosDatos").show();
+                $("#divBotones").show();
+
+                $("#vErroresM").hide();
+
+                $('#seleccionarDocumento').val("");
+                $('#DescripcionDocumento').val("");
+
+                $("#mDocumentos").modal({ show: true  });
+
+            };
+
+            this.guardarDocumento = function () {
+
+
+                $("#vErroresM").hide();
+
+
+                var htmlContent = "";
+
+
+                if ($("#seleccionarDocumento").val().length == 0) {
+
+                    htmlContent += "<li>El campo <b>Seleccionar documento</b> es obligatorio.</li>";
+
+                }
+
+                if ($("#DescripcionDocumento").val().length == 0) {
+
+                    htmlContent += "<li>El campo <b>Descripción</b> es obligatorio.</li>";
+
+                }
+
+                if (htmlContent.length > 0) {
+
+
+                    this.showErrorM(htmlContent);
+
+
+                } else {
+
+
+                    this.mostrarLoaderModal();
+
+                    var files = document.getElementById('seleccionarDocumento').files[0];
+
+                    $("#pDescripcion").val($("#DescripcionDocumento").val());
+
+                    var data = new FormData();
+
+                    data.append("file" + 0, files);
+                    data.append("pDescripcion", $("#DescripcionDocumento").val());
+
+                    $.ajax({
+
+                        type: "POST",
+                        url: oForm.Url + "CargarDocumento",
+                        contentType: false,
+                        processData: false,
+                        data: data,
+                        success: function (result) {
+
+                            oForm.lstDocumentos = result;
+                            //oForm.mostrarDocumentos();
+
+                        }
+
+                    });
+
+
+
+                }
+
+
+
+            };
+
+            this.showErrorM = function (m) {
+
+                $("#ErrorMessageM").html(m);
+                $("#vErroresM").show();
+
+            };
+            
+            //this.mostrarDocumentos = function () {
+
+            //    $("#mDocumentos").modal("hide");
+            //    $("#mEliminarDocumento").modal("hide");
+
+
+            //    var htmlContent = "";
+
+            //    if (this.lstDocumentos.length > 0) {
+
+
+            //        htmlContent += "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+
+            //        htmlContent += "<thead>";
+                    
+            //        htmlContent += "<th>Nombre</th>";
+            //        htmlContent += "<th style='text-align:center' >Eliminar</th>";
+
+            //        htmlContent += "</thead><tbody>";
+
+
+            //        var Consecutivo = 1;
+                    
+            //        for (var i = 0; i < this.lstDocumentos.length; i++) {
+
+            //            var item = this.lstDocumentos[i];
+
+            //            htmlContent += "<tr>";
+                        
+            //            htmlContent += "<td>" + item.Nombre + "</td>";
+            //            htmlContent += "<td style='text-align:center'><a class='btnOption' onclick='oForm.EliminarDocumento("+ item.IdDocumento +");' href='#' title='Eliminar'><i class='text-danger fa fa-trash' aria-hidden='true'></i></a></td>";
+
+            //            htmlContent += "</tr>";
+
+            //            Consecutivo += 1;
+
+            //        }
+
+            //        htmlContent += "</tbody></table>";
+
+            //    } else {
+
+            //        htmlContent = "<Strong>No se han encontrado registros.</Strong>"
+
+            //    }
+
+            //    $("#vDatosDocumentos").html(htmlContent);
+
+            //};
+
+            this.EliminarDocumento = function (id) {
+
+
+                $("#dvLoaderEliminar").hide();
+                $("#dvMensajeError").show();
+                $("#dvBotonesEliminar").show();
+
+
+                for (var i = 0; i < this.lstDocumentos.length; i++) {
+
+                    var oDcoumento = this.lstDocumentos[i];
+
+                    if(oDcoumento.IdDocumento == id){
+
+                        this.IdDocumento = oDcoumento.IdDocumento;
+
+                        $("#lblMensajeDocumento").html("¿Esta seguro que desea eliminar el documento " + oDcoumento.Nombre + "?");
+
+
+                    }
+
+
+                }
+
+
+                $("#mEliminarDocumento").modal({ show: true , backdrop:"static" });
+
+            };
+
+            this.AceptarEliminarDocumento = function () {
+
+                this.mostrarLoaderModal();
+
+                var P1 = this.IdDocumento;
+
+                var jsData = '{"p":"' + P1 + '" }';
+
+                $.ajax({
+                    url: this.Url + "EliminarDocumento",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstDocumentos = data;
+                        //oForm.mostrarDocumentos();
+
+                    }
+                });
+
+            };
+
+
+
+
+
+
+            this.mostrarAsistenteMandante = function () {
+
+
+                console.log(this.oRespuestaMandantes);
+
+
+
+                if(this.oRespuestaMandantes.Codigo == null){
+                
+                    this.oRespuestaMandantes.lstMandantes == [];
+                
+                }
+
+
+
+                if(this.oDetalle.lstDetalle.length == this.oRespuestaMandantes.lstMandantes.length){
+
+                    $("#mMensajeMandantes").modal({ show: true  });
+                    
+                }else{
+                
+                    $("#vErroresMandantes").hide();
+                    $("#dvLoaderMandantes").hide();
+
+                    $("#dvMandantesDatos").show();
+                    $("#divBotonesMandantes").show();
+
+                    $("#NombreMandante").val("");
+                    $("#IdentificacionMandante").val("");
+                    $("#DVMandante").val("0");
+                
+                    $("#mMandantes").modal({ show: true  });
+                
+                }
+
+
+
+            };
+
+            this.mostrarLoaderModalMandante = function () {
+
+                $("#dvMandantesDatos").hide();
+                $("#divBotonesMandantes").hide();
+
+                $("#dvMensajeMandante").hide();
+                $("#dvBotonesEliminarMandante").hide();
+
+                $("#dvLoaderEliminarMandante").show();
+                $("#dvLoaderMandantes").show();
+
+
+
+            };
+
+            this.cerrarLoaderModalMandantes = function () {
+
+                $("#dvMandantesDatos").show();
+                $("#divBotonesMandantes").show();
+
+                $("#dvMensajeMandante").show();
+                $("#dvBotonesEliminarMandante").show();
+
+                $("#dvLoaderMandantes").hide();
+                $("#dvLoaderEliminarMandante").hide();
+            };
+
+            this.guardarMandante = function () {
+
+
+                $("#vErroresMandantes").hide();
+
+
+                var htmlContent = "";
+
+
+
+                if ($("#NombreMandante").val().length == 0) {
+
+
+                    htmlContent += "<li>El campo <b>nombre</b> es obligatorio.</li>";
+
+                }
+
+                
+                if ($("#IdentificacionMandante").val().length == 0) {
+
+                    htmlContent += "<li>El campo <b>identificación</b> es obligatorio.</li>";
+
+                }
+
+
+
+
+
+
+                if (htmlContent.length > 0) {
+
+
+                    this.showErrorMandante(htmlContent);
+
+
+                } else {
+
+
+
+
+                    this.mostrarLoaderModalMandante();
+
+
+
+
+                    var NombreMandante = $("#NombreMandante").val();
+                    var Identificacion = $("#IdentificacionMandante").val();
+                    var DV = $("#DVMandante").val();
+
+
+                    
+                    var jsData = '{ "P1":"' + NombreMandante + '" , "P2":"' + Identificacion + '" , "P3":"' + DV + '" }';
+
+                    $.ajax({
+                        url: this.Url + "crearMandante",
+                        dataType: 'json',
+                        contentType: "application/json",
+                        type: "POST",
+                        data: jsData,
+                        success: function (data) {
+
+
+
+                            oForm.oRespuestaMandantes = data;
+
+
+
+                            if(oForm.oRespuestaMandantes.Codigo == "0000"){
+                            
+                                //oForm.mostrarMandantes();
+
+                            }
+                            
+
+
+                            if(oForm.oRespuestaMandantes.Codigo == "0001"){
+                            
+                                oForm.cerrarLoaderModalMandantes();
+                                oForm.showErrorMandante("<li>" + oForm.oRespuestaMandantes.Mensaje + "</li>");
+
+                            }
+
+
+
+                            if(oForm.oRespuestaMandantes.Codigo == "9999"){
+                            
+                                oForm.cerrarLoaderModalMandantes();
+                                oForm.showErrorMandante("<li>" + oForm.oRespuestaMandantes.Mensaje + "</li>");
+
+                            }
+
+
+
+
+                        }
+
+
+                    });
+
+
+
+
+
+                }
+
+
+
+            };
+
+            this.showErrorMandante = function (m) {
+
+                
+                $("#ErrorMessageMandantes").html(m);
+                $("#vErroresMandantes").show();
+
+
+            };
+            
+            this.showErrorMandanteEliminar = function (m) {
+                
+                $("#ErrorMessageEliminarMandantes").html(m);
+                $("#vErroresEliminarMandantes").show();
+
+            };
+
+            //this.mostrarMandantes = function () {
+
+            //    $("#mMandantes").modal("hide");
+            //    $("#mEliminarMandantes").modal("hide");
+
+
+            //    var htmlContent = "";
+
+            //    if (this.oRespuestaMandantes.lstMandantes.length > 0) {
+
+
+            //        htmlContent += "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+
+            //        htmlContent += "<thead>";
+                    
+            //        htmlContent += "<th style='text-align:center' >#</th>";
+            //        htmlContent += "<th>Identificación</th>";
+            //        htmlContent += "<th>Nombre</th>";
+            //        htmlContent += "<th style='text-align:center' >Eliminar</th>";
+
+            //        htmlContent += "</thead><tbody>";
+
+
+            //        var Consecutivo = 1;
+                    
+            //        for (var i = 0; i < this.oRespuestaMandantes.lstMandantes.length; i++) {
+
+            //            var item = this.oRespuestaMandantes.lstMandantes[i];
+
+            //            htmlContent += "<tr>";
+                        
+            //            htmlContent += "<td style='text-align:center' ><b>Producto " + Consecutivo + "</b></td>";
+            //            htmlContent += "<td>" + item.Identificacion + "</td>";
+            //            htmlContent += "<td>" + item.Nombre + "</td>";
+            //            htmlContent += "<td style='text-align:center'><a class='btnOption' onclick='oForm.EliminarMandante("+ item.IdMandante +");' href='#' title='Eliminar'><i class='text-danger fa fa-trash' aria-hidden='true'></i></a></td>";
+
+            //            htmlContent += "</tr>";
+
+            //            Consecutivo += 1;
+
+            //        }
+
+            //        htmlContent += "</tbody></table>";
+
+            //    } else {
+
+            //        htmlContent = "<Strong>No se han encontrado registros.</Strong>"
+
+            //    }
+
+
+            //    $("#vDatosMandantes").html(htmlContent);
+
+            //};
+
+            this.EliminarMandante = function (id) {
+
+
+                $("#dvLoaderEliminarMandante").hide();
+                $("#vErroresEliminarMandantes").hide();
+
+                $("#dvBotonesEliminarMandante").show();
+                $("#dvMensajeMandante").show();
+                
+
+
+
+                                    
+                for (var i = 0; i < this.oRespuestaMandantes.lstMandantes.length; i++) {
+
+                    var oMandante = this.oRespuestaMandantes.lstMandantes[i];
+
+                    if(oMandante.IdMandante == id){
+
+                        this.IdMandante = oMandante.IdMandante;
+
+                        $("#lblMensajeMandante").html("¿Esta seguro que desea eliminar el mandante " + oMandante.Nombre + "?");
+
+
+                    }
+
+                }
+
+
+
+
+                $("#mEliminarMandantes").modal({ show: true , backdrop:"static" });
+
+
+
+            };
+
+            this.AceptarEliminarMandante = function () {
+
+
+
+                this.mostrarLoaderModalMandante();
+
+
+
+
+
+                var P1 = this.IdMandante;
+
+                var jsData = '{"P1":"' + P1 + '" }';
+
+                $.ajax({
+                    url: this.Url + "eliminarMandante",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oRespuestaMandantes = data;
+                        oForm.cerrarLoaderModalMandantes();
+
+
+                        if(oForm.oRespuestaMandantes.Codigo == "0000"){
+
+                            //oForm.mostrarMandantes();
+
+                        }else{
+                           
+                            oForm.showErrorMandanteEliminar("<li>" + oForm.oRespuestaMandantes.Mensaje + "</li>");
+                        
+                        }
+
+
+                    }
+                });
+
+
+
+
+
+
+
+            };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this.mostrarDetalleVacio = function () {
+
+                var htmlContent = "";
+
+
+                var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                htmlContent += "<thead>";
+                htmlContent += "<th>#</th>";
+                htmlContent += "<th>Nombre</th>";
+                htmlContent += "<th style='text-align:right' >Valor</th>";
+                htmlContent += "<th style='text-align:right' >Unidades</th>";
+                htmlContent += "<th style='text-align:right' >Sub total</th>";
+                htmlContent += "<th style='text-align:right' >Descuento</th>";
+                htmlContent += "<th style='text-align:right' >IVA</th>";
+                htmlContent += "<th style='text-align:right' >Total</th>";
+                htmlContent += "<th style='text-align:center' >Editar</th>";
+                htmlContent += "<th style='text-align:center' >Eliminar</th>";
+                htmlContent += "</thead>";
+                htmlContent += "<tbody>";
+
+
+                htmlContent += "<tr>";
+                htmlContent += "<td></td>";
+                htmlContent += "<td></td>";
+                htmlContent += "<td style='text-align:right' ></td>";
+                htmlContent += "<td style='text-align:right' ></td>";
+                htmlContent += "<td style='text-align:right' ></td>";
+                htmlContent += "<td style='text-align:right' ></td>";
+                htmlContent += "<td style='text-align:right' ></td>";
+                htmlContent += "<td style='text-align:right' ></td>";
+
+                htmlContent += "<td style='text-align:center'><a class='btnOption' href='#' title='Editar'><i class='fa fa-pencil-square' aria-hidden='true'></i></a></td>";
+                htmlContent += "<td style='text-align:center'><a class='btnOption' href='#' title='Eliminar'><i class='text-danger fa fa-trash' aria-hidden='true'></i></a></td>";
+
+                htmlContent += "</tr>";
+
+                htmlContent += "</tbody></table>";
+
+                $("#vProductosAgregados").html(htmlContent);
+
+                var htmlContentTotales = "";
+
+                htmlContentTotales += "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                    
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left;background-color: #e1e1e1;' >Total Bruto</th>";
+                htmlContentTotales += "<td style='text-align:right' ><b>0</b></td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left' >Total Descuento</th>";
+                htmlContentTotales += "<td style='text-align:right'>0</td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left' >Total Iva</th>";
+                htmlContentTotales += "<td style='text-align:right' >0</td>";
+                htmlContentTotales += "</tr>";
+                    
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left' >Total Consumo</th>";
+                htmlContentTotales += "<td style='text-align:right' >0</td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left;background-color: #e1e1e1;' >Total Neto</th>";
+                htmlContentTotales += "<td style='text-align:right' ><b>0</b></td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left' >Total ReteFuente</th>";
+                htmlContentTotales += "<td style='text-align:right' >0</td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left' >Total ReteIVA</th>";
+                htmlContentTotales += "<td style='text-align:right' >0</td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left' >Total ReteICA</th>";
+                htmlContentTotales += "<td style='text-align:right' >0</td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "<tr>";
+                htmlContentTotales += "<th style='text-align:left;background-color: #e1e1e1;' >Total Pagar</th>";
+                htmlContentTotales += "<td style='text-align:right;background-color: #e1e1e1;' ><b>0</b></td>";
+                htmlContentTotales += "</tr>";
+
+                htmlContentTotales += "</tr>";
+
+
+                $("#vTotales").html(htmlContentTotales);
+
+            };
+
+
+
+
+
+
+
+            this.mostrarLoader = function () {
+
+                $("#dvValores").hide();
+                $("#dvfooter").hide();
+                $("#loader").show();
+
+            };
+
+            this.cerrarLoader = function () {
+
+                $("#dvValores").show();
+                $("#dvfooter").show();
+                $("#loader").hide();
+
+            };
+
+            this.MostrarTercero = function () {
+
+                $("#txtBuscar").val("");
+                $("#vTerceros").html("");
+                $("#btnAceptarMensaje").hide();
+                $("#mTerceros").modal({ show: true  });
+
+            };
+
+            this.BuscarTercero = function () {
+
+
+                var jsData = '{"b":"' + $("#txtBuscar").val().trim() + '" }';
+
+                $.ajax({
+                    url: this.Url + "BuscarProveedor",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstTerceros = data;
+                        oForm.mostrarTerceros();
+
+                    }
+                });
+
+
+            };
+
+            this.mostrarTerceros = function () {
+
+                var htmlContent = "";
+
+                if (this.lstTerceros.length > 0) {
+
+                    var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                    htmlContent += "<thead><th>#</th><th>Nombre completo</th><th>Identificación</th><th class='text-center' >Agregar</th></thead>";
+                    htmlContent += "<tbody>";
+
+                    for (var i = 0; i < this.lstTerceros.length; i++) {
+
+                        var item = this.lstTerceros[i];
+
+                        htmlContent += "<tr>";
+                        htmlContent += "<td>" + item.Consecutivo + "</td>";
+                        htmlContent += "<td>" + item.RazonSocial + "</td>";
+                        htmlContent += "<td>" + item.Identificacion + "</td>";
+                        htmlContent += "<td class='text-center' ><a class='btnOption'   onclick='oForm.agregarTercero(this);' oData='" + JSON.stringify(item) + "' href='#' title='Agregar'><i class='fa fa-plus-circle' aria-hidden='true'></i></a></td>";
+
+                        htmlContent += "</tr>";
+
+                    }
+
+
+                    htmlContent += "</tbody></table>";
+
+
+                } else {
+
+                    htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+                }
+
+                $("#vTerceros").html(htmlContent);
+
+            };
+
+            this.agregarTercero = function (f) {
+
+                this.cerrarAsistente();
+
+                var Tercero = JSON.parse($(f).attr("oData"));
+
+                this.TarifaReteICAFactura  = Tercero.TarifaReteICA;
+
+                $('#IdProveedor').val(Tercero.IdTercero);
+                $('#sProveedor').val(Tercero.RazonSocial);
+                $('#txtTarifaReteICA').val(Tercero.TarifaReteICA);
+
+                if(Tercero.sFechaVencimiento == "" || Tercero.sFechaVencimiento == null){
+                    $('#sFechaVencimiento').val( $('#Fecha').val());
+                }else{
+                    $('#sFechaVencimiento').val(Tercero.sFechaVencimiento);
+                }
+
+
+               
+
+                if($('#IdResolucion').val() > 0 &&  $('#IdProveedor').val() > 0){
+                
+                    $('#AgregarProducto').show();
+                    $('#accordionExample').show();
+
+                    if($('#ddlTipoMoneda').val() == 2 || $('#ddlTipoMoneda').val() == 3){
+
+                        $("#dvFacturaExportacion").show();
+
+                        $("#opcion1").addClass("show");
+
+                    }else{
+
+                        $("#dvFacturaExportacion").hide();
+
+                        $("#opcion1").removeClass("show");
+
+                    }
+
+                
+                }
+
+
+            };
+
+            this.cerrarAsistente = function () {
+
+                $("#mTerceros").modal("hide");
+                $("#mProdcutos").modal("hide");
+                $("#mEliminar").modal("hide");
+                $("#mTiposPagos").modal("hide");
+                $("#mGuardado").modal("hide");
+                $("#mResoluciones").modal("hide");
+                $("#mCambiarTarifa").modal("hide");
+                $("#mDocumentos").modal("hide");
+                $("#mEliminarDocumento").modal("hide");
+                $("#mNotas").modal("hide");
+                $("#mEliminarNota").modal("hide");
+                $("#mEditarNota").modal("hide");
+                $("#mMandantes").modal("hide");
+                $("#mEliminarMandantes").modal("hide");
+                $("#mMensajeMandantes").modal("hide");
+
+            };
+
+
+
+
+
+            this.BuscarProducto = function () {
+
+                var jsData = '{"b":"' + $("#Busqueda").val().trim() + '" }';
+
+                $.ajax({
+                    url: this.Url + "BuscarProductos",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstProductos = data;
+                        oForm.mostrarProductos();
+
+                    }
+                });
+
+            };
+
+            this.mostrarProductos = function () {
+
+                var htmlContent = "";
+
+                if (this.lstProductos.length > 0) {
+
+                    var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                    htmlContent += "<thead><th>#</th><th>Referencia</th><th>Nombre</th><th style='text-align:right' >Valor unitario</th><th class='text-center' >Agregar</th></thead>";
+                    htmlContent += "<tbody>";
+
+                    for (var i = 0; i < this.lstProductos.length; i++) {
+
+                        var item = this.lstProductos[i];
+
+                        htmlContent += "<tr>";
+                        htmlContent += "<td><b>" + item.Consecutivo + "<b></td>";
+                        htmlContent += "<td>" + item.Referencia + "</td>";
+                        htmlContent += "<td>" + item.Nombre + "</td>";
+                        htmlContent += "<td style='text-align:right' >" + item.sPrecioVenta + "</td>";
+                        
+                        if(item.SwPrecioIncluidoImpuestos == 1){
+                            htmlContent += "<td class='text-center' ><a class='btnOption'   onclick='oForm.agregarProductoConIvaIncluido(" + item.IdProducto + ");' href='#' title='Agregar'><i class='fa fa-plus-circle' aria-hidden='true'></i></a></td>";
+                        }else{
+                            htmlContent += "<td class='text-center' ><a class='btnOption'   onclick='oForm.agregarProducto(" + item.IdProducto + ");' href='#' title='Agregar'><i class='fa fa-plus-circle' aria-hidden='true'></i></a></td>";
+                        }
+
+                        htmlContent += "</tr>";
+
+                    }
+
+
+                    htmlContent += "</tbody></table>";
+
+
+                } else {
+
+                    htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+                }
+
+                $("#vProductos").html(htmlContent);
+
+            };
+
+            this.MostrarNuevoProducto = function () {
+
+                this.cerrarLoader();
+
+                this.SwEditar = 0;
+
+                $("#dvBusqueda").show();
+                $("#Busqueda").val("");
+                $("#vProductos").html("");
+                $("#BtnGuardarDocumento").hide();
+
+
+                // Campos del prodcuto que NO incluye iva en el precio
+                $("#dvValores").hide();
+                $("#Descripcion").val("");
+                $("#mValor").val("");
+                $("#Unidad").val("");
+                $("#SubTotal").val("");
+                $("#mValorDescuento").val("");
+                $("#mValorTotal").val("");
+
+
+               
+                // Campos del prodcuto que SI incluye iva en el precio
+                $("#dvProductoIncluyeIva").hide();
+                $("#mPrecioProducto").val("");
+                $("#DescripcionI").val("");
+                $("#mValorI").val("");
+                $("#UnidadI").val("");
+                $("#SubTotalI").val("");
+                $("#mValorTotalI").val("");
+
+
+                $('#lblDescripcion').html("&nbsp; ( 240 caracteres )");
+                $('#lblDescripcionI').html("&nbsp; ( 240 caracteres )");
+
+
+                $("#mProdcutos").modal({ show: true , backdrop:"static" });
+
+            };
+
+
+
+
+
+            // Producto que NO incluye el iva en el precio.
+
+
+            this.agregarProducto = function (id) {
+
+                var P1 = 0;
+                this.SwPrecioIncluidoImpuestos = 0;
+
+                for (var i = 0; i < this.lstProductos.length; i++) {
+
+                    var item = this.lstProductos[i];
+
+                    if(item.IdProducto == id){
+                    
+                        this.oProducto = item;
+
+                        P1 = item.sPrecioVenta;
+                        $("#Titulo").html(item.Nombre);
+                        this.porcentajeIVA = item.ImpuestoVentas;
+
+                    }
+
+                }
+
+                var jsData = '{"P1":"' + P1 + '","P2":"' + id + '"  }';
+
+                $.ajax({
+                    url: this.Url + "CalcularValorUnitario",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oTotalesProducto = data;
+
+                        $("#Unidad").val(oForm.oTotalesProducto.sUnidades);
+                        $("#mValor").val(oForm.oTotalesProducto.sValorUnitario);
+                        $("#mValorIVA").val(oForm.oTotalesProducto.sValorIVA);
+                        $("#SubTotal").val(oForm.oTotalesProducto.sValorSubTotal);
+                        $("#mValorTotal").val(oForm.oTotalesProducto.sValorTotal);
+
+                    }
+                });
+
+
+                $("#dvBusqueda").hide();
+                $("#dvValores").show();
+                $("#dvProductoIncluyeIva").hide();
+                $("#BtnGuardarDocumento").show();
+                $("#vErrores").hide();
+                $("#vErroresI").hide();
+                $("#BtnGuardarDocumento").show();
+
+            };
+
+            this.CalcularTotal = function () {
+
+                var ValorPrecio = 0;
+                if($('#mValor').val().trim().length > 0){
+                    ValorPrecio = $("#mValor").val().replace(/[.]/g, '');
+                }
+
+                var Unidades = 0;
+                if($('#Unidad').val().trim().length > 0){
+                    Unidades = $("#Unidad").val().replace(/[.]/g, '');
+                }
+
+                var Descuento = 0;
+                if($('#mValorDescuento').val().trim().length > 0){
+                    Descuento = $("#mValorDescuento").val().replace(/[.]/g, '');
+                }
+
+
+                var P1 = ValorPrecio.toString().trim();
+                var P2 = Unidades.toString().trim();
+                var P3 = Descuento.toString().trim();
+
+                if(this.SwEditar == 0){
+                
+                    var P4 =  this.oProducto.IdProducto;
+                
+                }else{
+                
+                    var P4 =  this.IdProductoDetalle;  
+                
+                }
+               
+
+                var jsData = '{"P1":"' + P1 + '","P2":"' + P2 + '","P3":"' + P3 + '","P4":"' + P4 + '","P5":"' + 0 + '" }';
+
+                $.ajax({
+                    url: this.Url + "CalcularTotal",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oTotalesProducto = data;
+
+                        $("#mValorIVA").val(oForm.oTotalesProducto.sValorIVA);
+                        $("#SubTotal").val(oForm.oTotalesProducto.sValorSubTotal);
+                        $("#mValorTotal").val(oForm.oTotalesProducto.sValorTotal);
+
+                    }
+                });
+
+
+            };
+
+
+
+
+
+            // Producto que SI incluye el iva en el precio.
+
+
+            this.agregarProductoConIvaIncluido = function (id) {
+
+                var P1 = 0;
+                this.SwPrecioIncluidoImpuestos = 1;
+
+                for (var i = 0; i < this.lstProductos.length; i++) {
+
+                    var item = this.lstProductos[i];
+
+                    if(item.IdProducto == id){
+                    
+                        this.oProducto = item;
+
+                        P1 = item.sPrecioVenta;
+                        $("#TituloI").html(item.Nombre);
+                        this.porcentajeIVA = item.ImpuestoVentas;
+
+
+                    }
+
+                }
+
+                var jsData = '{"P1":"' + 0 + '","P2":"' + id + '" }';
+
+                $.ajax({
+                    url: this.Url + "CalcularValorUnitario",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oTotalesProducto = data;
+
+                        $("#UnidadI").val(oForm.oTotalesProducto.sUnidades);
+                        $("#mValorI").val(oForm.oTotalesProducto.sValorUnitario);
+                        $("#mValorIVAI").val(oForm.oTotalesProducto.sValorIVA);
+                        $("#SubTotalI").val(oForm.oTotalesProducto.sValorSubTotal);
+                        $("#mValorTotalI").val(oForm.oTotalesProducto.sValorTotal);
+
+                    }
+                });
+
+
+                $("#dvBusqueda").hide();
+                $("#dvValores").hide();
+                $("#dvProductoIncluyeIva").show();
+                $("#BtnGuardarDocumento").show();
+                $("#vErroresI").hide();
+                $("#vErrores").hide();
+                $("#BtnGuardarDocumento").show();
+
+            };
+
+            this.CalcularTotal_IncluyeIVA = function () {
+
+                var ValorPrecio = 0;
+                if($('#mValorI').val().trim().length > 0){
+                    ValorPrecio = $("#mValorI").val().replace(/[.]/g, '');
+                }
+
+                var Unidades = 0;
+                if($('#UnidadI').val().trim().length > 0){
+                    Unidades = $("#UnidadI").val().replace(/[.]/g, '');
+                }
+
+                var Descuento = 0;
+
+                var PrecioProducto = 0;
+                if($('#mPrecioProducto').val().trim().length > 0){
+                    PrecioProducto = $("#mPrecioProducto").val().replace(/[.]/g, '');
+                }
+
+
+                var P1 = ValorPrecio.toString().trim();
+                var P2 = Unidades.toString().trim();
+                var P3 = Descuento.toString().trim();
+                var P5 = PrecioProducto.toString().trim();
+
+                if(this.SwEditar == 0){
+                
+                    var P4 =  this.oProducto.IdProducto;
+                
+                }else{
+                
+                    var P4 =  this.IdProductoDetalle;  
+                
+                }
+               
+
+                var jsData = '{"P1":"' + P1 + '","P2":"' + P2 + '","P3":"' + P3 + '","P4":"' + P4 + '","P5":"' + P5 + '" }';
+
+                $.ajax({
+                    url: this.Url + "CalcularTotal",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oTotalesProducto = data;
+
+                        $("#mValorI").val(oForm.oTotalesProducto.sValorUnitario);
+                        $("#mValorIVAI").val(oForm.oTotalesProducto.sValorIVA);
+                        $("#SubTotalI").val(oForm.oTotalesProducto.sValorSubTotal);
+                        $("#mValorTotalI").val(oForm.oTotalesProducto.sValorTotal);
+
+                    }
+                });
+
+
+            };
+
+
+
+
+
+
+
+
+
+
+            this.formatear = function (valor) {
+
+                var signo = "";
+
+                if(valor < 0){
+
+                    signo = "-";
+
+                }
+
+                var num = valor.toString().replace('-', '');
+
+                if (!isNaN(num)) {
+                    num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+                    num = num.split('').reverse().join('').replace(/^[\.]/, '');
+                    control = num;
+                }
+
+                return signo + num;
+
+            };
+
+            this.GuardarProducto = function () {
+
+
+           
+
+                
+
+                var htmlContent = "";
+
+              
+
+                if(this.SwPrecioIncluidoImpuestos == 1){
+                
+                
+
+                    if ($('#mPrecioProducto').val().trim().length == 0 || $('#mPrecioProducto').val() == 0) {
+
+                        htmlContent += "<li>Debe diligenciar el campo  VALOR UNITARIO (IVA INCLUIDO).</li>";
+
+                    }
+
+                    if ($('#UnidadI').val().trim().length == 0 || $('#UnidadI').val() == 0) {
+
+                        htmlContent += "<li>Debe diligenciar el campo UNIDADES.</li>";
+
+                    }
+
+                
+                }else{
+                
+                
+                
+                    if ($('#mValor').val().trim().length == 0 || $('#mValor').val() == 0) {
+
+                        htmlContent += "<li>Debe diligenciar el campo VALOR DE LA UNIDAD.</li>";
+
+                    }
+
+                    if ($('#Unidad').val().trim().length == 0 || $('#Unidad').val() == 0) {
+
+                        htmlContent += "<li>Debe diligenciar el campo UNIDADES.</li>";
+
+                    }
+
+                    if ($('#SubTotal').val().trim().length == 0 || $('#SubTotal').val() == 0) {
+
+                        htmlContent += "<li>Debe diligenciar el campo SUB TOTAL.</li>";
+
+                    }
+
+
+                    var mValorDescuento = $('#mValorDescuento').val().replace(/[.]/g, '');
+                    var SubTotal = $('#SubTotal').val().replace(/[.]/g, '');
+
+                    if (parseInt(mValorDescuento) > parseInt(SubTotal)) {
+
+                        htmlContent += "<li>El VALOR DE DESCUENTO no puede ser mayor al SUB TOTAL.</li>";
+
+                    }
+                
+                
+                }
+
+
+                if (htmlContent.length > 0) {
+
+                  
+
+                    this.showError(htmlContent);
+
+                }
+                else {
+
+
+
+                    this.mostrarLoader();
+
+
+
+
+                    if(this.SwEditar > 0 ){
+
+                        
+
+
+                        var Unidad = "0";
+                        var ValorUnitario = "0";
+                        var Descuento = "0";
+                        var PrecioProducto = "0";
+                        
+
+
+                        if(this.SwPrecioIncluidoImpuestos == 1){
+
+                            Unidad  = $("#UnidadI").val().replace(/[.]/g, '');
+                            ValorUnitario  = $("#mValorI").val().replace(/[.]/g, '');
+                            PrecioProducto  = $("#mPrecioProducto").val().replace(/[.]/g, '');
+
+                        }else{
+
+                            if($('#mValorDescuento').val().trim().length > 0){
+                                Descuento = $("#mValorDescuento").val();
+                            }
+
+                            Unidad = $("#Unidad").val().replace(/[.]/g, '');
+                            ValorUnitario = $("#mValor").val().replace(/[.]/g, '');
+                            Descuento = Descuento.toString().replace(/[.]/g, '');
+
+                        }
+
+
+
+
+                        var oItem = new Object();
+
+                        oItem.IdProductoDetalle = this.IdProductoDetalle;
+                        oItem.Unidad = Unidad.toString();
+                        oItem.ValorUnitario = ValorUnitario.toString();
+                        oItem.Descuento = Descuento.toString();
+                        oItem.PrecioProducto = PrecioProducto.toString();
+                        oItem.IdProveedor = $("#IdProveedor").val();
+                        oItem.sFechaEmision = $("#sFechaEmision").val();
+                        oItem.IdCompraDetalle = this.IdFacturaDetalle;
+                        oItem.sFechaVencimiento = $("#sFechaVencimiento").val();
+                        oItem.IdResolucion = $("#IdResolucion").val();
+                        oItem.Numero = $("#Numero").val();
+                        oItem.IdTipoPago = $("#IdTipoPago").val();
+                        oItem.IdMetodoPago = $("#IdMetodoPago").val();
+
+
+                        var jsData = JSON.stringify({ oEntrada: oItem })
+
+
+                        console.log(jsData);
+
+
+
+                        $.ajax({
+                            url: this.Url + "ActualizarDetalle",
+                            dataType: 'json',
+                            contentType: "application/json",
+                            type: "POST",
+                            data: jsData,
+                            success: function (data) {
+
+                                oForm.oDetalle = data;
+                                oForm.mostrarDetalle();
+
+                            }
+                        });
+
+
+
+
+
+                    }else{
+
+                     
+
+
+
+
+                        var Descuento = "0";
+                        var ValorTotal = "0";
+                        var SwPrimeraVez = 1;
+                        var Unidad = "0";
+                        var ValorUnitario = "0";
+                        var PrecioProducto = "0";
+
+
+
+
+                        if(this.SwPrecioIncluidoImpuestos == 1){
+
+                            ValorTotal = $("#mValorTotalI").val().replace(/[.]/g, '');
+
+                            if(this.oDetalle != null){
+                                SwPrimeraVez = 0;
+                                ValorTotal = this.oDetalle.TotalFactura;
+                            }
+                        
+                            Unidad = $("#UnidadI").val().replace(/[.]/g, '');
+                            ValorUnitario   = $("#mValorI").val().replace(/[.]/g, '');
+                            PrecioProducto  = $("#mPrecioProducto").val().replace(/[.]/g, '');
+
+                        }else{
+                        
+                            if($('#mValorDescuento').val().trim().length > 0){
+                                Descuento = $("#mValorDescuento").val();
+                            }
+                        
+                            ValorTotal = $("#mValorTotal").val().replace(/[.]/g, '');
+                            if(this.oDetalle != null){
+                                SwPrimeraVez = 0;
+                                ValorTotal = this.oDetalle.TotalFactura;
+                            }
+
+                            Unidad  = $("#Unidad").val().replace(/[.]/g, '');
+                            ValorUnitario   = $("#mValor").val().replace(/[.]/g, '');
+                            Descuento  = Descuento.toString().replace(/[.]/g, '');
+
+                        }
+
+
+
+                        var oItem = new Object();
+
+                        oItem.SwPrimeraVez = SwPrimeraVez;
+                        oItem.PrecioProducto  = PrecioProducto.toString();
+                        oItem.ValorDescuento  = Descuento.toString();
+                        oItem.ValorUnitario = ValorUnitario.toString();
+                        oItem.Unidad = Unidad.toString();
+                        oItem.ValorTotal = ValorTotal.toString();
+                        oItem.IdProducto  = this.oProducto.IdProducto.toString();
+                        oItem.IdProveedor  = $("#IdProveedor").val().toString();
+                        oItem.sFechaEmision  = $("#sFechaEmision").val().toString();
+                        oItem.sFechaVencimiento  = $("#sFechaVencimiento").val().toString();
+                        oItem.IdResolucion   = $("#IdResolucion").val().toString();
+                        oItem.Numero  = $("#Numero").val().toString();
+                        oItem.IdMetodoPago  = $("#IdMetodoPago").val().toString();
+                        oItem.IdTipoPago  = $("#IdTipoPago").val().toString();
+
+
+                        var jsData = JSON.stringify({ oEntrada: oItem })
+
+
+                        $.ajax({
+                            url: this.Url + "CrearDetalle",
+                            dataType: 'json',
+                            contentType: "application/json",
+                            type: "POST",
+                            data: jsData,
+                            success: function (data) {
+                                
+                                oForm.oDetalle = data;
+                                oForm.mostrarDetalle();
+
+                            }
+                        });
+
+
+
+
+
+                    }
+
+
+                    this.cerrarAsistente();
+
+
+                }
+
+
+            };
+
+            this.mostrarDetalle = function () {
+
+                var htmlContent = "";
+
+                var SwMostrarTablaTotales = 1;
+
+                var contRegistros = 0;
+
+                if (this.oDetalle.lstDetalle != null) {
+                    
+                    
+                    console.log("1");
+
+
+                    if(this.oDetalle.lstDetalle.length > 0){
+
+                        console.log("2");
+                 
+
+
+                        var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                        htmlContent += "<thead>";
+                        htmlContent += "<th>#</th>";
+                        htmlContent += "<th>Nombre</th>";
+                        htmlContent += "<th style='text-align:right' >Valor</th>";
+                        htmlContent += "<th style='text-align:right' >Unidades</th>";
+                        htmlContent += "<th style='text-align:right' >Sub total</th>";
+                        htmlContent += "<th style='text-align:right' >Descuento</th>";
+                        htmlContent += "<th style='text-align:right' >IVA</th>";
+                        htmlContent += "<th style='text-align:right' >Total</th>";
+                        htmlContent += "<th style='text-align:center' >Editar</th>";
+                        htmlContent += "<th style='text-align:center' >Eliminar</th>";
+                        htmlContent += "</thead>";
+                        htmlContent += "<tbody>";
+
+                        var consecutivo = 1;
+                        
+                        for (var i = 0; i < this.oDetalle.lstDetalle.length; i++) {
+
+                            var item = this.oDetalle.lstDetalle[i];
+
+                            htmlContent += "<tr>";
+                            htmlContent += "<td>" + consecutivo + "</td>";
+                            htmlContent += "<td>" + item.sProducto + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorUnitario + "</br><b style='font-size: 11px;'>("+ item.sTipoMoneda +")</b></td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sUnidades + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorSubTotal + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorDescuento + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sIVA + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorTotal + "</td>";
+
+                            if(item.SwPrecioIncluidoImpuestos == 1){
+                            
+                                htmlContent += "<td style='text-align:center'><a class='btnOption' onclick='oForm.EditarIncluyeIva("+ item.Consecutivo +");' href='#' title='Editar'><i class='fa fa-pencil-square' aria-hidden='true'></i></a></td>";
+                            
+                            }else{
+                            
+                                htmlContent += "<td style='text-align:center'><a class='btnOption' onclick='oForm.Editar("+ item.Consecutivo +");' href='#' title='Editar'><i class='fa fa-pencil-square' aria-hidden='true'></i></a></td>";
+                            
+                            }
+                            
+                            htmlContent += "<td style='text-align:center'><a class='btnOption' onclick='oForm.Eliminar("+ item.Consecutivo +");' href='#' title='Eliminar'><i class='text-danger fa fa-trash' aria-hidden='true'></i></a></td>";
+
+                            htmlContent += "</tr>";
+
+                            consecutivo += 1;
+
+                        }
+
+                        htmlContent += "<tr>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + this.oDetalle.sTotalSubTotal + "</b></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + this.oDetalle.sTotalDescuento + "</b></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + this.oDetalle.sTotalIVA + "</b></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + this.oDetalle.sTotalFactura + "</b></td>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td></td>";
+
+                        htmlContent += "</tr>";
+
+                        this.TotalFinal = this.oDetalle.sTotalFactura;
+
+
+                        htmlContent += "</tbody></table>";
+
+                        $("#ValorTotal").val(this.oDetalle.TotalFactura);
+                        $("#BtnGuardar").show();
+                        $("#TipoDePagos").show();
+                        $("#agregarTipoPago").show();
+                        $("#vTipoPagos").show();
+                        $("#dvNota1").show();
+                        $("#dvDocumentosFactura").show();
+                        $("#dvNotasFactura").show();
+                        $("#dvNota2").show();
+                        $("#dvListaMandantes").show();
+
+                        //this.mostrarTiposAgregados();
+
+
+                    }else{
+
+                     
+
+                        SwMostrarTablaTotales = 0;
+                        this.lstTiposPagosAgregados = [];
+                        $("#TipoDePagos").hide();
+                        $("#BtnGuardar").hide();
+                        $("#agregarTipoPago").hide();
+                        $("#vTipoPagos").hide();
+                        $("#dvNota1").hide();
+                        $("#dvDocumentosFactura").hide();
+                        $("#dvNotasFactura").hide();
+                        $("#dvNota2").hide();
+                        $("#dvListaMandantes").hide();
+
+                        htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+                        contRegistros += 1;
+                      
+
+
+                    }
+
+
+                } else {
+
+                    console.log("2");
+
+                    SwMostrarTablaTotales = 0;
+                    this.lstTiposPagosAgregados = [];
+                    $("#TipoDePagos").hide();
+                    $("#BtnGuardar").hide();
+                    $("#vTipoPagos").show();
+                    $("#dvNota1").show();
+                    $("#dvNota2").show();
+                    $("#dvDocumentosFactura").show();
+                    $("#dvNotasFactura").show();
+                    $("#dvListaMandantes").show();
+
+                    htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+                    contRegistros += 1;
+                }
+
+
+
+                $("#vProductosAgregados").html(htmlContent);
+
+              
+                var htmlContentTotales = "";
+
+                if(SwMostrarTablaTotales == 1){
+
+                    console.log("3");
+
+                    htmlContentTotales += "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                    
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left;background-color: #e1e1e1;' >Total Bruto</th>";
+                    htmlContentTotales += "<td style='text-align:right' ><b>"+ this.oDetalle.sTotalSubTotal +"</b></td>";
+                    htmlContentTotales += "</tr>";
+
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left' >Total Descuento</th>";
+                    htmlContentTotales += "<td style='text-align:right' >"+ this.oDetalle.sTotalDescuento +"</td>";
+                    htmlContentTotales += "</tr>";
+
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left' >Total Iva</th>";
+                    htmlContentTotales += "<td style='text-align:right' >"+ this.oDetalle.sTotalIVA +"</td>";
+                    htmlContentTotales += "</tr>";
+                    
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left' >Total Consumo</th>";
+                    htmlContentTotales += "<td style='text-align:right' >"+ this.oDetalle.sTotalConsumo +"</td>";
+                    htmlContentTotales += "</tr>";
+
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left;background-color: #e1e1e1;' >Total Neto</th>";
+                    htmlContentTotales += "<td style='text-align:right' ><b>"+ this.oDetalle.sTotalNeto +"</b></td>";
+                    htmlContentTotales += "</tr>";
+
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left' >Total ReteFuente</th>";
+                    htmlContentTotales += "<td style='text-align:right' >"+ this.oDetalle.sTotalValorReteFuente +"</td>";
+                    htmlContentTotales += "</tr>";
+
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left' >Total ReteIVA</th>";
+                    htmlContentTotales += "<td style='text-align:right' >"+ this.oDetalle.sTotalValorReteIVA +"</td>";
+                    htmlContentTotales += "</tr>";
+
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left' >Total ReteICA&nbsp;&nbsp;&nbsp;<a class='btnOption' href='#' title='Cambiar Tarifa ReteICA' onclick='oForm.MostrarTarifa();'><i class='fa fa-search' aria-hidden='true'></i></a></th>";
+                    htmlContentTotales += "<td style='text-align:right' >"+ this.oDetalle.sTotalValorReteICA +"</td>";
+                    htmlContentTotales += "</tr>";
+
+                    htmlContentTotales += "<tr>";
+                    htmlContentTotales += "<th style='text-align:left;background-color: #e1e1e1;' >Total Pagar</th>";
+                    htmlContentTotales += "<td style='text-align:right;background-color: #e1e1e1;' ><b>"+ this.oDetalle.sTotalFactura + "</b></td>";
+                    htmlContentTotales += "</tr>";
+
+                    this.TotalReteICA = this.oDetalle.sTotalValorReteICA;
+
+                    htmlContentTotales += "</tr>";
+
+                }
+
+                $("#vTotales").html(htmlContentTotales);
+
+                
+               
+
+                if(contRegistros > 0){
+                
+                    console.log("4");
+
+                    this.mostrarDetalleVacio();
+                
+                }
+
+
+            };
+
+            this.showError = function (m) {
+
+                if(this.SwPrecioIncluidoImpuestos == 1){
+
+                    $("#ErrorMessageI").html(m);
+                    $("#vErroresI").show();
+
+                }else{
+                
+                
+                    $("#ErrorMessage").html(m);
+                    $("#vErrores").show();
+                
+                }
+         
+
+            };
+
+            
+            
+            this.Editar = function (idDetalle) {
+
+                this.cerrarLoader();
+                
+                this.SwPrecioIncluidoImpuestos = 0;
+                this.SwEditar = 1;
+
+                for (var i = 0; i < this.oDetalle.lstDetalle.length; i++) {
+
+                    var oProducto = this.oDetalle.lstDetalle[i];
+
+                    if(oProducto.Consecutivo == idDetalle){
+                    
+                        this.porcentajeIVA = oProducto.ImpuestoVentas;
+                        this.IdFacturaDetalle = oProducto.IdCompraDetalle;
+                        this.IdProductoDetalle = oProducto.IdProductoDetalle;
+
+                        $("#Titulo").html(oProducto.sProducto);
+
+                        $("#dvBusqueda").hide();
+                        $("#vErrores").hide();
+                        $("#dvValores").show();
+                        $("#dvProductoIncluyeIva").hide();
+                        $("#BtnGuardarDocumento").show();
+                        $("#Busqueda").val("");
+                        $("#Descripcion").val(oProducto.Descripcion);
+                        $("#mValor").val(oProducto.sValorUnitario);
+                        $("#Unidad").val(oProducto.sUnidades);
+                        $("#SubTotal").val(oProducto.sValorSubTotal);
+                        $("#mValorDescuento").val(oProducto.sValorDescuento);
+                        $("#mValorIVA").val(oProducto.sIVA);
+                        $("#mValorTotal").val(oProducto.sValorTotal);
+
+                        $("#vProductos").html("");
+                    
+                    
+                    }
+
+                }
+
+
+                $("#mProdcutos").modal({ show: true , backdrop:"static" });
+
+            };
+
+            this.EditarIncluyeIva = function (idDetalle) {
+
+                this.cerrarLoader();
+                
+                this.SwPrecioIncluidoImpuestos = 1;
+                this.SwEditar = 1;
+
+                for (var i = 0; i < this.oDetalle.lstDetalle.length; i++) {
+
+                    var oProducto = this.oDetalle.lstDetalle[i];
+
+                    if(oProducto.Consecutivo == idDetalle){
+                    
+                        this.porcentajeIVA = oProducto.ImpuestoVentas;
+                        this.IdFacturaDetalle = oProducto.IdCompraDetalle;
+                        this.IdProductoDetalle = oProducto.IdProductoDetalle;
+
+                        $("#TituloI").html(oProducto.sProducto);
+
+                        var jsData = '{"P1":"' + oProducto.sValorUnitario + '","P2":"' + oProducto.IdProductoDetalle + '" }';
+
+                        $.ajax({
+                            url: this.Url + "CalcularValorUnidadConIVA",
+                            dataType: 'json',
+                            contentType: "application/json",
+                            type: "POST",
+                            data: jsData,
+                            success: function (data) {
+
+                                $("#mPrecioProducto").val(data);
+
+                            }
+                        });
+
+                        $("#dvBusqueda").hide();
+                        $("#vErroresI").hide();
+                        $("#dvValores").hide();
+                        $("#dvProductoIncluyeIva").show();
+                        $("#BtnGuardarDocumento").show();
+                        $("#Busqueda").val("");
+                        $("#DescripcionI").val(oProducto.Descripcion);
+                        $("#mValorI").val(oProducto.sValorUnitario);
+                        $("#UnidadI").val(oProducto.sUnidades);
+                        $("#SubTotalI").val(oProducto.sValorSubTotal);
+                        $("#mValorIVAI").val(oProducto.sIVA);
+                        $("#mValorTotalI").val(oProducto.sValorTotal);
+
+                        $("#vProductos").html("");
+                    
+                    
+                    }
+
+                }
+
+
+                $("#mProdcutos").modal({ show: true , backdrop:"static" });
+
+            };
+
+
+
+            this.Eliminar = function (id) {
+
+
+                for (var i = 0; i < this.oDetalle.lstDetalle.length; i++) {
+
+                    var oProducto = this.oDetalle.lstDetalle[i];
+
+                    if(oProducto.Consecutivo == id){
+
+                        this.IdFacturaDetalle = oProducto.IdCompraDetalle;
+
+                        var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                        htmlContent += "<thead>";
+                        htmlContent += "<th>Nombre</th>";
+                        htmlContent += "<th style='text-align:right' >Valor</th>";
+                        htmlContent += "<th style='text-align:right' >Unidades</th>";
+                        htmlContent += "<th style='text-align:right' >Sub total</th>";
+                        htmlContent += "<th style='text-align:right' >Descuento</th>";
+                        htmlContent += "<th style='text-align:right' >Total</th>";
+                        htmlContent += "</thead>";
+                        htmlContent += "<tbody>";
+
+
+                        htmlContent += "<tr>";
+                        htmlContent += "<td>" + oProducto.sProducto + "</td>";
+                        htmlContent += "<td style='text-align:right' >" + oProducto.sValorUnitario + "</td>";
+                        htmlContent += "<td style='text-align:right' >" + oProducto.sUnidades + "</td>";
+                        htmlContent += "<td style='text-align:right' >" + oProducto.sValorSubTotal + "</td>";
+                        htmlContent += "<td style='text-align:right' >" + oProducto.sValorDescuento + "</td>";
+                        htmlContent += "<td style='text-align:right' >" + oProducto.sValorTotal + "</td>";
+
+                        htmlContent += "</tr>";
+
+                        $("#dvProductoEliminar").html(htmlContent);
+
+
+                    }
+
+
+                }
+
+
+                $("#mEliminar").modal({ show: true , backdrop:"static" });
+
+            };
+
+            this.AceptarEliminar = function () {
+
+
+
+                this.cerrarAsistente();
+
+
+
+                var oItem = new Object();
+
+                oItem.IdCompraDetalle = this.IdFacturaDetalle;
+                oItem.IdProveedor = $("#IdProveedor").val();
+                oItem.sFechaEmision = $("#sFechaEmision").val();
+                oItem.sFechaVencimiento = $("#sFechaVencimiento").val().trim();
+                oItem.IdResolucion  = $("#IdResolucion").val();	
+                oItem.Numero = $("#Numero").val();
+                oItem.IdMetodoPago  = $("#IdMetodoPago").val();
+                oItem.IdTipoPago  = $("#IdTipoPago").val();
+
+
+                var jsData = JSON.stringify({ oEntrada: oItem })
+
+                $.ajax({
+                    url: this.Url + "EliminarDetalle",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        //oForm.oDetalle = data;
+                        //oForm.mostrarDetalle();
+                        oForm.ActualizarTarifaDetalle();
+
+                    }
+                });
+
+            };
+
+            this.MostrarTipoPago = function () {
+
+                this.lstTiposPagosAgregados = [];
+
+                for (var t = 0; t < this.lstTiposPagos.length; t++) {
+
+                    var item = this.lstTiposPagos[t];
+
+                    if(item.Value > 0){
+
+                        var obj = { IdTipo: item.Value , sTipo: item.Text, sValor: "0" };
+
+                        this.lstTiposPagosAgregados.push(obj);
+
+                    }
+
+                }
+
+                for (var i = 0; i < this.lstTiposPagosAgregados.length; i++) {
+
+                    var item = this.lstTiposPagosAgregados[i];
+
+                    for (var x = 0; x < this.oDetalle.lstFomrasTiposPagos.length; x++) {
+
+                        var item2 = this.oDetalle.lstFomrasTiposPagos[x];
+
+                        if(item2.IdTipo == item.IdTipo){
+
+                            item.sValor = item2.sValor;
+
+                        }
+
+                    }
+
+
+                }
+
+
+
+                $("#vErroresTipo").hide();
+
+                var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                htmlContent += "<thead> <th>#</th> <th>Tipos de pagos</th> <th style='text-align:right' >Valor</th> </thead>";
+                htmlContent += "<tbody>";
+
+                var consecutivo = 1;
+                var total = 0;
+                for (var i = 0; i < this.lstTiposPagosAgregados.length; i++) {
+
+                    var item = this.lstTiposPagosAgregados[i];
+
+                    htmlContent += "<tr>";
+                    htmlContent += "<td><b>" + consecutivo + "<b></td>";
+                    htmlContent += "<td>" + item.sTipo + "</td>";
+                    htmlContent += "<td><input value='"+ item.sValor +"' style='text-align:right' class='form-control' id='valor" + item.IdTipo + "' maxlength='20' name='valor" + item.IdTipo + "' type='text' value='0' onblur='oForm.CalcularTotalTipoPago();' onkeyup='Tools.Formatear_enteros_decimales(this);' onkeypress='return Tools.SoloNumeros_Enteros_Decimales(event);' ></td>";
+                    htmlContent += "</tr>";
+
+                    consecutivo += 1;
+
+
+                    var valorDecimal = item.sValor.toString().replace(/[.]/g, '').replace(/[,]/g, '.');
+
+                    if(valorDecimal > 0){
+
+                        total = total + parseFloat(valorDecimal);
+                    }
+
+
+
+                }
+
+
+
+                htmlContent += "<tr>";
+                htmlContent += "<td></td>";
+                htmlContent += "<td><b>TOTALES<b></td>";
+                htmlContent += "<td style='text-align:right' ><b><label id='TotalTipoPagos' >"+ Tools.formatearNumeroDecimal(total.toString().replace(/[.]/g, ',')) +"</label><b></td>";
+
+
+                htmlContent += "</tr>";
+
+
+
+                htmlContent += "</tbody></table>";
+
+
+                $("#TiposPagos").html(htmlContent);
+
+                $("#mTiposPagos").modal({ show: true , backdrop:"static" });
+
+            };
+
+            this.AceptarTipos = function () {
+
+                var htmlContent = "";
+
+                var valorpagar = 0;
+                for (var i = 0; i < this.lstTiposPagosAgregados.length; i++) {
+
+                    var item = this.lstTiposPagosAgregados[i];
+
+                    var valorSinPunto = $("#valor" + item.IdTipo).val().toString().replace(/[.]/g, '');
+
+                    var valorSinComa = valorSinPunto.toString().replace(/[,]/g, '.');
+
+                    if(valorSinComa > 0){
+
+                        valorpagar = valorpagar + parseFloat(valorSinComa);
+
+                    }
+
+                }
+
+
+                if(valorpagar != this.TotalFinal.toString().replace(/[.]/g, '').replace(/[,]/g, '.')){
+
+                    htmlContent = "Total pagado debe ser igual al valor total de la factura.";
+
+                }
+
+                if (htmlContent.length > 0) {
+
+                    this.showErrorTipo(htmlContent);
+
+                }
+                else {
+
+                    this.cerrarAsistente();
+
+                    for (var i = 0; i < this.lstTiposPagosAgregados.length; i++) {
+
+                        var item = this.lstTiposPagosAgregados[i];
+
+                        item.Valor = $("#valor" + item.IdTipo).val();
+
+                    }
+
+                    this.ProcesarTipos();
+
+                }
+
+
+            };
+
+            //this.mostrarTiposAgregados = function () {
+
+            //    var htmlContent = "";
+
+            //    if (this.oDetalle.lstFomrasTiposPagos != null) {
+
+            //        if (this.oDetalle.lstFomrasTiposPagos.length > 0) {
+
+            //            var htmlContent = "<table name='lstTiposPagosAgregados' class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+            //            htmlContent += "<thead>";
+            //            htmlContent += "<th style='text-align:left' >Medios de pago</th>";
+            //            htmlContent += "<th style='text-align:right' >Valor</th>";
+            //            htmlContent += "</thead>";
+            //            htmlContent += "<tbody>";
+
+            //            var TOTALfinal = 0;
+            //            for (var i = 0; i < this.oDetalle.lstFomrasTiposPagos.length; i++) {
+
+            //                var item = this.oDetalle.lstFomrasTiposPagos[i];
+
+            //                htmlContent += "<tr>";
+            //                htmlContent += "<td style='text-align:left'  >" + item.sTipo + "</td>";
+            //                htmlContent += "<td style='text-align:right' >" + item.sValor + "</td>";
+            //                htmlContent += "</tr>";
+
+            //                TOTALfinal += parseInt(item.Valor.toString().replace(/[.]/g, ''));
+
+            //                var va = item.sValor;
+
+            //            }
+
+            //            this.TotalPagado = this.formatear(TOTALfinal);
+
+            //            htmlContent += "<tr>";
+            //            htmlContent += "<td style='text-align:left'  ><b>TOTAL PAGADO</b></td>";
+            //            htmlContent += "<td style='text-align:right' ><b>" + this.oDetalle.sTotalTipoPago + "</b></td>";
+            //            htmlContent += "</tr>";
+
+            //            htmlContent += "<tr>";
+            //            htmlContent += "<td style='text-align:left'  ><b>TOTAL FACTURA</b></td>";
+            //            htmlContent += "<td style='text-align:right' ><b>" + this.oDetalle.sTotalFactura + "</b></td>";
+            //            htmlContent += "</tr>";
+
+            //            htmlContent += "</tbody></table>";
+
+
+            //            $("#BtnGuardar").show();
+
+            //        } else {
+
+            //            $("#BtnGuardar").hide();
+            //            htmlContent = "<Strong>No se han agregado tipos de pagos.</Strong>"
+
+            //        }
+
+
+            //    }else{
+
+            //        $("#BtnGuardar").hide();
+            //        htmlContent = "<Strong>No se han agregado tipos de pagos.</Strong>"
+
+
+            //    }
+
+
+            //    $("#vTipoPagos").html(htmlContent);
+
+            //};
+
+            //this.ProcesarTipos = function () {
+
+            //    var htmlContent = "";
+
+            //    if (this.lstTiposPagosAgregados.length > 0) {
+
+            //        var cadena = "";
+
+            //        for (var i = 0; i < this.lstTiposPagosAgregados.length; i++) {
+
+            //            var item = this.lstTiposPagosAgregados[i];
+
+
+            //            var ValorTipo = item.Valor.toString().replace(/[.]/g, '').replace(/[,]/g, '.');
+                        
+
+            //            if(ValorTipo > 0){
+
+            //                cadena += ""+ item.IdTipo +"|"+ item.Valor +"_";
+
+            //            }
+
+
+            //        }
+
+
+            //        this.cadenaTipoPagos = cadena;
+
+            //        this.cerrarAsistente();
+
+            //        var P1 = this.cadenaTipoPagos;
+            //        var P2 = $("#IdProveedor").val();
+            //        var P3 = $("#sFechaEmision").val();
+            //        var P10 = $("#Nota1").val().trim();
+            //        var P11 = $("#Nota2").val().trim();
+            //        var P12 = $("#sFechaVencimiento").val().trim();
+
+            //        var P13  = $("#ddlTipoMoneda").val();
+            //        var P14  = $("#TasaCambio").val();
+            //        var P15  = $("#FechaNegociacion").val();
+            //        var P16  = $("#TipoCoondicionEntrega").val();
+            //        var P17  = $("#Termino").val();
+            //        var P18  = $("#Riesgo").val();	
+            //        var P19  = $("#IdResolucion").val();	
+            //        var P20  = $("#ddlTipoOperacion").val();
+
+            //        var jsData = '{"c":"' + P1 + '" , "t":"' + P2 + '" , "f":"' + P3 + '", "P10":"' + P10 + '", "P11":"' + P11 + '", "fv":"' + P12 + '","P13":"' + P13 + '","P14":"' + P14 + '","P15":"' + P15 + '","P16":"' + P16 + '","P17":"' + P17 + '","P18":"' + P18 + '","P19":"' + P19 + '" ,"P20":"' + P20 + '"}';
+
+
+
+            //        $.ajax({
+            //            url: this.Url + "CrearFormasTiposPagos",
+            //            dataType: 'json',
+            //            contentType: "application/json",
+            //            type: "POST",
+            //            data: jsData,
+            //            success: function (data) {
+
+            //                oForm.oDetalle = data;
+            //                oForm.mostrarTiposAgregados();
+
+            //            }
+            //        });
+
+
+
+
+            //    }
+
+
+            //};
+
+            this.CargarArray = function (v) {
+
+
+                var cont = 0;
+                for (var x = 0; x < this.lstTiposPagosAgregados.length; x++) {
+
+                    var item = this.lstTiposPagosAgregados[x];
+
+                    var ValorTipo = item.Valor.toString().replace(/[.]/g, '');
+
+                    if(ValorTipo > 0){
+
+                        cont += 1;
+
+                    }
+
+                }
+
+                if(cont == 1){
+
+                    for (var x = 0; x < this.lstTiposPagosAgregados.length; x++) {
+
+                        var item = this.lstTiposPagosAgregados[x];
+
+                        var ValorTipo = item.Valor.toString().replace(/[.]/g, '');
+
+                        if(ValorTipo > 0){
+
+                            item.Valor = v;
+
+                        }
+
+                    }
+
+                }
+
+
+                if( this.lstTiposPagosAgregados.length == 0){
+
+                    for (var i = 0; i < this.lstTiposPagos.length; i++) {
+
+                        var item = this.lstTiposPagos[i];
+
+                        if(item.Value > 0 ){
+
+                            if(item.Value > 1 ){
+
+                                var oItem = { IdTipo: item.Value , sTipo: item.Text, Valor: "0" };
+
+                                this.lstTiposPagosAgregados.push(oItem);
+
+                            }else{
+
+                                var oItem = { IdTipo: item.Value , sTipo: item.Text, Valor: v };
+
+                                this.lstTiposPagosAgregados.push(oItem);
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                //this.mostrarTiposAgregados();
+
+            };
+
+            this.showErrorTipo = function (m) {
+
+                $("#ErrorMessageTipo").html("<h5>¡Alerta!</h5>" + m);
+                $("#vErroresTipo").show();
+
+            };
+
+            this.CalcularTotalTipoPago = function () {
+
+                var valorpagar = 0;
+                for (var i = 0; i < this.lstTiposPagosAgregados.length; i++) {
+
+                    var item = this.lstTiposPagosAgregados[i];
+
+                    var valorSinPunto = $("#valor" + item.IdTipo).val().toString().replace(/[.]/g, '');
+
+                    var valorSinComa = valorSinPunto.toString().replace(/[,]/g, '.');
+
+                    if(valorSinComa > 0){
+
+                        valorpagar = valorpagar + parseFloat(valorSinComa);
+
+                    }
+
+                }
+
+
+                var ValorFinal = valorpagar.toFixed(2);
+
+                var ValorFinalConComa = ValorFinal.toString().replace(/[.]/g, ',');
+
+                $("#TotalTipoPagos").html(Tools.formatearNumeroDecimal(ValorFinalConComa));
+
+            };
+
+
+
+            this.ValidarTercero_10122020 = function () {
+
+                var P1  = $("#IdProveedor").val();
+
+                var jsData = '{"P1":"' + P1 + '" }';
+
+                $.ajax({
+                    url: this.Url + "ObtenerDatosTercero",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oTercero = data;
+                        oForm.validate(2);
+
+                    }
+                });
+
+            };
+
+            this.ValidarFactura = function () {
+
+
+
+
+                $.ajax({
+                    url: this.Url + "validacionesFactura",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: null,
+                    success: function (data) {
+
+                        oForm.oResultadoValidaciones = data;
+                        oForm.validate(2);
+
+                    }
+                });
+
+
+
+
+
+            };
+
+
+
+            this.validate = function (SwBoton) {
+
+
+
+                console.log(this.oResultadoValidaciones);
+
+
+
+
+                var htmlContent = "";
+
+
+
+
+
+
+                if(this.oResultadoValidaciones.Codigo != "9999"){
+                
+
+
+
+                    //var valorpagar = 0;
+                    //for (var i = 0; i < this.oDetalle.lstFomrasTiposPagos.length; i++) {
+
+                    //    var item = this.oDetalle.lstFomrasTiposPagos[i];
+
+                    //    var valorSinPunto = item.sValor.toString().replace(/[.]/g, '');
+
+                    //    var valorSinComa = valorSinPunto.toString().replace(/[,]/g, '.');
+
+                    //    if(valorSinComa > 0){
+
+                    //        valorpagar = valorpagar + parseFloat(valorSinComa);
+
+                    //    }
+
+                    //}
+
+
+
+            
+
+                    var contError = 0;
+                    for (var d = 0; d < this.oDetalle.lstDetalle.length; d++) {
+
+                        var item = this.oDetalle.lstDetalle[d];
+
+                        if(item.IdTipoMoneda != 1){
+                    
+                            contError += 1; 
+                    
+                        }
+
+                    }
+
+
+
+                    if(contError > 0){
+                
+                        htmlContent += "<li>El tipo de moneda de los productos / servicios agregados deben ser " + $('#ddlTipoMoneda option:selected').html() + "</li>";
+                
+                    }
+
+
+
+
+                    //if(valorpagar != this.TotalFinal.toString().replace(/[.]/g, '').replace(/[,]/g, '.')){
+
+                    //    htmlContent += "<li>Total pagado debe ser igual al valor total de la factura.</li>";
+
+                    //}
+
+
+
+
+
+
+
+                    var IdPais = 0;
+
+
+
+             
+
+              
+
+                    if( $("#ddlTipoMoneda").val() == 2 || $("#ddlTipoMoneda").val() == 3){
+                   
+                        if(this.oResultadoValidaciones.oTercero.IdPais == 169){
+                      
+                            htmlContent += "<li>El pais del tercero no puede ser COLOMBIA.</li>";
+                
+                        }
+                
+                    }else{
+                
+                
+                        if(this.oResultadoValidaciones.oTercero.IdPais != 169){
+                     
+                            htmlContent += "<li>El pais del tercero no puede ser diferente a COLOMBIA.</li>";
+                
+                        }
+                
+                
+                    }
+
+
+                    //if( $("#Nota1").val().trim().length > 240){
+
+                    //    htmlContent += "<li>El campo NOTA 1 no puede ser mayor a 240 caracteres.</li>";
+                
+                    //}
+                
+                    //if( $("#Nota2").val().trim().length > 240){
+
+                    //    htmlContent += "<li>El campo NOTA 2 no puede ser mayor a 240 caracteres.</li>";
+                
+                    //}
+
+                    //if($("#Nota1").val().trim().length == 0 && $("#Nota2").val().trim().length > 0 ){
+
+                    //    htmlContent += "<li>Debe diligenciar el campo NOTA 1 primero.</li>";
+                
+                    //}
+
+
+                    //if($("#ddlTipoMoneda").val() == 2 || $("#ddlTipoMoneda").val() == 3 ){
+                
+                    //    if($("#TasaCambio").val().trim().length == 0){
+
+                    //        htmlContent += "<li>El campo TASA DE CAMBIO es obligatorio.</li>";
+                
+                    //    }
+
+
+                   
+
+                    //    if($("#FechaNegociacion").val().trim().length == 0){
+
+                    //        htmlContent += "<li>El campo FECHA DE NEGOCIACIÓN es obligatorio.</li>";
+                
+                    //    }
+
+                    //    if($("#TipoCoondicionEntrega").val() == -1){
+
+                    //        htmlContent += "<li>El campo TIPO DE CONDICIÓN DE ENTREGA es obligatorio.</li>";
+                
+                    //    }
+
+                    //}else{
+                
+                    //    $("#TasaCambio").val("0");
+                    //    $("#TipoCoondicionEntrega").val("-1");
+                    //    $("#Riesgo").val("");
+                    //    $("#Termino").val("");
+                    //    $("#FechaNegociacion").val($("#sFechaEmision").val());
+                
+                    //}
+
+
+
+
+
+
+
+                
+                    //if( $("#ddlTipoOperacion").val() == 3){
+                   
+                    //    //    var cont = 0;
+
+
+                    //    //    if(this.oRespuestaMandantes.lstMandantes.length == 0){
+                    
+                    //    //        htmlContent += "<li>Debe diligenciar almenos un <b>mandante</b>.</li>";
+                    
+                    //    //    }
+
+         
+
+                    //    //    if(this.oDetalle.lstDetalle.length != this.oRespuestaMandantes.lstMandantes.length){
+
+                    //    //        htmlContent += "<li>El número de Mandantes debe ser igual al número de Productos o Servicios de la factura.</li>";
+                    
+                    //    //    }
+
+
+                    //    if(this.oResultadoValidaciones.Codigo == "0001"){
+                        
+                    //        htmlContent += this.oResultadoValidaciones.Mensaje;
+                        
+                    //    }
+
+                
+                    //}
+
+
+
+                
+
+
+                    if( $("#Numero").val().trim().length == 0){
+
+                        htmlContent += "<li>Debe diligenciar Número de Factura.</li>";
+                
+                    }
+
+                
+
+                    if( $("#IdMetodoPago").val() == 0){
+
+                        htmlContent += "<li>Debe diligenciar el Metodo de pago.</li>";
+                
+                    }
+
+
+                    
+                    if( $("#IdTipoPago").val() == 0){
+
+                        htmlContent += "<li>Debe diligenciar el Tipo de pago.</li>";
+                
+                    }
+
+
+
+
+
+                
+                }else{
+                
+                
+                
+                
+                    htmlContent += this.oResultadoValidaciones.Mensaje;
+                
+                
+                
+                }
+
+
+
+
+
+                if (htmlContent.length > 0) {
+
+                    this.showErrorPost(htmlContent);
+
+                    return false;
+                }
+                else {
+
+
+                    this.mostrarModal();
+
+         
+
+                }
+
+
+
+            };
+
+
+
+
+
+            this.showErrorPost = function (m) {
+
+                $("#ErrorMessagePost").html("<h5>¡Alerta!</h5>" + m);
+                $("#vErroresPost").show();
+
+            };
+
+            this.GuardarBorrador = function () {
+
+                $("#SwBotonGuardar").val(1);
+                document.getElementById("formCrearFactura").submit();
+            };
+
+            this.EnviarFactura = function () {
+
+
+                console.log("222222222222222222");
+
+
+                $("#SwBotonGuardar").val(2);
+
+                this.cerrarAsistente();
+                this.procesar();
+                
+                document.getElementById("formCrearFactura").submit();
+
+            };
+
+            this.mostrarModal = function () {
+
+
+                $("#mGuardado").modal({ show: true , backdrop:"static" });
+
+            };
+
+            this.MostrarResolucion = function () {
+
+                $("#mResoluciones").modal({ show: true , backdrop:"static" });
+
+                this.BuscarResolucion();
+
+            };
+
+            this.BuscarResolucion = function () {
+
+
+                var jsData = '{"b":"' + "" + '" ,  "t":"' + "8" + '"}';
+
+                $.ajax({
+                    url: this.Url + "BuscarResoluciones",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.lstResoluciones = data;
+                        oForm.mostrarResoluciones();
+
+                    }
+                });
+
+
+            };
+
+            this.mostrarResoluciones = function () {
+
+                var htmlContent = "";
+
+                if (this.lstResoluciones.length > 0) {
+
+                    var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                    htmlContent += "<thead><th>#</th><th>Tipo Resolución</th><th>Prefijo</th><th class='text-center' >Agregar</th></thead>";
+                    htmlContent += "<tbody>";
+
+                    var Consecutivo = 1;
+                    for (var i = 0; i < this.lstResoluciones.length; i++) {
+
+                        var item = this.lstResoluciones[i];
+
+                        htmlContent += "<tr>";
+                        htmlContent += "<td><b>" + Consecutivo + "<b></td>";
+                        htmlContent += "<td>" + item.sTipoResolucion + "</td>";
+                        htmlContent += "<td>" + item.sResolucion + "</td>";
+                        htmlContent += "<td class='text-center' ><a class='btnOption'   onclick='oForm.agregarResolucion(this);' oData='" + JSON.stringify(item) + "' href='#' title='Agregar'><i class='fa fa-plus-circle' aria-hidden='true'></i></a></td>";
+
+                        htmlContent += "</tr>";
+
+                        Consecutivo += 1;
+
+                    }
+
+                    htmlContent += "</tbody></table>";
+
+                } else {
+
+                    htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+                }
+
+                $("#vResoluciones").html(htmlContent);
+
+            };
+
+            this.agregarResolucion = function (f) {
+
+                this.cerrarAsistente();
+
+                var Resolucion = JSON.parse($(f).attr("oData"));
+
+
+                $('#IdResolucion').val(Resolucion.IdResolucion);
+                $('#sResolucion').val(Resolucion.sResolucion);
+
+
+
+                if(Resolucion.IdTipoResolucion == 5){
+                
+                    $('#cardDocumentos').hide();
+                    
+                }else{
+                
+                
+                    $('#cardDocumentos').show();
+                
+                }
+
+
+
+                if($('#IdResolucion').val() > 0 &&  $('#IdProveedor').val() > 0){
+                
+                    $('#AgregarProducto').show();
+                    $('#accordionExample').show();
+                
+                }
+
+            };
+
+            this.contarcaracteres = function () {
+                
+             
+
+                var conteoNota1 = parseInt(240) - parseInt($('#Nota1').val().length) 
+                var conteoNota2 = parseInt(240) - parseInt($('#Nota2').val().length) 
+
+                $('#lblConteoNota1').html("&nbsp; ( " + conteoNota1 + " caracteres )");
+                $('#lblConteoNota2').html("&nbsp; ( " + conteoNota2 + " caracteres )");
+
+                var conteoTermino = parseInt(200) - parseInt($('#Termino').val().length) 
+                var conteoRiesgo = parseInt(200) - parseInt($('#Riesgo').val().length) 
+
+                $('#lblConteoTermino').html("&nbsp; ( " + conteoTermino + " caracteres )");
+                $('#lblConteoRiesgo').html("&nbsp; ( " + conteoRiesgo + " caracteres )");
+
+             
+
+                var conteoDescripcion = parseInt(500) - parseInt($('#DescripcionDocumento').val().length) 
+                $('#lblConteoDocumento').html("&nbsp; ( " + conteoDescripcion + " caracteres )");
+
+
+            };
+
+            this.MostrarTarifa = function () {
+
+                if(this.TarifaReteICATercero == null){
+                
+                    this.TarifaReteICATercero = this.TarifaReteICAFactura;
+                
+                }
+
+
+                $("#lblTotalReteICA").html(this.TotalReteICA);
+                $("#txtTarifaReteICA").val(this.TarifaReteICAFactura);
+                $("#mCambiarTarifa").modal({ show: true  });
+
+            };
+
+            this.ActualizarTarifa = function () {
+
+                var texto = "";
+
+                if($("#txtTarifaReteICA").val().trim().length > 0){
+                
+                    this.cerrarAsistente();
+
+                    this.TarifaReteICAFactura = $("#txtTarifaReteICA").val().trim();
+
+                    var jsData = '{"t":"' + $("#txtTarifaReteICA").val().trim() + '" }';
+
+                    $.ajax({
+                        url: this.Url + "ActualizarTarifaReteICA",
+                        dataType: 'json',
+                        contentType: "application/json",
+                        type: "POST",
+                        data: jsData,
+                        success: function (data) {
+
+                            oForm.oDetalle = data;
+                            oForm.mostrarDetalle();
+
+                        }
+                    });
+                
+                }else{
+                
+                    texto = "<div class='alert alert-danger' role='alert'>Debe ingresar la Tarifa ReteICA.</div>";
+                
+                }
+
+                $("#lblMensajeError").html(texto);
+
+            };
+            
+            this.NuevaTarifa = function () {
+
+                this.TarifaReteICAFactura  = this.oFactura.TarifaReteICAFactura;
+
+                $("#txtTarifaReteICA").html(this.TarifaReteICAFactura);
+
+            };
+
+            this.resetearTarifa = function () {
+
+                $("#txtTarifaReteICA").val(this.TarifaReteICATercero);
+
+            };
+
+            this.ActualizarTarifaDetalle = function () {
+
+                // Esta metodo es para cuando agregue un detalle nuevo
+
+                var jsData = '{"t":"' + this.TarifaReteICAFactura + '" }';
+
+                $.ajax({
+                    url: this.Url + "ActualizarTarifaReteICA",
+                    dataType: 'json',
+                    contentType: "application/json",
+                    type: "POST",
+                    data: jsData,
+                    success: function (data) {
+
+                        oForm.oDetalle = data;
+                        oForm.mostrarDetalle();
+
+                    }
+                });
+
+            };
+
+
+
+            this.procesar = function () {
+
+                if ($.isFunction($("form").valid) == true) {
+                    if ($("form").valid() == true) {
+                        $("#mProcesando").modal({ show: true, backdrop: "static" });
+                    }
+                }
+                else {
+                    $("#mProcesando").modal({ show: true, backdrop: "static" });
+                }
+
+            };
+
+            this.contarcaracteresDescripcion = function () {
+                
+
+                var conteoNota1 = parseInt(240) - parseInt($('#Descripcion').val().length) 
+
+                $('#lblDescripcion').html("&nbsp; ( " + conteoNota1 + " caracteres )");
+
+
+                var descripciionI = parseInt(240) - parseInt($('#DescripcionI').val().length) 
+
+                $('#lblDescripcionI').html("&nbsp; ( " + descripciionI + " caracteres )");
+
+
+            };
+
+            this.contarcaracteresDocumentos = function () {
+
+                var conteoDescripcion = parseInt(500) - parseInt($('#DescripcionDocumento').val().length) 
+                $('#lblConteoDocumento').html("&nbsp; ( " + conteoDescripcion + " caracteres )");
+
+
+            };
+
+
+
+
+
+            this.GenerarDV = function (TextoDV) {
+
+                var TN = $("#IdentificacionMandante").val();
+
+                var TextoNit = TN.replace(/[.]/g, '');
+
+                var dv = document.getElementById(TextoDV);
+                var NIT15 = '000000000000000' + TextoNit;
+                var NumDigitos = NIT15.length - 15;
+                var miArray = new Array(15)
+                miArray[0] = 71
+                miArray[1] = 67
+                miArray[2] = 59
+                miArray[3] = 53
+                miArray[4] = 47
+                miArray[5] = 43
+                miArray[6] = 41
+                miArray[7] = 37
+                miArray[8] = 29
+                miArray[9] = 23
+                miArray[10] = 19
+                miArray[11] = 17
+                miArray[12] = 13
+                miArray[13] = 7
+                miArray[14] = 3
+                lnRetorno = 0;
+                var WDato = "";
+                WDato = NIT15.substring(NumDigitos, NIT15.length);
+                var WSuma = 0;
+                for (i = 0; i < 15; i++) {
+                    var WDato2 = "";
+                    WDato2 = WDato.substring(i, i + 1);
+
+                    WSuma += (parseInt(WDato2) * parseInt(miArray[i]));
+                }
+                WSuma = WSuma % 11;
+
+                if (WSuma == 0 || WSuma == 1) {
+                    lnRetorno = WSuma;
+                }
+                else {
+                    lnRetorno = 11 - WSuma;
+                }
+                if (dv != null) dv.value = lnRetorno;
+
+
+            };
+
+
+        }
+
+
+
+
+    </script>
+
+    <script type="text/javascript">
+
+        oForm.lstTiposPagos = [{"IdOpcion":"0","Opcion":"SELECCIONE"},{"IdOpcion":"1","Opcion":"Efectivo"},{"IdOpcion":"2","Opcion":"Tarjeta Crédito"},{"IdOpcion":"3","Opcion":"Tarjeta Débito"},{"IdOpcion":"4","Opcion":"Cheque"},{"IdOpcion":"5","Opcion":"Bonos"},{"IdOpcion":"6","Opcion":"Vales"},{"IdOpcion":"7","Opcion":"Crédito"}];
+        oForm.lstProductos = null;
+        oForm.Url = "/demo/Compras/";
+        oForm.oDetalle = null;
+        oForm.oFactura = {"Consecutivo":0,"IdCompra":null,"IdEmpresa":0,"sFechaRecepcion":null,"NitProveedor":null,"NombreProveedor":null,"Tipo":null,"Numero":null,"sFechaEmision":null,"ValorTotal":0,"sValorTotal":null,"Moneda":null,"CUFE":null,"RutaXML":null,"IdEstado":0,"sEstado":null,"IdProveedor":0,"sProveedor":null,"sFechaVencimiento":null,"IdMetodoPago":0,"IdTipoPago":0,"IdResolucion":0,"sResolucion":null,"RutaCompraXML":null,"RutaCompraPDF":null,"IdTipoMoneda":0,"TasaCambio":0,"sTasaCambio":null,"SwNotificado":0,"IntentosNotificacionEmail":0,"FechaHoraUltimoIntentoNotificacionEmail":null,"Operador":null,"DataICO_UUID":null,"DataICO_QRCode":null,"SwNotificacionCancelada":0,"FechaHoraNotificacionCancelada":null,"ValorReteFuente":0,"sValorReteFuente":null,"ValorImpuesto":0,"sValorImpuesto":null,"ValorReteICA":0,"sValorReteICA":null,"IdUsuario":0,"Plazo":0,"sRazonSocial":null,"sUsuario":null,"TarifaReteICAFactura":null,"TarifaReteICATercero":null,"sFechaHoraCreacion":null,"EmailTercero":null,"RutaFactura":null,"RutaFacturaXML":null,"codeContencion":null,"lstCompraDetalle":null,"ReferenciaSoporte":null,"Referencia":null,"SwTieneNota":0,"oDetalle":null,"IdNota":0,"Nota1":null,"IdConcepto":0,"oNota":null};
+        oForm.lstDocumentos = null;
+        oForm.oResultadoNota = null;
+        oForm.oRespuestaMandantes = null;
+
+    </script>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-sm-2 logo">
+                <img src="/demo/Content/images/logo-footer.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-4 info">
+                <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
+                <p>COLOMBIA</p>
+                <p>&copy; Todos los derechos reservados.</p>
+            </div>
+            <div class="col-sm-3 redes">
+                <p>Síguenos en:</p>
+                <div class="redesLogos">
+                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-3 copy">
+                <a href="#" target="_blank">
+                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

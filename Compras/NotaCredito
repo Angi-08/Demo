@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobuTIC</title>
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="/demo/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/hover/hover-min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/demo/Content/css/styles.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+
+    <!-- Footer Scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/moment/moment-with-locales.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/demo/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
+    <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-sm-9 logo">
+                <img src="/demo/Content/images/logo.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-3 headerUser text-right">
+                <div class="d-block d-sm-none mobileMenu" data-toggle="collapse" href="#navBar">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="homeBtn">
+                    
+                </div>
+                <div class="notifBtn">
+                    
+                </div>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <div class="dropdownMenuUser collapse" id="collapseExample">
+                    <ul>
+                        <li><a href="#">Mi perfil</a></li>
+                        
+                        <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
+                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid menubar collapse dont-collapse-sm" id="navBar">
+        <ul>
+
+
+
+                <li>
+                    <a href="#">ADMINISTRACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FACTURACIÓN</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
+                        <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
+                        <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NOTA CRÉDITO</a>
+                    <ul>
+                        <li><a href="/demo/Gestion/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Gestion/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMPRAS</a>
+                    <ul>
+                        
+                        <li><a href="/demo/Compras/Inicio">Recepción</a></li>
+                        <li><a href="/demo/Compras/SoportesBorrador">Soportes borrador</a></li>
+                        <li><a href="/demo/Compras/SoportesFinalizadas">Soportes finalizadas</a></li>
+
+                        <li><a href="/demo/Compras/NotaCredito">Nota crédito</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoBorrador">Notas crédito borrador</a></li>
+                        <li><a href="/demo/Compras/NotasCreditoFinalizadas">Notas crédito finalizadas</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFORMES</a>
+                    <ul>
+                        <li><a href="/demo/Informes/Informe01">Consulta por cliente</a></li>
+                        <li><a href="/demo/Informes/Informe02">Consulta por articulo</a></li>
+                        <li><a href="/demo/Informes/Informe03">Clientes frecuentes</a></li>
+                        <li><a href="/demo/Informes/Informe04">Items mas vendidos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">NÓMINA</a>
+                    <ul>
+                        <li><a href="/demo/Nomina/Nominas">Nómina</a></li>
+                    </ul>
+                </li>
+
+
+
+
+
+        </ul>
+    </div>
+    
+    <div class="container-fluid content">
+
+        <div class="row">
+
+            <div class="col-sm">
+
+                
+
+
+
+
+
+<link href="/demo/Content/css/Validaciones.css" rel="stylesheet" type="text/css" />
+
+
+<form id="formNotaCredito" name="formNotaCredito" class="col-md-12" method="post">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Nota crédito</h3>
+            <hr />
+        </div>
+    </div>
+    <br />
+
+    <label for="Referencia" class="required">Referencia de la Compra</label>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <input class="form-control tt-query" name="Referencia" id="Referencia" type="text" placeholder="">
+        </div>
+
+        <div class="col-md-2">
+            <a id="BtnBuscar" class="btn btn-primary" href="#" title="Buscar" onclick="oForm.BuscarCompra();">Buscar</a>
+        </div>
+
+    </div>
+    <br />
+
+    <div id="dvMensaje" class="row">
+        <div class="col-md-6">
+            <div class="alert alert-danger" role="alert">
+                Debe diligenciar la referencia
+            </div>
+        </div>
+    </div>
+
+    <div id="Alerta" class="row">
+        <div class="col-md-6">
+            <div class="alert alert-danger" role="alert">
+                <label id="texto"></label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="dvDatos" class="row">
+
+        <div class="col-md-2">
+            <label for="datetimepicker1" class="active">Fecha de Compra</label>
+            <input id="Fecha" name="Fecha" class="form-control" type="text" readonly="readonly" />
+        </div>
+
+        <div class="col-md-5">
+            <label for="Resolucion" class="active">Resolución</label>
+            <input id="IdResolucion" name="IdResolucion" value="0" hidden type="text" />
+            <input id="sResolucion" name="sResolucion" class="form-control" type="text" readonly="readonly" />
+        </div>
+
+        <div class="col-md-5">
+            <label for="Tercero" class="active">Tercero</label>
+            <input id="IdTercero" name="IdTercero" value="0" hidden type="text" />
+            <input id="sTercero" name="sTercero" class="form-control" type="text" readonly="readonly" />
+        </div>
+
+    </div>
+    <br />
+
+    <div class="row">
+        <div id="vProductosAgregados" class="col-md-12">
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+
+        <div id="vProductosAgregados" class="col-md-12">
+        </div>
+
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12" style="text-align: right;">
+            <a id="AgregarNota" href="/demo/Compras/crearnotacredito" class="btn btn-primary">Crear nota crédito</a>
+        </div>
+    </div>
+    <br />
+
+</form>
+
+
+
+
+<script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+
+            oForm.init();
+
+        });
+
+
+
+        var oForm = new function () {
+
+            this.Url = null;
+            this.TotalFinal = null;
+            this.TotalPagado = null;
+            this.TotalNeto = null;
+            this.oCompra = null;
+            this.Referencia = null;
+            this.SwObtenerCompra = null;
+
+            this.init = function () {
+
+                this.cerrarLoader();
+                $("#dvDatos").hide();
+                $("#AgregarNota").hide();
+                $('#Alerta').hide();
+                $("#dvMensaje").hide();
+                $('#Referencia').val("");
+
+                if(this.SwObtenerCompra == 1){
+                
+                    $('#Referencia').val(this.Referencia);
+                    this.BuscarCompra();
+
+                }
+
+
+            };
+
+            this.mostrarLoader = function () {
+                
+                $("#dvDatos").hide();
+                $("#vProductosAgregados").hide();
+                $("#loader").show();
+
+            };
+
+            this.cerrarLoader = function () {
+
+                $("#dvDatos").show();
+                $("#vProductosAgregados").show();
+                $("#loader").hide();
+
+            };
+
+            this.BuscarCompra = function () {
+
+                this.mostrarLoader();
+                $("#dvMensaje").hide();
+                $('#dvDatos').hide();
+                $("#AgregarNota").hide();
+                $('#Alerta').hide();
+
+                if ($('#Referencia').val().trim().length > 0) {
+
+                    console.log("1");
+
+                    var P1 = $('#Referencia').val().trim();
+
+                    var jsData = '{"r":"' + P1 + '" }';
+
+                    $.ajax({
+                        url: this.Url + "ObtenerCompras",
+                        dataType: 'json',
+                        contentType: "application/json",
+                        type: "POST",
+                        data: jsData,
+                        success: function (data) {
+
+                            oForm.oCompra = data;
+                            oForm.ShowCompra();
+
+                        }
+                    });
+
+                } else {
+
+                    $("#loader").hide();
+                    $("#dvMensaje").show();
+                    $("#AgregarNota").hide();
+                    
+                }
+
+            };
+
+            this.ShowCompra = function () {
+
+                this.cerrarLoader();
+
+                if(this.oCompra.SwTieneNota == 1){
+
+                    $('#vProductosAgregados').hide();
+                    $('#dvDatos').hide();
+                    $('#AgregarNota').hide();
+                    $('#Alerta').show();
+                    $('#texto').html("Ya existe una nota crédito para la Compra de referencia " + this.oCompra.Referencia);
+
+                }else{
+
+                    $('#vProductosAgregados').show();
+                    $('#Alerta').hide();
+                    $('#texto').html("");
+                    $('#dvDatos').show();
+                    $('#AgregarNota').show();
+                    $('#Fecha').val(this.oCompra.sFechaEmision);
+                    $('#IdResolucion').val(this.oCompra.IdResolucion);
+                    $('#sResolucion').val(this.oCompra.sResolucion);
+                    $('#IdTercero').val(this.oCompra.IdTercero);
+                    $('#sTercero').val(this.oCompra.sProveedor);
+
+                    this.CompraDetalle(this.oCompra);
+                
+                }
+
+
+            };
+
+            this.CompraDetalle = function (oCompra) {
+
+                var htmlContent = "";
+
+                var SwMostrarTablaTotales = 1;
+
+                if (oCompra.oDetalle != null) {
+
+                    if(oCompra.oDetalle.lstDetalle.length > 0){
+
+
+                        var htmlContent = "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                        htmlContent += "<thead>";
+                        htmlContent += "<th>#</th>";
+                        htmlContent += "<th>Nombre</th>";
+                        htmlContent += "<th style='text-align:right' >Valor</th>";
+                        htmlContent += "<th style='text-align:right' >Unidades</th>";
+                        htmlContent += "<th style='text-align:right' >Sub total</th>";
+                        htmlContent += "<th style='text-align:right' >Descuento</th>";
+                        htmlContent += "<th style='text-align:right' >IVA</th>";
+                        htmlContent += "<th style='text-align:right' >Total</th>";
+                        //htmlContent += "<th style='text-align:center' >Editar</th>";
+                        htmlContent += "</thead>";
+                        htmlContent += "<tbody>";
+
+                        var consecutivo = 1;
+
+
+                        for (var i = 0; i < oCompra.oDetalle.lstDetalle.length; i++) {
+
+                            var item = oCompra.oDetalle.lstDetalle[i];
+
+                            htmlContent += "<tr>";
+                            htmlContent += "<td>" + consecutivo + "</td>";
+                            htmlContent += "<td>" + item.sProducto + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorUnitario + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sUnidades + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorSubTotal + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorDescuento + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sIVA + "</td>";
+                            htmlContent += "<td style='text-align:right' >" + item.sValorTotal + "</td>";
+                            //htmlContent += "<td style='text-align:center'  ><a class='btnOption'   onclick='oForm.Editar(this);' oData='" + JSON.stringify(item) + "' href='#' title='Editar'><i class='fa fa-pencil-square' aria-hidden='true'></i></a></td>";
+
+                            htmlContent += "</tr>";
+
+                            consecutivo += 1;
+
+                        }
+
+                        htmlContent += "<tr>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + oCompra.oDetalle.sTotalSubTotal + "</b></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + oCompra.oDetalle.sTotalDescuento + "</b></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + oCompra.oDetalle.sTotalIVA + "</b></td>";
+                        htmlContent += "<td style='text-align:right' ><b>" + oCompra.oDetalle.sTotalFactura + "</b></td>";
+                        //htmlContent += "<td></td>";
+                     
+
+                        htmlContent += "</tr>";
+
+                        this.TotalFinal = oCompra.oDetalle.sTotalCompra;
+
+
+                        htmlContent += "</tbody></table>";
+
+                        $("#ValorTotal").val(oCompra.oDetalle.TotalCompra);
+                        $("#TipoDePagos").show();
+                        $("#agregarTipoPago").show();
+                        $("#vTipoPagos").show();
+                        $('#dvDatos').hide();
+                        $('#AgregarNota').hide();
+                        $('#dvDatos').show();
+                        $('#AgregarNota').show();
+
+
+                    }else{
+
+                        SwMostrarTablaTotales = 0;
+                        this.lstTiposPagosAgregados = [];
+                        $("#TipoDePagos").hide();
+                        $("#agregarTipoPago").hide();
+                        $("#vTipoPagos").hide();
+                        htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+                        $('#dvDatos').hide();
+                        $('#AgregarNota').hide();
+
+                    }
+
+
+                } else {
+
+                    SwMostrarTablaTotales = 0;
+                    this.lstTiposPagosAgregados = [];
+                    $("#TipoDePagos").hide();
+                    $("#vTipoPagos").show();
+                    $('#dvDatos').hide();
+                    $('#AgregarNota').hide();
+                    htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
+
+                }
+
+
+                if(SwMostrarTablaTotales == 1){
+
+                    htmlContent += "</br>";
+                    htmlContent += "</br>";
+
+                    htmlContent += "<table class='table table-striped table-bordered dataTable no-footer dtr-inline collapsed' cellpadding='10' cellspacing='5'>";
+                    htmlContent += "<thead>";
+                    htmlContent += "<th style='text-align:center;background-color: #e1e1e1;' >Total Bruto</th>";
+                    htmlContent += "<th style='text-align:center' >Total Descuento</th>";
+                    htmlContent += "<th style='text-align:center' >Total Iva</th>";
+                    htmlContent += "<th style='text-align:center' >Total Consumo</th>";
+                    htmlContent += "<th style='text-align:center;background-color: #e1e1e1;' >Total Neto</th>";
+                    htmlContent += "<th style='text-align:center' >Total ReteFuente</th>";
+                    htmlContent += "<th style='text-align:center' >Total ReteIVA</th>";
+                    htmlContent += "<th style='text-align:center' >Total ReteICA</th>";
+                    htmlContent += "<th style='text-align:center;background-color: #e1e1e1;' >Total Pagar</th>";
+                    htmlContent += "</thead>";
+                    htmlContent += "<tbody>";
+
+                    htmlContent += "<tr>";
+                    
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalSubTotal +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalDescuento +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalIVA +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalConsumo +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalNeto +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalValorReteFuente +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalValorReteIVA +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalValorReteICA +"</td>";
+                    htmlContent += "<td style='text-align:right' >"+ oCompra.oDetalle.sTotalFactura + "</td>";
+
+                    htmlContent += "</tr>";
+
+
+                }
+
+                $("#vProductosAgregados").html(htmlContent);
+
+            };
+
+            this.formatear = function (valor) {
+
+                var signo = "";
+
+                if(valor < 0){
+
+                    signo = "-";
+
+                }
+
+                var num = valor.toString().replace('-', '');
+
+                if (!isNaN(num)) {
+                    num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+                    num = num.split('').reverse().join('').replace(/^[\.]/, '');
+                    control = num;
+                }
+
+                return signo + num;
+
+            };
+
+        }
+
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    oForm.Url = "/demo/Compras/";
+    oForm.Referencia = null;
+    oForm.SwObtenerCompra = 0;
+
+</script>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-sm-2 logo">
+                <img src="/demo/Content/images/logo-footer.png" class="img-fluid" />
+            </div>
+            <div class="col-sm-4 info">
+                <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
+                <p>COLOMBIA</p>
+                <p>&copy; Todos los derechos reservados.</p>
+            </div>
+            <div class="col-sm-3 redes">
+                <p>Síguenos en:</p>
+                <div class="redesLogos">
+                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-3 copy">
+                <a href="#" target="_blank">
+                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
