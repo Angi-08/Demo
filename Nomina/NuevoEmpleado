@@ -70,7 +70,7 @@
                         <li><a href="#">Mi perfil</a></li>
                         
                         <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
-                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                        <li><a href="Includes/logout.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -233,18 +233,18 @@
         <div class="col-md-6">
             <label for="IdTipoDocumento" class="required">Tipo de documento</label>
             <select class="form-control" data-val="true" data-val-number="The field IdTipoDocumento must be a number." data-val-required="The IdTipoDocumento field is required." id="IdTipoDocumento" name="IdTipoDocumento"><option selected="selected" value="0">SELECCIONE</option>
-<option value="11">Registro civil</option>
-<option value="12">Tarjeta de identidad</option>
-<option value="13">C&#233;dula de ciudadan&#237;a</option>
-<option value="21">Tarjeta de extranjer&#237;a</option>
-<option value="22">C&#233;dula de extranjer&#237;a</option>
-<option value="31">NIT</option>
-<option value="41">Pasaporte</option>
-<option value="42">Documento de identificaci&#243;n extranjero</option>
-<option value="47">PEP</option>
-<option value="50">NIT de otro pa&#237;s</option>
-<option value="91">NUIP</option>
-</select>
+                <option value="11">Registro civil</option>
+                <option value="12">Tarjeta de identidad</option>
+                <option value="13">C&#233;dula de ciudadan&#237;a</option>
+                <option value="21">Tarjeta de extranjer&#237;a</option>
+                <option value="22">C&#233;dula de extranjer&#237;a</option>
+                <option value="31">NIT</option>
+                <option value="41">Pasaporte</option>
+                <option value="42">Documento de identificaci&#243;n extranjero</option>
+                <option value="47">PEP</option>
+                <option value="50">NIT de otro pa&#237;s</option>
+                <option value="91">NUIP</option>
+            </select>
         </div>
 
 
@@ -588,13 +588,14 @@
 
         <div class="col-md-6">
             <label for="IdTipoContrato" class="required">Tipo de contrato</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoContrato must be a number." data-val-required="The IdTipoContrato field is required." id="IdTipoContrato" name="IdTipoContrato"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Termino Fijo</option>
-<option value="2">T&#233;rmino Indefinido</option>
-<option value="3">Obra o Labor</option>
-<option value="4">Aprendizaje</option>
-<option value="5">Pr&#225;cticas o Pasant&#237;as</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoContrato must be a number." data-val-required="The IdTipoContrato field is required." id="IdTipoContrato" name="IdTipoContrato">
+                <option selected="selected" value="0">SELECCIONE</option>
+                <option value="1">Termino Fijo</option>
+                <option value="2">T&#233;rmino Indefinido</option>
+                <option value="3">Obra o Labor</option>
+                <option value="4">Aprendizaje</option>
+                <option value="5">Pr&#225;cticas o Pasant&#237;as</option>
+            </select>
         </div>
 
 
@@ -663,79 +664,79 @@
         <div class="col-md-6">
             <label for="IdMetodoPago" class="required">Metodos de pago</label>
             <select class="form-control" id="IdMetodoPago" name="IdMetodoPago"><option value="0">SELECCIONE</option>
-<option value="1">Instrumento no definido</option>
-<option value="10">Efectivo</option>
-<option value="11">Reversi&#243;n Cr&#233;dito Ahorro</option>
-<option value="12">Reversi&#243;n D&#233;bito Ahorro</option>
-<option value="13">Cr&#233;dito Ahorro</option>
-<option value="14">D&#233;bito Ahorro</option>
-<option value="15">Bookentry Cr&#233;dito</option>
-<option value="16">Bookentry D&#233;bito</option>
-<option value="17">Concentraci&#243;n de la demanda en efectivo /Desembolso Cr&#233;dito (CCD)</option>
-<option value="18">Concentraci&#243;n de la demanda en efectivo / Desembolso (CCD) d&#233;bito</option>
-<option value="19">Cr&#233;dito Pago negocio corporativo (CTP)</option>
-<option value="2">Cr&#233;dito ACH</option>
-<option value="20">Cheque</option>
-<option value="21">Proyecto bancario</option>
-<option value="22">Proyecto bancario certificado</option>
-<option value="23">Cheque bancario</option>
-<option value="24">Nota cambiaria esperando aceptaci&#243;n</option>
-<option value="25">Cheque certificado</option>
-<option value="26">Cheque Local</option>
-<option value="27">D&#233;bito Pago Negocio Corporativo (CTP)</option>
-<option value="28">Cr&#233;dito Negocio Intercambio Corporativo (CTX)</option>
-<option value="29">D&#233;bito Negocio Intercambio Corporativo (CTX)</option>
-<option value="3">D&#233;bito ACH</option>
-<option value="30">Transferencia Cr&#233;dito</option>
-<option value="31">Transferencia D&#233;bito</option>
-<option value="32">Concentraci&#243;n Efectivo / Desembolso Cr&#233;dito plus (CCD+)</option>
-<option value="33">Concentraci&#243;n Efectivo / Desembolso D&#233;bito plus (CCD+)</option>
-<option value="34">Pago y dep&#243;sito pre acordado (PPD)</option>
-<option value="35">Concentraci&#243;n efectivo ahorros / Desembolso Cr&#233;dito (CCD)</option>
-<option value="37">Pago Negocio Corporativo Ahorros Cr&#233;dito (CTP)</option>
-<option value="38">Pago Negocio Corporativo Ahorros D&#233;bito (CTP)</option>
-<option value="4">Reversi&#243;n d&#233;bito de demanda ACH</option>
-<option value="42">Consignaci&#243;n bancaria</option>
-<option value="44">Nota cambiaria</option>
-<option value="45">Transferencia Cr&#233;dito Bancario</option>
-<option value="46">Transferencia D&#233;bito Interbancario</option>
-<option value="47">Transferencia D&#233;bito Bancaria</option>
-<option value="48">Tarjeta Cr&#233;dito</option>
-<option value="49">Tarjeta D&#233;bito</option>
-<option value="5">Reversi&#243;n cr&#233;dito de demanda ACH&#160;</option>
-<option value="50">Postgiro</option>
-<option value="51">Telex est&#225;ndar bancario franc&#233;s</option>
-<option value="52">Pago comercial urgente</option>
-<option value="53">Pago Tesorer&#237;a Urgente</option>
-<option value="6">Cr&#233;dito de demanda ACH</option>
-<option value="60">Nota promisoria</option>
-<option value="61">Nota promisoria firmada por el acreedor</option>
-<option value="62">Nota promisoria firmada por el acreedor, avalada por el banco</option>
-<option value="63">Nota promisoria firmada por el acreedor, avalada por un tercero</option>
-<option value="64">Nota promisoria firmada por el banco</option>
-<option value="65">Nota promisoria firmada por un banco avalada por otro banco</option>
-<option value="66">Nota promisoria firmada</option>
-<option value="67">Nota promisoria firmada por un tercero avalada por un banco</option>
-<option value="7">D&#233;bito de demanda ACH</option>
-<option value="70">Retiro de nota por el por el acreedor</option>
-<option value="71">Bonos</option>
-<option value="72">Vales</option>
-<option value="75">Retiro de nota por el acreedor, avalada por otro banco</option>
-<option value="76">Retiro de nota por el acreedor, sobre un banco avalada por un tercero</option>
-<option value="77">Retiro de una nota por el acreedor sobre un tercero</option>
-<option value="78">Retiro de una nota por el acreedor sobre un tercero avalada por un banco</option>
-<option value="8">Mantener</option>
-<option value="9">Clearing Nacional o Regional</option>
-<option value="91">Nota bancaria transferible</option>
-<option value="92">Cheque local trasferible</option>
-<option value="93">Giro referenciado</option>
-<option value="94">Giro urgente</option>
-<option value="95">Giro formato abierto</option>
-<option value="96">M&#233;todo de pago solicitado no usado</option>
-<option value="97">Clearing entre partners</option>
-<option value="98">Cuentas de Ahorro de Tramite Simplificado (CATS)(Nequi, Daviplata, etc)</option>
-<option value="ZZZ">Acuerdo mutuo</option>
-</select>
+                <option value="1">Instrumento no definido</option>
+                <option value="10">Efectivo</option>
+                <option value="11">Reversi&#243;n Cr&#233;dito Ahorro</option>
+                <option value="12">Reversi&#243;n D&#233;bito Ahorro</option>
+                <option value="13">Cr&#233;dito Ahorro</option>
+                <option value="14">D&#233;bito Ahorro</option>
+                <option value="15">Bookentry Cr&#233;dito</option>
+                <option value="16">Bookentry D&#233;bito</option>
+                <option value="17">Concentraci&#243;n de la demanda en efectivo /Desembolso Cr&#233;dito (CCD)</option>
+                <option value="18">Concentraci&#243;n de la demanda en efectivo / Desembolso (CCD) d&#233;bito</option>
+                <option value="19">Cr&#233;dito Pago negocio corporativo (CTP)</option>
+                <option value="2">Cr&#233;dito ACH</option>
+                <option value="20">Cheque</option>
+                <option value="21">Proyecto bancario</option>
+                <option value="22">Proyecto bancario certificado</option>
+                <option value="23">Cheque bancario</option>
+                <option value="24">Nota cambiaria esperando aceptaci&#243;n</option>
+                <option value="25">Cheque certificado</option>
+                <option value="26">Cheque Local</option>
+                <option value="27">D&#233;bito Pago Negocio Corporativo (CTP)</option>
+                <option value="28">Cr&#233;dito Negocio Intercambio Corporativo (CTX)</option>
+                <option value="29">D&#233;bito Negocio Intercambio Corporativo (CTX)</option>
+                <option value="3">D&#233;bito ACH</option>
+                <option value="30">Transferencia Cr&#233;dito</option>
+                <option value="31">Transferencia D&#233;bito</option>
+                <option value="32">Concentraci&#243;n Efectivo / Desembolso Cr&#233;dito plus (CCD+)</option>
+                <option value="33">Concentraci&#243;n Efectivo / Desembolso D&#233;bito plus (CCD+)</option>
+                <option value="34">Pago y dep&#243;sito pre acordado (PPD)</option>
+                <option value="35">Concentraci&#243;n efectivo ahorros / Desembolso Cr&#233;dito (CCD)</option>
+                <option value="37">Pago Negocio Corporativo Ahorros Cr&#233;dito (CTP)</option>
+                <option value="38">Pago Negocio Corporativo Ahorros D&#233;bito (CTP)</option>
+                <option value="4">Reversi&#243;n d&#233;bito de demanda ACH</option>
+                <option value="42">Consignaci&#243;n bancaria</option>
+                <option value="44">Nota cambiaria</option>
+                <option value="45">Transferencia Cr&#233;dito Bancario</option>
+                <option value="46">Transferencia D&#233;bito Interbancario</option>
+                <option value="47">Transferencia D&#233;bito Bancaria</option>
+                <option value="48">Tarjeta Cr&#233;dito</option>
+                <option value="49">Tarjeta D&#233;bito</option>
+                <option value="5">Reversi&#243;n cr&#233;dito de demanda ACH&#160;</option>
+                <option value="50">Postgiro</option>
+                <option value="51">Telex est&#225;ndar bancario franc&#233;s</option>
+                <option value="52">Pago comercial urgente</option>
+                <option value="53">Pago Tesorer&#237;a Urgente</option>
+                <option value="6">Cr&#233;dito de demanda ACH</option>
+                <option value="60">Nota promisoria</option>
+                <option value="61">Nota promisoria firmada por el acreedor</option>
+                <option value="62">Nota promisoria firmada por el acreedor, avalada por el banco</option>
+                <option value="63">Nota promisoria firmada por el acreedor, avalada por un tercero</option>
+                <option value="64">Nota promisoria firmada por el banco</option>
+                <option value="65">Nota promisoria firmada por un banco avalada por otro banco</option>
+                <option value="66">Nota promisoria firmada</option>
+                <option value="67">Nota promisoria firmada por un tercero avalada por un banco</option>
+                <option value="7">D&#233;bito de demanda ACH</option>
+                <option value="70">Retiro de nota por el por el acreedor</option>
+                <option value="71">Bonos</option>
+                <option value="72">Vales</option>
+                <option value="75">Retiro de nota por el acreedor, avalada por otro banco</option>
+                <option value="76">Retiro de nota por el acreedor, sobre un banco avalada por un tercero</option>
+                <option value="77">Retiro de una nota por el acreedor sobre un tercero</option>
+                <option value="78">Retiro de una nota por el acreedor sobre un tercero avalada por un banco</option>
+                <option value="8">Mantener</option>
+                <option value="9">Clearing Nacional o Regional</option>
+                <option value="91">Nota bancaria transferible</option>
+                <option value="92">Cheque local trasferible</option>
+                <option value="93">Giro referenciado</option>
+                <option value="94">Giro urgente</option>
+                <option value="95">Giro formato abierto</option>
+                <option value="96">M&#233;todo de pago solicitado no usado</option>
+                <option value="97">Clearing entre partners</option>
+                <option value="98">Cuentas de Ahorro de Tramite Simplificado (CATS)(Nequi, Daviplata, etc)</option>
+                <option value="ZZZ">Acuerdo mutuo</option>
+            </select>
         </div>
 
         <div id="dvTipoCuenta" class="col-md-6">
@@ -764,12 +765,12 @@
                 <div class="col-md-6">
                     <label for="IdBanco" class="required">Banco</label>
                     <select class="form-control" data-val="true" data-val-number="The field IdBanco must be a number." data-val-required="The IdBanco field is required." id="IdBanco" name="IdBanco"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Bancolombia</option>
-<option value="2">Caja social</option>
-<option value="3">Banco de Bogot&#225;</option>
-<option value="4">Banco del Occidente</option>
-<option value="5">Banco Davivienda</option>
-</select>
+                        <option value="1">Bancolombia</option>
+                        <option value="2">Caja social</option>
+                        <option value="3">Banco de Bogot&#225;</option>
+                        <option value="4">Banco del Occidente</option>
+                        <option value="5">Banco Davivienda</option>
+                    </select>
                 </div>
 
             </div>
@@ -1070,26 +1071,7 @@
                 <p>COLOMBIA</p>
                 <p>&copy; Todos los derechos reservados.</p>
             </div>
-            <div class="col-sm-3 redes">
-                <p>Síguenos en:</p>
-                <div class="redesLogos">
-                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                </div>
-            </div>
-            <div class="col-sm-3 copy">
-                <a href="#" target="_blank">
-                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
-                </a>
-            </div>
         </div>
     </div>
-
-
-
-
-
 </body>
 </html>

@@ -70,7 +70,7 @@
                         <li><a href="#">Mi perfil</a></li>
                         
                         <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
-                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                        <li><a href="../Includes/logout.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -781,25 +781,27 @@
 
             <div class="col-md-6">
                 <label for="IdTipoImpuesto" class="required">Tipo de impuesto</label>
-                <select class="form-control" data-val="true" data-val-number="The field IdTipoImpuesto must be a number." data-val-required="The IdTipoImpuesto field is required." id="IdTipoImpuesto" name="IdTipoImpuesto"><option value="-1">SELECCIONE</option>
-<option value="1">IVA</option>
-<option value="2">INC</option>
-<option value="3">INC Bolsas</option>
-<option value="4">IVA e INC</option>
-<option value="5">No aplica</option>
-</select>
+                <select class="form-control" data-val="true" data-val-number="The field IdTipoImpuesto must be a number." data-val-required="The IdTipoImpuesto field is required." id="IdTipoImpuesto" name="IdTipoImpuesto">
+                    <option value="-1">SELECCIONE</option>
+                    <option value="1">IVA</option>
+                    <option value="2">INC</option>
+                    <option value="3">INC Bolsas</option>
+                    <option value="4">IVA e INC</option>
+                    <option value="5">No aplica</option>
+                </select>
             </div>
 
 
             <div class="col-md-6">
                 <label for="TarifaReteICA" class="required">Tipo de Responsabilidad Fiscal</label>
-                <select class="form-control" data-val="true" data-val-number="The field IdTipoResponsabilidadFiscal must be a number." data-val-required="The IdTipoResponsabilidadFiscal field is required." id="IdTipoResponsabilidadFiscal" name="IdTipoResponsabilidadFiscal"><option value="-1">SELECCIONE</option>
-<option value="1">Gran contribuyente</option>
-<option value="2">Autorretenedor</option>
-<option value="3">Agente de retenci&#243;n en el impuesto sobre las ventas</option>
-<option value="4">R&#233;gimen simple de tributaci&#243;n</option>
-<option value="5">No aplica</option>
-</select>
+                <select class="form-control" data-val="true" data-val-number="The field IdTipoResponsabilidadFiscal must be a number." data-val-required="The IdTipoResponsabilidadFiscal field is required." id="IdTipoResponsabilidadFiscal" name="IdTipoResponsabilidadFiscal">
+                    <option value="-1">SELECCIONE</option>
+                    <option value="1">Gran contribuyente</option>
+                    <option value="2">Autorretenedor</option>
+                    <option value="3">Agente de retenci&#243;n en el impuesto sobre las ventas</option>
+                    <option value="4">R&#233;gimen simple de tributaci&#243;n</option>
+                    <option value="5">No aplica</option>
+                </select>
             </div>
 
         </div>
@@ -809,12 +811,13 @@
 
             <div class="col-md-6">
                 <label for="IdTipoRegimen" class="required"> Régimen Fiscal</label>
-                <select class="form-control" data-val="true" data-val-number="The field IdTipoRegimen must be a number." data-val-required="The IdTipoRegimen field is required." id="IdTipoRegimen" name="IdTipoRegimen"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Responsable IVA</option>
-<option value="2">No responsable IVA</option>
-<option value="3">Regimen simple</option>
-<option value="4">Regimen ordinario</option>
-</select>
+                <select class="form-control" data-val="true" data-val-number="The field IdTipoRegimen must be a number." data-val-required="The IdTipoRegimen field is required." id="IdTipoRegimen" name="IdTipoRegimen">
+                    <option selected="selected" value="0">SELECCIONE</option>
+                    <option value="1">Responsable IVA</option>
+                    <option value="2">No responsable IVA</option>
+                    <option value="3">Regimen simple</option>
+                    <option value="4">Regimen ordinario</option>
+                </select>
             </div>
 
 
@@ -843,14 +846,15 @@
 
             <div class="col-md-6">
                 <label for="IdTipoRetefuenteIVA" class="required">Número de días de plazo en compras por defecto</label>
-                <select class="form-control" data-val="true" data-val-number="The field IdTipoPlazoCompraCredito must be a number." data-val-required="The IdTipoPlazoCompraCredito field is required." id="IdTipoPlazoCompraCredito" name="IdTipoPlazoCompraCredito"><option value="-1">SELECCIONE</option>
-<option value="6">0</option>
-<option value="1">10</option>
-<option value="2">15</option>
-<option value="3">30</option>
-<option value="4">45</option>
-<option value="5">60</option>
-</select>
+                <select class="form-control" data-val="true" data-val-number="The field IdTipoPlazoCompraCredito must be a number." data-val-required="The IdTipoPlazoCompraCredito field is required." id="IdTipoPlazoCompraCredito" name="IdTipoPlazoCompraCredito">
+                    <option value="-1">SELECCIONE</option>
+                    <option value="6">0</option>
+                    <option value="1">10</option>
+                    <option value="2">15</option>
+                    <option value="3">30</option>
+                    <option value="4">45</option>
+                    <option value="5">60</option>
+                </select>
             </div>
 
             <div class="col-md-3">
@@ -1390,26 +1394,7 @@
                 <p>COLOMBIA</p>
                 <p>&copy; Todos los derechos reservados.</p>
             </div>
-            <div class="col-sm-3 redes">
-                <p>Síguenos en:</p>
-                <div class="redesLogos">
-                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                </div>
-            </div>
-            <div class="col-sm-3 copy">
-                <a href="#" target="_blank">
-                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
-                </a>
-            </div>
         </div>
     </div>
-
-
-
-
-
 </body>
 </html>

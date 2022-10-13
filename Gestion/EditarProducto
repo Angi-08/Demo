@@ -70,7 +70,7 @@
                         <li><a href="#">Mi perfil</a></li>
                         
                         <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
-                        <li><a href="/demo/Inicio/logout">Cerrar Sesión</a></li>
+                        <li><a href="../Includes/logout.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
