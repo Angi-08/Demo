@@ -85,19 +85,19 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">FACTURACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
-                        <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
-                        <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
-                        <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
+                        <li><a href="/demo/Gestion/Inicio.php">Inicio</a></li>
+                        <li><a href="/demo/Gestion/NuevaFactura.php">Nueva factura</a></li>
+                        <li><a href="/demo/Gestion/FacturasBorrador.php">Facturas borrador</a></li>
+                        <li><a href="/demo/Gestion/FacturasFinalizadas.php">Facturas finalizadas</a></li>
                     </ul>
                 </li>
                 <li>
@@ -895,7 +895,7 @@
 
         <div class="col-md-6">
 
-            <a href="/demo/Gestion/Terceros">Cancelar, regresar al listado</a>
+            <a href="/demo/Gestion/Terceros.php">Cancelar, regresar al listado</a>
 
         </div>
 

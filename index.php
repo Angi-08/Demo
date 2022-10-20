@@ -26,13 +26,12 @@ if(isset($_SESSION['user'])){
     }else{
         //echo "No existe el usuario";
         $errorLogin = "Nombre de usuario y/o password incorrecto";
-        include_once 'Gestion/Inicio.php';
+        include_once 'Inicio/logout';
     }
 }else{
     //echo "login";
-    include_once 'Gestion/Inicio.php';
+    include_once 'Inicio/logout';
+
 }
-
-
 
 ?>

@@ -85,10 +85,10 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
@@ -225,19 +225,20 @@
 
         <div class="col-md-6">
             <label for="IdTipoDocumento" class="required">Tipo de documento</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoDocumento must be a number." data-val-required="The IdTipoDocumento field is required." id="IdTipoDocumento" name="IdTipoDocumento"><option value="0">SELECCIONE</option>
-<option value="11">Registro civil</option>
-<option value="12">Tarjeta de identidad</option>
-<option selected="selected" value="13">C&#233;dula de ciudadan&#237;a</option>
-<option value="21">Tarjeta de extranjer&#237;a</option>
-<option value="22">C&#233;dula de extranjer&#237;a</option>
-<option value="31">NIT</option>
-<option value="41">Pasaporte</option>
-<option value="42">Documento de identificaci&#243;n extranjero</option>
-<option value="47">PEP</option>
-<option value="50">NIT de otro pa&#237;s</option>
-<option value="91">NUIP</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoDocumento must be a number." data-val-required="The IdTipoDocumento field is required." id="IdTipoDocumento" name="IdTipoDocumento">
+                <option value="0">SELECCIONE</option>
+                <option value="11">Registro civil</option>
+                <option value="12">Tarjeta de identidad</option>
+                <option selected="selected" value="13">C&#233;dula de ciudadan&#237;a</option>
+                <option value="21">Tarjeta de extranjer&#237;a</option>
+                <option value="22">C&#233;dula de extranjer&#237;a</option>
+                <option value="31">NIT</option>
+                <option value="41">Pasaporte</option>
+                <option value="42">Documento de identificaci&#243;n extranjero</option>
+                <option value="47">PEP</option>
+                <option value="50">NIT de otro pa&#237;s</option>
+                <option value="91">NUIP</option>
+            </select>
         </div>
 
 
@@ -861,7 +862,7 @@
 
         <div class="col-md-6">
 
-            <a href="/demo/Nomina/Empleados">Cancelar, regresar al listado</a>
+            <a href="/demo/Nomina/Empleados.php">Cancelar, regresar al listado</a>
 
         </div>
 

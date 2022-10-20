@@ -1,9 +1,29 @@
 <?php
 
-    include_once('demo/Includes/db.php');
+    include_once '../Includes/db.php';
     
     $objeto = new DB();
     $con = $objeto->connect();
+
+
+    //Insertar tipo de unidad
+    if(isset($_POST['insert_unidad'])){
+
+        $Descripcion = $_POST['Descripcion'];
+
+        $query = "INSERT INTO unidades VALUES (NULL,'$Descripcion')";
+        $result = $con->prepare($query);
+        $result->execute();
+        if(!$result) {
+            die("Query Failed.");
+        }
+
+        $_SESSION['message'] = 'Tercero registrado con exito';
+        $_SESSION['message_type'] = 'success';
+        header('Location: ../Gestion/TipoUnidades.php');
+
+    }
+
     //Insertar Producto
     if(isset($_POST['insert_producto'])){
 
@@ -32,7 +52,7 @@
 
         $_SESSION['message'] = 'Producto registrado con exito';
         $_SESSION['message_type'] = 'success';
-        header('Location: demo/Gestion/Productos');
+        header('Location: ../Gestion/Productos.php');
 
     }
 
@@ -74,24 +94,7 @@
 
         $_SESSION['message'] = 'Tercero registrado con exito';
         $_SESSION['message_type'] = 'success';
-        header('Location: demo/Gestion/Terceros');
-    }
-
-    if(isset($_POST['insert_unidad'])){
-
-        $Descripcion = $_POST['Descripcion'];
-
-        $query = "INSERT INTO unidades(id, nombre) VALUES(NULL, '$Descripcion')";
-        $result = $con->prepare($query);
-        $result->execute();
-        if(!$result) {
-            die("Query Failed.");
-        }
-
-        $_SESSION['message'] = 'Unidad registrado con exito';
-        $_SESSION['message_type'] = 'success';
-        header('Location: demo/Gestion/TipoUidades');
-
+        header('Location: ../Gestion/Terceros.php');
     }
 
     if(isset($_POST['insert_empleado'])){
@@ -100,7 +103,7 @@
         $pNombre = $_POST["PrimerNombre"];
         $oNombres = $_POST["OtrosNombres"];
         $pApellido = $_POST["PrimerApellido"];
-        $sApellido $_POST["SegundoApellido"];
+        $sApellido = $_POST["SegundoApellido"];
         $IdPaisTra = $_POST["IdPaisTrabajo"];
         $DirTrabajo = $_POST["DireccionTrabajo"];
         $IdDepa = $_POST["IdDepartamento"];
@@ -117,7 +120,6 @@
         $NumCuenta = $_POST["NumeroCuenta"];
         $IdBanco = $_POST["IdBanco"];
         $IdTipoTrabajador = $_POST["IdTipoTrabajador"];
-        $IdSubTipoTrabajador = $_POST["IdSubTipoTrabajador"];
         $IdFormaPago = $_POST["IdFormaPago"];
         $AltoRiesgo = $_POST["SwAltoRiesgo"];
         $IdPerioridad = $_POST["IdPerioridad"];
@@ -135,12 +137,11 @@
 
         $_SESSION['message'] = 'Tercero registrado con exito';
         $_SESSION['message_type'] = 'success';
-        header('Location: demo/Nomina/Empleados');
+        header('Location: ../Nomina/Empleados.php');
     }
 
 
-
-
+    
 
 
 

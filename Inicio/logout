@@ -25,14 +25,14 @@
             <div class="loginForm">
                 <form action="#" method="post">
                     <h3>Iniciar Sesión</h3>
-                    <input type="text" id="Login" name="Login" placeholder="Usuario" />
+                    <input type="email" id="Login" name="Login" placeholder="name@example.com" />
                     <input type="password" id="Contrasena" name="Contrasena" placeholder="Password" />
                     <div hidden class="notificacionError">
                         Usuario o contraseña erroneos.
                     </div>
                     <input type="submit" class="btn btn-warning" value="Ingresar" />
                     
-                    <a href="registro.html">Registro</a>
+                    <a href="Registro">Registro</a>
                 </form>
             </div>
         </div>
@@ -43,9 +43,6 @@
                     <div class="col-sm-4">
                         <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
                         <p>TODOS LOS DERECHOS RESERVADOS</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <p><img src="/demo/Content/images/logoDeveloped.png" /></p>
                     </div>
                 </div>
             </div>

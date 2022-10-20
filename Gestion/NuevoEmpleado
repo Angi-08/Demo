@@ -85,10 +85,10 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
@@ -214,7 +214,10 @@
 
 
 
-<form action="/demo/Nomina/NuevoEmpleado" class="col-md-12" method="post"><input name="__RequestVerificationToken" type="hidden" value="CO45eaexoR36eC_VveSgiiRkODPygDnik4JneOnU8xJM3UyFxqhzxy2FqS5vc33CfXg3ASmPLtw_kkfJGSyMLY4h5dmQqN4UURqZzfeR9Z81" /><input data-val="true" data-val-number="The field IdEmpresa must be a number." data-val-required="The IdEmpresa field is required." id="IdEmpresa" name="IdEmpresa" type="hidden" value="1011" />    <div class="row">
+<form action="../Controller/Create.php" class="col-md-12" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="CO45eaexoR36eC_VveSgiiRkODPygDnik4JneOnU8xJM3UyFxqhzxy2FqS5vc33CfXg3ASmPLtw_kkfJGSyMLY4h5dmQqN4UURqZzfeR9Z81" />
+    <input data-val="true" data-val-number="The field IdEmpresa must be a number." data-val-required="The IdEmpresa field is required." id="IdEmpresa" name="IdEmpresa" type="hidden" value="1011" />    
+    <div class="row">
         <div class="col-md-12">
             <h3>Nuevo empleado</h3>
             <hr />
@@ -232,19 +235,20 @@
 
         <div class="col-md-6">
             <label for="IdTipoDocumento" class="required">Tipo de documento</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoDocumento must be a number." data-val-required="The IdTipoDocumento field is required." id="IdTipoDocumento" name="IdTipoDocumento"><option selected="selected" value="0">SELECCIONE</option>
-<option value="11">Registro civil</option>
-<option value="12">Tarjeta de identidad</option>
-<option value="13">C&#233;dula de ciudadan&#237;a</option>
-<option value="21">Tarjeta de extranjer&#237;a</option>
-<option value="22">C&#233;dula de extranjer&#237;a</option>
-<option value="31">NIT</option>
-<option value="41">Pasaporte</option>
-<option value="42">Documento de identificaci&#243;n extranjero</option>
-<option value="47">PEP</option>
-<option value="50">NIT de otro pa&#237;s</option>
-<option value="91">NUIP</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoDocumento must be a number." data-val-required="The IdTipoDocumento field is required." id="IdTipoDocumento" name="IdTipoDocumento">
+                <option selected="selected" value="0">SELECCIONE</option>
+                <option value="11">Registro civil</option>
+                <option value="12">Tarjeta de identidad</option>
+                <option value="13">C&#233;dula de ciudadan&#237;a</option>
+                <option value="21">Tarjeta de extranjer&#237;a</option>
+                <option value="22">C&#233;dula de extranjer&#237;a</option>
+                <option value="31">NIT</option>
+                <option value="41">Pasaporte</option>
+                <option value="42">Documento de identificaci&#243;n extranjero</option>
+                <option value="47">PEP</option>
+                <option value="50">NIT de otro pa&#237;s</option>
+                <option value="91">NUIP</option>
+            </select>
         </div>
 
 
@@ -302,239 +306,240 @@
 
         <div class="col-md-6">
             <label for="IdPaisTrabajo" class="required">Pais</label>
-            <select class="form-control" id="IdPaisTrabajo" name="IdPaisTrabajo"><option value="0">SELECCIONE</option>
-<option value="013">AFGANISTAN</option>
-<option value="017">ALBANIA</option>
-<option value="023">ALEMANIA</option>
-<option value="026">ARMENIA</option>
-<option value="027">ARUBA</option>
-<option value="029">BOSNIA-HERZEGOVINA</option>
-<option value="031">BURKINA FASSO</option>
-<option value="037">ANDORRA</option>
-<option value="040">ANGOLA</option>
-<option value="041">ANGUILLA</option>
-<option value="043">ANTIGUA Y BARBUDA</option>
-<option value="047">ANTILLAS HOLANDESAS</option>
-<option value="053">ARABIA SAUDITA</option>
-<option value="059">ARGELIA</option>
-<option value="063">ARGENTINA</option>
-<option value="069">AUSTRALIA</option>
-<option value="072">AUSTRIA</option>
-<option value="074">AZERBAIJAN</option>
-<option value="077">BAHAMAS</option>
-<option value="080">BAHREIN</option>
-<option value="081">BANGLADESH</option>
-<option value="083">BARBADOS</option>
-<option value="087">BELGICA</option>
-<option value="088">BELICE</option>
-<option value="090">BERMUDAS</option>
-<option value="091">BELARUS</option>
-<option value="093">BIRMANIA (MYANMAR)</option>
-<option value="097">BOLIVIA</option>
-<option value="101">BOTSWANA</option>
-<option value="105">BRASIL</option>
-<option value="108">BRUNEI DARUSSALAM</option>
-<option value="111">BULGARIA</option>
-<option value="115">BURUNDI</option>
-<option value="119">BUTAN</option>
-<option value="127">CABO VERDE</option>
-<option value="137">CAIMAN, ISLAS</option>
-<option value="141">CAMBOYA (KAMPUCHEA)</option>
-<option value="145">CAMERUN, REPUBLICA UNIDA DEL</option>
-<option value="149">CANADA</option>
-<option value="159">SANTA SEDE</option>
-<option value="165">COCOS (KEELING), ISLAS</option>
-<option value="169">COLOMBIA</option>
-<option value="173">COMORAS</option>
-<option value="177">CONGO</option>
-<option value="183">COOK, ISLAS</option>
-<option value="187">COREA (NORTE), REPUBLICA POPULAR DEMOCRATICA DE</option>
-<option value="190">COREA (SUR), REPUBLICA DE</option>
-<option value="193">COSTA DE MARFIL</option>
-<option value="196">COSTA RICA</option>
-<option value="198">CROACIA</option>
-<option value="199">CUBA</option>
-<option value="203">CHAD</option>
-<option value="211">CHILE</option>
-<option value="215">CHINA</option>
-<option value="218">TAIWAN (FORMOSA)</option>
-<option value="221">CHIPRE</option>
-<option value="229">BENIN</option>
-<option value="232">DINAMARCA</option>
-<option value="235">DOMINICA</option>
-<option value="239">ECUADOR</option>
-<option value="240">EGIPTO</option>
-<option value="242">EL SALVADOR</option>
-<option value="243">ERITREA</option>
-<option value="244">EMIRATOS ARABES UNIDOS</option>
-<option value="245">ESPA&#209;A</option>
-<option value="246">ESLOVAQUIA</option>
-<option value="247">ESLOVENIA</option>
-<option value="249">ESTADOS UNIDOS</option>
-<option value="251">ESTONIA</option>
-<option value="253">ETIOPIA</option>
-<option value="259">FEROE, ISLAS</option>
-<option value="267">FILIPINAS</option>
-<option value="271">FINLANDIA</option>
-<option value="275">FRANCIA</option>
-<option value="281">GABON</option>
-<option value="285">GAMBIA</option>
-<option value="287">GEORGIA</option>
-<option value="289">GHANA</option>
-<option value="293">GIBRALTAR</option>
-<option value="297">GRANADA</option>
-<option value="301">GRECIA</option>
-<option value="305">GROENLANDIA</option>
-<option value="309">GUADALUPE</option>
-<option value="313">GUAM</option>
-<option value="317">GUATEMALA</option>
-<option value="325">GUAYANA FRANCESA</option>
-<option value="329">GUINEA</option>
-<option value="331">GUINEA ECUATORIAL</option>
-<option value="334">GUINEA-BISSAU</option>
-<option value="337">GUAYANA</option>
-<option value="341">HAITI</option>
-<option value="345">HONDURAS</option>
-<option value="351">HONG KONG</option>
-<option value="355">HUNGRIA</option>
-<option value="361">INDIA</option>
-<option value="365">INDONESIA</option>
-<option value="369">IRAK</option>
-<option value="372">IRAN, REPUBLICA ISLAMICA DEL</option>
-<option value="375">IRLANDA (EIRE)</option>
-<option value="379">ISLANDIA</option>
-<option value="383">ISRAEL</option>
-<option value="386">ITALIA</option>
-<option value="391">JAMAICA</option>
-<option value="399">JAPON</option>
-<option value="403">JORDANIA</option>
-<option value="406">KASAJSTAN</option>
-<option value="410">KENIA</option>
-<option value="411">KIRIBATI</option>
-<option value="412">KIRGUIZISTAN</option>
-<option value="413">KUWAIT</option>
-<option value="420">LAOS, REPUBLICA POPULAR DEMOCRATICA DE</option>
-<option value="426">LESOTHO</option>
-<option value="429">LETONIA</option>
-<option value="431">LIBANO</option>
-<option value="434">LIBERIA</option>
-<option value="438">LIBIA (INCLUYE FEZZAN)</option>
-<option value="440">LIECHTENSTEIN</option>
-<option value="443">LITUANIA</option>
-<option value="445">LUXEMBURGO</option>
-<option value="447">MACAO</option>
-<option value="448">MACEDONIA</option>
-<option value="450">MADAGASCAR</option>
-<option value="455">MALAYSIA</option>
-<option value="458">MALAWI</option>
-<option value="461">MALDIVAS</option>
-<option value="464">MALI</option>
-<option value="467">MALTA</option>
-<option value="469">MARIANAS DEL NORTE, ISLAS</option>
-<option value="472">MARSHALL, ISLAS</option>
-<option value="474">MARRUECOS</option>
-<option value="477">MARTINICA</option>
-<option value="485">MAURICIO</option>
-<option value="488">MAURITANIA</option>
-<option value="493">MEXICO</option>
-<option value="494">MICRONESIA, ESTADOS FEDERADOS DE</option>
-<option value="496">MOLDAVIA</option>
-<option value="497">MONGOLIA</option>
-<option value="498">MONACO</option>
-<option value="501">MONSERRAT, ISLA</option>
-<option value="505">MOZAMBIQUE</option>
-<option value="507">NAMIBIA</option>
-<option value="508">NAURU</option>
-<option value="511">NAVIDAD (CHRISTMAS), ISLAS</option>
-<option value="517">NEPAL</option>
-<option value="521">NICARAGUA</option>
-<option value="525">NIGER</option>
-<option value="528">NIGERIA</option>
-<option value="531">NIUE, ISLA</option>
-<option value="535">NORFOLK, ISLA</option>
-<option value="538">NORUEGA</option>
-<option value="542">NUEVA CALEDONIA</option>
-<option value="545">PAPUASIA NUEVA GUINEA</option>
-<option value="548">NUEVA ZELANDIA</option>
-<option value="551">VANUATU</option>
-<option value="556">OMAN</option>
-<option value="566">PACIFICO, ISLAS (USA)</option>
-<option value="573">PAISES BAJOS (HOLANDA)</option>
-<option value="576">PAKISTAN</option>
-<option value="578">PALAU, ISLAS</option>
-<option value="580">PANAMA</option>
-<option value="586">PARAGUAY</option>
-<option value="589">PERU</option>
-<option value="593">PITCAIRN, ISLA</option>
-<option value="599">POLINESIA FRANCESA</option>
-<option value="603">POLONIA</option>
-<option value="607">PORTUGAL</option>
-<option value="611">PUERTO RICO</option>
-<option value="618">QATAR</option>
-<option value="628">REINO UNIDO</option>
-<option value="640">REPUBLICA CENTROAFRICANA</option>
-<option value="644">REPUBLICA CHECA</option>
-<option value="647">REPUBLICA DOMINICANA</option>
-<option value="660">REUNION</option>
-<option value="665">ZIMBABWE</option>
-<option value="670">RUMANIA</option>
-<option value="675">RUANDA</option>
-<option value="676">RUSIA</option>
-<option value="677">SALOMON, ISLAS</option>
-<option value="685">SAHARA OCCIDENTAL</option>
-<option value="687">SAMOA</option>
-<option value="690">SAMOA NORTEAMERICANA</option>
-<option value="695">SAN CRISTOBAL Y NIEVES</option>
-<option value="697">SAN MARINO</option>
-<option value="700">SAN PEDRO Y MIGUELON</option>
-<option value="705">SAN VICENTE Y LAS GRANADINAS</option>
-<option value="710">SANTA ELENA</option>
-<option value="715">SANTA LUCIA</option>
-<option value="720">SANTO TOME Y PRINCIPE</option>
-<option value="728">SENEGAL</option>
-<option value="731">SEYCHELLES</option>
-<option value="735">SIERRA LEONA</option>
-<option value="741">SINGAPUR</option>
-<option value="744">SIRIA, REPUBLICA ARABE DE</option>
-<option value="748">SOMALIA</option>
-<option value="750">SRI LANKA</option>
-<option value="756">SUDAFRICA, REPUBLICA DE</option>
-<option value="759">SUDAN</option>
-<option value="764">SUECIA</option>
-<option value="767">SUIZA</option>
-<option value="770">SURINAM</option>
-<option value="773">SWAZILANDIA</option>
-<option value="774">TADJIKISTAN</option>
-<option value="776">TAILANDIA</option>
-<option value="780">TANZANIA, REPUBLICA UNIDA DE</option>
-<option value="783">DJIBOUTI</option>
-<option value="787">TERRITORIO BRITANICO DEL OCEANO INDICO</option>
-<option value="788">TIMOR DEL ESTE</option>
-<option value="800">TOGO</option>
-<option value="805">TOKELAU</option>
-<option value="810">TONGA</option>
-<option value="815">TRINIDAD Y TOBAGO</option>
-<option value="820">TUNICIA</option>
-<option value="823">TURCAS Y CAICOS, ISLAS</option>
-<option value="825">TURKMENISTAN</option>
-<option value="827">TURQUIA</option>
-<option value="828">TUVALU</option>
-<option value="830">UCRANIA</option>
-<option value="833">UGANDA</option>
-<option value="845">URUGUAY</option>
-<option value="847">UZBEKISTAN</option>
-<option value="850">VENEZUELA</option>
-<option value="855">VIET NAM</option>
-<option value="863">VIRGENES, ISLAS (BRITANICAS)</option>
-<option value="866">VIRGENES, ISLAS (NORTEAMERICANAS)</option>
-<option value="870">FIJI</option>
-<option value="875">WALLIS Y FORTUNA, ISLAS</option>
-<option value="880">YEMEN</option>
-<option value="885">YUGOSLAVIA</option>
-<option value="888">ZAIRE</option>
-<option value="890">ZAMBIA</option>
-<option value="897">ZONA NEUTRAL PALESTINA</option>
-</select>
+            <select class="form-control" id="IdPaisTrabajo" name="IdPaisTrabajo">
+                <option value="0">SELECCIONE</option>
+                <option value="013">AFGANISTAN</option>
+                <option value="017">ALBANIA</option>
+                <option value="023">ALEMANIA</option>
+                <option value="026">ARMENIA</option>
+                <option value="027">ARUBA</option>
+                <option value="029">BOSNIA-HERZEGOVINA</option>
+                <option value="031">BURKINA FASSO</option>
+                <option value="037">ANDORRA</option>
+                <option value="040">ANGOLA</option>
+                <option value="041">ANGUILLA</option>
+                <option value="043">ANTIGUA Y BARBUDA</option>
+                <option value="047">ANTILLAS HOLANDESAS</option>
+                <option value="053">ARABIA SAUDITA</option>
+                <option value="059">ARGELIA</option>
+                <option value="063">ARGENTINA</option>
+                <option value="069">AUSTRALIA</option>
+                <option value="072">AUSTRIA</option>
+                <option value="074">AZERBAIJAN</option>
+                <option value="077">BAHAMAS</option>
+                <option value="080">BAHREIN</option>
+                <option value="081">BANGLADESH</option>
+                <option value="083">BARBADOS</option>
+                <option value="087">BELGICA</option>
+                <option value="088">BELICE</option>
+                <option value="090">BERMUDAS</option>
+                <option value="091">BELARUS</option>
+                <option value="093">BIRMANIA (MYANMAR)</option>
+                <option value="097">BOLIVIA</option>
+                <option value="101">BOTSWANA</option>
+                <option value="105">BRASIL</option>
+                <option value="108">BRUNEI DARUSSALAM</option>
+                <option value="111">BULGARIA</option>
+                <option value="115">BURUNDI</option>
+                <option value="119">BUTAN</option>
+                <option value="127">CABO VERDE</option>
+                <option value="137">CAIMAN, ISLAS</option>
+                <option value="141">CAMBOYA (KAMPUCHEA)</option>
+                <option value="145">CAMERUN, REPUBLICA UNIDA DEL</option>
+                <option value="149">CANADA</option>
+                <option value="159">SANTA SEDE</option>
+                <option value="165">COCOS (KEELING), ISLAS</option>
+                <option value="169">COLOMBIA</option>
+                <option value="173">COMORAS</option>
+                <option value="177">CONGO</option>
+                <option value="183">COOK, ISLAS</option>
+                <option value="187">COREA (NORTE), REPUBLICA POPULAR DEMOCRATICA DE</option>
+                <option value="190">COREA (SUR), REPUBLICA DE</option>
+                <option value="193">COSTA DE MARFIL</option>
+                <option value="196">COSTA RICA</option>
+                <option value="198">CROACIA</option>
+                <option value="199">CUBA</option>
+                <option value="203">CHAD</option>
+                <option value="211">CHILE</option>
+                <option value="215">CHINA</option>
+                <option value="218">TAIWAN (FORMOSA)</option>
+                <option value="221">CHIPRE</option>
+                <option value="229">BENIN</option>
+                <option value="232">DINAMARCA</option>
+                <option value="235">DOMINICA</option>
+                <option value="239">ECUADOR</option>
+                <option value="240">EGIPTO</option>
+                <option value="242">EL SALVADOR</option>
+                <option value="243">ERITREA</option>
+                <option value="244">EMIRATOS ARABES UNIDOS</option>
+                <option value="245">ESPA&#209;A</option>
+                <option value="246">ESLOVAQUIA</option>
+                <option value="247">ESLOVENIA</option>
+                <option value="249">ESTADOS UNIDOS</option>
+                <option value="251">ESTONIA</option>
+                <option value="253">ETIOPIA</option>
+                <option value="259">FEROE, ISLAS</option>
+                <option value="267">FILIPINAS</option>
+                <option value="271">FINLANDIA</option>
+                <option value="275">FRANCIA</option>
+                <option value="281">GABON</option>
+                <option value="285">GAMBIA</option>
+                <option value="287">GEORGIA</option>
+                <option value="289">GHANA</option>
+                <option value="293">GIBRALTAR</option>
+                <option value="297">GRANADA</option>
+                <option value="301">GRECIA</option>
+                <option value="305">GROENLANDIA</option>
+                <option value="309">GUADALUPE</option>
+                <option value="313">GUAM</option>
+                <option value="317">GUATEMALA</option>
+                <option value="325">GUAYANA FRANCESA</option>
+                <option value="329">GUINEA</option>
+                <option value="331">GUINEA ECUATORIAL</option>
+                <option value="334">GUINEA-BISSAU</option>
+                <option value="337">GUAYANA</option>
+                <option value="341">HAITI</option>
+                <option value="345">HONDURAS</option>
+                <option value="351">HONG KONG</option>
+                <option value="355">HUNGRIA</option>
+                <option value="361">INDIA</option>
+                <option value="365">INDONESIA</option>
+                <option value="369">IRAK</option>
+                <option value="372">IRAN, REPUBLICA ISLAMICA DEL</option>
+                <option value="375">IRLANDA (EIRE)</option>
+                <option value="379">ISLANDIA</option>
+                <option value="383">ISRAEL</option>
+                <option value="386">ITALIA</option>
+                <option value="391">JAMAICA</option>
+                <option value="399">JAPON</option>
+                <option value="403">JORDANIA</option>
+                <option value="406">KASAJSTAN</option>
+                <option value="410">KENIA</option>
+                <option value="411">KIRIBATI</option>
+                <option value="412">KIRGUIZISTAN</option>
+                <option value="413">KUWAIT</option>
+                <option value="420">LAOS, REPUBLICA POPULAR DEMOCRATICA DE</option>
+                <option value="426">LESOTHO</option>
+                <option value="429">LETONIA</option>
+                <option value="431">LIBANO</option>
+                <option value="434">LIBERIA</option>
+                <option value="438">LIBIA (INCLUYE FEZZAN)</option>
+                <option value="440">LIECHTENSTEIN</option>
+                <option value="443">LITUANIA</option>
+                <option value="445">LUXEMBURGO</option>
+                <option value="447">MACAO</option>
+                <option value="448">MACEDONIA</option>
+                <option value="450">MADAGASCAR</option>
+                <option value="455">MALAYSIA</option>
+                <option value="458">MALAWI</option>
+                <option value="461">MALDIVAS</option>
+                <option value="464">MALI</option>
+                <option value="467">MALTA</option>
+                <option value="469">MARIANAS DEL NORTE, ISLAS</option>
+                <option value="472">MARSHALL, ISLAS</option>
+                <option value="474">MARRUECOS</option>
+                <option value="477">MARTINICA</option>
+                <option value="485">MAURICIO</option>
+                <option value="488">MAURITANIA</option>
+                <option value="493">MEXICO</option>
+                <option value="494">MICRONESIA, ESTADOS FEDERADOS DE</option>
+                <option value="496">MOLDAVIA</option>
+                <option value="497">MONGOLIA</option>
+                <option value="498">MONACO</option>
+                <option value="501">MONSERRAT, ISLA</option>
+                <option value="505">MOZAMBIQUE</option>
+                <option value="507">NAMIBIA</option>
+                <option value="508">NAURU</option>
+                <option value="511">NAVIDAD (CHRISTMAS), ISLAS</option>
+                <option value="517">NEPAL</option>
+                <option value="521">NICARAGUA</option>
+                <option value="525">NIGER</option>
+                <option value="528">NIGERIA</option>
+                <option value="531">NIUE, ISLA</option>
+                <option value="535">NORFOLK, ISLA</option>
+                <option value="538">NORUEGA</option>
+                <option value="542">NUEVA CALEDONIA</option>
+                <option value="545">PAPUASIA NUEVA GUINEA</option>
+                <option value="548">NUEVA ZELANDIA</option>
+                <option value="551">VANUATU</option>
+                <option value="556">OMAN</option>
+                <option value="566">PACIFICO, ISLAS (USA)</option>
+                <option value="573">PAISES BAJOS (HOLANDA)</option>
+                <option value="576">PAKISTAN</option>
+                <option value="578">PALAU, ISLAS</option>
+                <option value="580">PANAMA</option>
+                <option value="586">PARAGUAY</option>
+                <option value="589">PERU</option>
+                <option value="593">PITCAIRN, ISLA</option>
+                <option value="599">POLINESIA FRANCESA</option>
+                <option value="603">POLONIA</option>
+                <option value="607">PORTUGAL</option>
+                <option value="611">PUERTO RICO</option>
+                <option value="618">QATAR</option>
+                <option value="628">REINO UNIDO</option>
+                <option value="640">REPUBLICA CENTROAFRICANA</option>
+                <option value="644">REPUBLICA CHECA</option>
+                <option value="647">REPUBLICA DOMINICANA</option>
+                <option value="660">REUNION</option>
+                <option value="665">ZIMBABWE</option>
+                <option value="670">RUMANIA</option>
+                <option value="675">RUANDA</option>
+                <option value="676">RUSIA</option>
+                <option value="677">SALOMON, ISLAS</option>
+                <option value="685">SAHARA OCCIDENTAL</option>
+                <option value="687">SAMOA</option>
+                <option value="690">SAMOA NORTEAMERICANA</option>
+                <option value="695">SAN CRISTOBAL Y NIEVES</option>
+                <option value="697">SAN MARINO</option>
+                <option value="700">SAN PEDRO Y MIGUELON</option>
+                <option value="705">SAN VICENTE Y LAS GRANADINAS</option>
+                <option value="710">SANTA ELENA</option>
+                <option value="715">SANTA LUCIA</option>
+                <option value="720">SANTO TOME Y PRINCIPE</option>
+                <option value="728">SENEGAL</option>
+                <option value="731">SEYCHELLES</option>
+                <option value="735">SIERRA LEONA</option>
+                <option value="741">SINGAPUR</option>
+                <option value="744">SIRIA, REPUBLICA ARABE DE</option>
+                <option value="748">SOMALIA</option>
+                <option value="750">SRI LANKA</option>
+                <option value="756">SUDAFRICA, REPUBLICA DE</option>
+                <option value="759">SUDAN</option>
+                <option value="764">SUECIA</option>
+                <option value="767">SUIZA</option>
+                <option value="770">SURINAM</option>
+                <option value="773">SWAZILANDIA</option>
+                <option value="774">TADJIKISTAN</option>
+                <option value="776">TAILANDIA</option>
+                <option value="780">TANZANIA, REPUBLICA UNIDA DE</option>
+                <option value="783">DJIBOUTI</option>
+                <option value="787">TERRITORIO BRITANICO DEL OCEANO INDICO</option>
+                <option value="788">TIMOR DEL ESTE</option>
+                <option value="800">TOGO</option>
+                <option value="805">TOKELAU</option>
+                <option value="810">TONGA</option>
+                <option value="815">TRINIDAD Y TOBAGO</option>
+                <option value="820">TUNICIA</option>
+                <option value="823">TURCAS Y CAICOS, ISLAS</option>
+                <option value="825">TURKMENISTAN</option>
+                <option value="827">TURQUIA</option>
+                <option value="828">TUVALU</option>
+                <option value="830">UCRANIA</option>
+                <option value="833">UGANDA</option>
+                <option value="845">URUGUAY</option>
+                <option value="847">UZBEKISTAN</option>
+                <option value="850">VENEZUELA</option>
+                <option value="855">VIET NAM</option>
+                <option value="863">VIRGENES, ISLAS (BRITANICAS)</option>
+                <option value="866">VIRGENES, ISLAS (NORTEAMERICANAS)</option>
+                <option value="870">FIJI</option>
+                <option value="875">WALLIS Y FORTUNA, ISLAS</option>
+                <option value="880">YEMEN</option>
+                <option value="885">YUGOSLAVIA</option>
+                <option value="888">ZAIRE</option>
+                <option value="890">ZAMBIA</option>
+                <option value="897">ZONA NEUTRAL PALESTINA</option>
+            </select>
         </div>
 
         <div class="col-md-6">
@@ -588,13 +593,14 @@
 
         <div class="col-md-6">
             <label for="IdTipoContrato" class="required">Tipo de contrato</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoContrato must be a number." data-val-required="The IdTipoContrato field is required." id="IdTipoContrato" name="IdTipoContrato"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Termino Fijo</option>
-<option value="2">T&#233;rmino Indefinido</option>
-<option value="3">Obra o Labor</option>
-<option value="4">Aprendizaje</option>
-<option value="5">Pr&#225;cticas o Pasant&#237;as</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoContrato must be a number." data-val-required="The IdTipoContrato field is required." id="IdTipoContrato" name="IdTipoContrato">
+                <option selected="selected" value="0">SELECCIONE</option>
+                <option value="1">Termino Fijo</option>
+                <option value="2">T&#233;rmino Indefinido</option>
+                <option value="3">Obra o Labor</option>
+                <option value="4">Aprendizaje</option>
+                <option value="5">Pr&#225;cticas o Pasant&#237;as</option>
+            </select>
         </div>
 
 
@@ -663,87 +669,88 @@
         <div class="col-md-6">
             <label for="IdMetodoPago" class="required">Metodos de pago</label>
             <select class="form-control" id="IdMetodoPago" name="IdMetodoPago"><option value="0">SELECCIONE</option>
-<option value="1">Instrumento no definido</option>
-<option value="10">Efectivo</option>
-<option value="11">Reversi&#243;n Cr&#233;dito Ahorro</option>
-<option value="12">Reversi&#243;n D&#233;bito Ahorro</option>
-<option value="13">Cr&#233;dito Ahorro</option>
-<option value="14">D&#233;bito Ahorro</option>
-<option value="15">Bookentry Cr&#233;dito</option>
-<option value="16">Bookentry D&#233;bito</option>
-<option value="17">Concentraci&#243;n de la demanda en efectivo /Desembolso Cr&#233;dito (CCD)</option>
-<option value="18">Concentraci&#243;n de la demanda en efectivo / Desembolso (CCD) d&#233;bito</option>
-<option value="19">Cr&#233;dito Pago negocio corporativo (CTP)</option>
-<option value="2">Cr&#233;dito ACH</option>
-<option value="20">Cheque</option>
-<option value="21">Proyecto bancario</option>
-<option value="22">Proyecto bancario certificado</option>
-<option value="23">Cheque bancario</option>
-<option value="24">Nota cambiaria esperando aceptaci&#243;n</option>
-<option value="25">Cheque certificado</option>
-<option value="26">Cheque Local</option>
-<option value="27">D&#233;bito Pago Negocio Corporativo (CTP)</option>
-<option value="28">Cr&#233;dito Negocio Intercambio Corporativo (CTX)</option>
-<option value="29">D&#233;bito Negocio Intercambio Corporativo (CTX)</option>
-<option value="3">D&#233;bito ACH</option>
-<option value="30">Transferencia Cr&#233;dito</option>
-<option value="31">Transferencia D&#233;bito</option>
-<option value="32">Concentraci&#243;n Efectivo / Desembolso Cr&#233;dito plus (CCD+)</option>
-<option value="33">Concentraci&#243;n Efectivo / Desembolso D&#233;bito plus (CCD+)</option>
-<option value="34">Pago y dep&#243;sito pre acordado (PPD)</option>
-<option value="35">Concentraci&#243;n efectivo ahorros / Desembolso Cr&#233;dito (CCD)</option>
-<option value="37">Pago Negocio Corporativo Ahorros Cr&#233;dito (CTP)</option>
-<option value="38">Pago Negocio Corporativo Ahorros D&#233;bito (CTP)</option>
-<option value="4">Reversi&#243;n d&#233;bito de demanda ACH</option>
-<option value="42">Consignaci&#243;n bancaria</option>
-<option value="44">Nota cambiaria</option>
-<option value="45">Transferencia Cr&#233;dito Bancario</option>
-<option value="46">Transferencia D&#233;bito Interbancario</option>
-<option value="47">Transferencia D&#233;bito Bancaria</option>
-<option value="48">Tarjeta Cr&#233;dito</option>
-<option value="49">Tarjeta D&#233;bito</option>
-<option value="5">Reversi&#243;n cr&#233;dito de demanda ACH&#160;</option>
-<option value="50">Postgiro</option>
-<option value="51">Telex est&#225;ndar bancario franc&#233;s</option>
-<option value="52">Pago comercial urgente</option>
-<option value="53">Pago Tesorer&#237;a Urgente</option>
-<option value="6">Cr&#233;dito de demanda ACH</option>
-<option value="60">Nota promisoria</option>
-<option value="61">Nota promisoria firmada por el acreedor</option>
-<option value="62">Nota promisoria firmada por el acreedor, avalada por el banco</option>
-<option value="63">Nota promisoria firmada por el acreedor, avalada por un tercero</option>
-<option value="64">Nota promisoria firmada por el banco</option>
-<option value="65">Nota promisoria firmada por un banco avalada por otro banco</option>
-<option value="66">Nota promisoria firmada</option>
-<option value="67">Nota promisoria firmada por un tercero avalada por un banco</option>
-<option value="7">D&#233;bito de demanda ACH</option>
-<option value="70">Retiro de nota por el por el acreedor</option>
-<option value="71">Bonos</option>
-<option value="72">Vales</option>
-<option value="75">Retiro de nota por el acreedor, avalada por otro banco</option>
-<option value="76">Retiro de nota por el acreedor, sobre un banco avalada por un tercero</option>
-<option value="77">Retiro de una nota por el acreedor sobre un tercero</option>
-<option value="78">Retiro de una nota por el acreedor sobre un tercero avalada por un banco</option>
-<option value="8">Mantener</option>
-<option value="9">Clearing Nacional o Regional</option>
-<option value="91">Nota bancaria transferible</option>
-<option value="92">Cheque local trasferible</option>
-<option value="93">Giro referenciado</option>
-<option value="94">Giro urgente</option>
-<option value="95">Giro formato abierto</option>
-<option value="96">M&#233;todo de pago solicitado no usado</option>
-<option value="97">Clearing entre partners</option>
-<option value="98">Cuentas de Ahorro de Tramite Simplificado (CATS)(Nequi, Daviplata, etc)</option>
-<option value="ZZZ">Acuerdo mutuo</option>
-</select>
+                <option value="1">Instrumento no definido</option>
+                <option value="10">Efectivo</option>
+                <option value="11">Reversi&#243;n Cr&#233;dito Ahorro</option>
+                <option value="12">Reversi&#243;n D&#233;bito Ahorro</option>
+                <option value="13">Cr&#233;dito Ahorro</option>
+                <option value="14">D&#233;bito Ahorro</option>
+                <option value="15">Bookentry Cr&#233;dito</option>
+                <option value="16">Bookentry D&#233;bito</option>
+                <option value="17">Concentraci&#243;n de la demanda en efectivo /Desembolso Cr&#233;dito (CCD)</option>
+                <option value="18">Concentraci&#243;n de la demanda en efectivo / Desembolso (CCD) d&#233;bito</option>
+                <option value="19">Cr&#233;dito Pago negocio corporativo (CTP)</option>
+                <option value="2">Cr&#233;dito ACH</option>
+                <option value="20">Cheque</option>
+                <option value="21">Proyecto bancario</option>
+                <option value="22">Proyecto bancario certificado</option>
+                <option value="23">Cheque bancario</option>
+                <option value="24">Nota cambiaria esperando aceptaci&#243;n</option>
+                <option value="25">Cheque certificado</option>
+                <option value="26">Cheque Local</option>
+                <option value="27">D&#233;bito Pago Negocio Corporativo (CTP)</option>
+                <option value="28">Cr&#233;dito Negocio Intercambio Corporativo (CTX)</option>
+                <option value="29">D&#233;bito Negocio Intercambio Corporativo (CTX)</option>
+                <option value="3">D&#233;bito ACH</option>
+                <option value="30">Transferencia Cr&#233;dito</option>
+                <option value="31">Transferencia D&#233;bito</option>
+                <option value="32">Concentraci&#243;n Efectivo / Desembolso Cr&#233;dito plus (CCD+)</option>
+                <option value="33">Concentraci&#243;n Efectivo / Desembolso D&#233;bito plus (CCD+)</option>
+                <option value="34">Pago y dep&#243;sito pre acordado (PPD)</option>
+                <option value="35">Concentraci&#243;n efectivo ahorros / Desembolso Cr&#233;dito (CCD)</option>
+                <option value="37">Pago Negocio Corporativo Ahorros Cr&#233;dito (CTP)</option>
+                <option value="38">Pago Negocio Corporativo Ahorros D&#233;bito (CTP)</option>
+                <option value="4">Reversi&#243;n d&#233;bito de demanda ACH</option>
+                <option value="42">Consignaci&#243;n bancaria</option>
+                <option value="44">Nota cambiaria</option>
+                <option value="45">Transferencia Cr&#233;dito Bancario</option>
+                <option value="46">Transferencia D&#233;bito Interbancario</option>
+                <option value="47">Transferencia D&#233;bito Bancaria</option>
+                <option value="48">Tarjeta Cr&#233;dito</option>
+                <option value="49">Tarjeta D&#233;bito</option>
+                <option value="5">Reversi&#243;n cr&#233;dito de demanda ACH&#160;</option>
+                <option value="50">Postgiro</option>
+                <option value="51">Telex est&#225;ndar bancario franc&#233;s</option>
+                <option value="52">Pago comercial urgente</option>
+                <option value="53">Pago Tesorer&#237;a Urgente</option>
+                <option value="6">Cr&#233;dito de demanda ACH</option>
+                <option value="60">Nota promisoria</option>
+                <option value="61">Nota promisoria firmada por el acreedor</option>
+                <option value="62">Nota promisoria firmada por el acreedor, avalada por el banco</option>
+                <option value="63">Nota promisoria firmada por el acreedor, avalada por un tercero</option>
+                <option value="64">Nota promisoria firmada por el banco</option>
+                <option value="65">Nota promisoria firmada por un banco avalada por otro banco</option>
+                <option value="66">Nota promisoria firmada</option>
+                <option value="67">Nota promisoria firmada por un tercero avalada por un banco</option>
+                <option value="7">D&#233;bito de demanda ACH</option>
+                <option value="70">Retiro de nota por el por el acreedor</option>
+                <option value="71">Bonos</option>
+                <option value="72">Vales</option>
+                <option value="75">Retiro de nota por el acreedor, avalada por otro banco</option>
+                <option value="76">Retiro de nota por el acreedor, sobre un banco avalada por un tercero</option>
+                <option value="77">Retiro de una nota por el acreedor sobre un tercero</option>
+                <option value="78">Retiro de una nota por el acreedor sobre un tercero avalada por un banco</option>
+                <option value="8">Mantener</option>
+                <option value="9">Clearing Nacional o Regional</option>
+                <option value="91">Nota bancaria transferible</option>
+                <option value="92">Cheque local trasferible</option>
+                <option value="93">Giro referenciado</option>
+                <option value="94">Giro urgente</option>
+                <option value="95">Giro formato abierto</option>
+                <option value="96">M&#233;todo de pago solicitado no usado</option>
+                <option value="97">Clearing entre partners</option>
+                <option value="98">Cuentas de Ahorro de Tramite Simplificado (CATS)(Nequi, Daviplata, etc)</option>
+                <option value="ZZZ">Acuerdo mutuo</option>
+            </select>
         </div>
 
         <div id="dvTipoCuenta" class="col-md-6">
             <label for="IdTipoCuenta" class="required">Tipo de cuenta</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoCuenta must be a number." data-val-required="The IdTipoCuenta field is required." id="IdTipoCuenta" name="IdTipoCuenta"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Ahorros</option>
-<option value="2">Corriente</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoCuenta must be a number." data-val-required="The IdTipoCuenta field is required." id="IdTipoCuenta" name="IdTipoCuenta">
+                <option selected="selected" value="0">SELECCIONE</option>
+                <option value="1">Ahorros</option>
+                <option value="2">Corriente</option>
+            </select>
         </div>
 
 
@@ -763,13 +770,14 @@
 
                 <div class="col-md-6">
                     <label for="IdBanco" class="required">Banco</label>
-                    <select class="form-control" data-val="true" data-val-number="The field IdBanco must be a number." data-val-required="The IdBanco field is required." id="IdBanco" name="IdBanco"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Bancolombia</option>
-<option value="2">Caja social</option>
-<option value="3">Banco de Bogot&#225;</option>
-<option value="4">Banco del Occidente</option>
-<option value="5">Banco Davivienda</option>
-</select>
+                    <select class="form-control" data-val="true" data-val-number="The field IdBanco must be a number." data-val-required="The IdBanco field is required." id="IdBanco" name="IdBanco">
+                        <option selected="selected" value="0">SELECCIONE</option>
+                        <option value="1">Bancolombia</option>
+                        <option value="2">Caja social</option>
+                        <option value="3">Banco de Bogot&#225;</option>
+                        <option value="4">Banco del Occidente</option>
+                        <option value="5">Banco Davivienda</option>
+                    </select>
                 </div>
 
             </div>
@@ -782,31 +790,31 @@
             <div class="col-md-6">
                 <label for="IdTipoTrabajador" class="required">Tipo de trabajador</label>
                 <select class="form-control" id="IdTipoTrabajador" name="IdTipoTrabajador"><option value="0">SELECCIONE</option>
-<option value="01">Dependiente</option>
-<option value="02">Servicio domestico</option>
-<option value="04">Madre comunitaria</option>
-<option value="12">Aprendices del Sena en etapa lectiva</option>
-<option value="18">Funcionarios p&#250;blicos sin tope m&#225;ximo de ibc</option>
-<option value="19">Aprendices del SENA en etapa productiva</option>
-<option value="21">Estudiantes de postgrado en salud</option>
-<option value="22">Profesor de establecimiento particular</option>
-<option value="23">Estudiantes aportes solo riesgos laborales</option>
-<option value="30">Dependiente entidades o universidades p&#250;blicas con r&#233;gimen especial en salud</option>
-<option value="31">Cooperados o pre cooperativas de trabajo asociado</option>
-<option value="47">Trabajador dependiente de entidad beneficiaria del sistema general de participaciones - aportes patronales</option>
-<option value="51">Trabajador de tiempo parcial.</option>
-<option value="54">Pre pensionado de entidad en liquidaci&#243;n.</option>
-<option value="56">Pre pensionado con aporte voluntario a salud.</option>
-<option value="58">Estudiantes de pr&#225;cticas laborales en el sector p&#250;blico.</option>
-</select>
+                    <option value="01">Dependiente</option>
+                    <option value="02">Servicio domestico</option>
+                    <option value="04">Madre comunitaria</option>
+                    <option value="12">Aprendices del Sena en etapa lectiva</option>
+                    <option value="18">Funcionarios p&#250;blicos sin tope m&#225;ximo de ibc</option>
+                    <option value="19">Aprendices del SENA en etapa productiva</option>
+                    <option value="21">Estudiantes de postgrado en salud</option>
+                    <option value="22">Profesor de establecimiento particular</option>
+                    <option value="23">Estudiantes aportes solo riesgos laborales</option>
+                    <option value="30">Dependiente entidades o universidades p&#250;blicas con r&#233;gimen especial en salud</option>
+                    <option value="31">Cooperados o pre cooperativas de trabajo asociado</option>
+                    <option value="47">Trabajador dependiente de entidad beneficiaria del sistema general de participaciones - aportes patronales</option>
+                    <option value="51">Trabajador de tiempo parcial.</option>
+                    <option value="54">Pre pensionado de entidad en liquidaci&#243;n.</option>
+                    <option value="56">Pre pensionado con aporte voluntario a salud.</option>
+                    <option value="58">Estudiantes de pr&#225;cticas laborales en el sector p&#250;blico.</option>
+                </select>
             </div>
 
             <div class="col-md-6">
                 <label for="IdSubTipoTrabajador" class="required">Sub tipo de trabajador</label>
                 <select class="form-control" id="IdSubTipoTrabajador" name="IdSubTipoTrabajador"><option value="0">SELECCIONE</option>
-<option value="00">No Aplica.</option>
-<option value="01">Dependiente pensionado por vejez activo</option>
-</select>
+                    <option value="00">No Aplica.</option>
+                    <option value="01">Dependiente pensionado por vejez activo</option>
+                </select>
             </div>
 
 
@@ -820,10 +828,10 @@
                 <div class="col-md-6">
                     <label for="IdFormaPago" class="required">Forma de pago</label>
                     <select class="form-control" data-val="true" data-val-number="The field IdFormaPago must be a number." data-val-required="The IdFormaPago field is required." id="IdFormaPago" name="IdFormaPago"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Contado</option>
-<option value="2">Cr&#233;dito</option>
-<option value="3">D&#233;bito</option>
-</select>
+                        <option value="1">Contado</option>
+                        <option value="2">Cr&#233;dito</option>
+                        <option value="3">D&#233;bito</option>
+                    </select>
                 </div>
 
 
@@ -843,14 +851,15 @@
 
                 <div class="col-md-6">
                     <label for="Periocidad" class="required">Periocidad</label>
-                    <select class="form-control" data-val="true" data-val-number="The field IdPeriocidad must be a number." data-val-required="The IdPeriocidad field is required." id="IdPeriocidad" name="IdPeriocidad"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Otro</option>
-<option value="2">Mensual</option>
-<option value="3">Decenal</option>
-<option value="4">Semanal</option>
-<option value="5">Quincenal</option>
-<option value="6">Catorcenal</option>
-</select>
+                    <select class="form-control" data-val="true" data-val-number="The field IdPeriocidad must be a number." data-val-required="The IdPeriocidad field is required." id="IdPeriocidad" name="IdPeriocidad">
+                        <option selected="selected" value="0">SELECCIONE</option>
+                        <option value="1">Otro</option>
+                        <option value="2">Mensual</option>
+                        <option value="3">Decenal</option>
+                        <option value="4">Semanal</option>
+                        <option value="5">Quincenal</option>
+                        <option value="6">Catorcenal</option>
+                    </select>
                 </div>
 
 
@@ -861,13 +870,13 @@
 
                 <div class="col-md-6">
 
-                    <a href="/demo/Nomina/Empleados">Cancelar, regresar al listado</a>
+                    <a href="/demo/Nomina/Empleados.php">Cancelar, regresar al listado</a>
 
                 </div>
 
                 <div class="col-md-6" style="text-align: right;">
 
-                    <button class="btn btn-primary" type="submit" name="action">
+                    <button class="btn btn-primary" type="submit" name="insert_empleado">
                         Guardar
                     </button>
 
@@ -1069,20 +1078,6 @@
                 <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
                 <p>COLOMBIA</p>
                 <p>&copy; Todos los derechos reservados.</p>
-            </div>
-            <div class="col-sm-3 redes">
-                <p>Síguenos en:</p>
-                <div class="redesLogos">
-                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                </div>
-            </div>
-            <div class="col-sm-3 copy">
-                <a href="#" target="_blank">
-                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
-                </a>
             </div>
         </div>
     </div>

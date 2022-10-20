@@ -70,7 +70,7 @@
                         <li><a href="#">Mi perfil</a></li>
                         
                         <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
-                        <li><a href="../Includes/logout.php">Cerrar Sesión</a></li>
+                        <li><a href="/demo/Includes/logout.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,16 +85,16 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">FACTURACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/index.php">Inicio</a></li>
                         <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
                         <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
                         <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
@@ -157,72 +157,41 @@
 
 
 
-<form id="formTerceros" name="formTerceros" class="col-md-12" method="post">
+
+<form id="formPagina" name="formPagina" class="col-md-12" method="post">
 
 
-    <input id="IdTercero" name="IdTercero" type="hidden" />
+
+
+    <input id="IdEmpleado" name="IdEmpleado" type="hidden" />
+
+
+
+
+
 
 
     <div class="row">
 
         <div class="col-md-12">
 
-            <h3>Terceros</h3>
+            <h3>Empleados</h3>
             <hr />
 
         </div>
 
+        <div class="col-md-12" style="text-align: right;">
 
+            <a href="/demo/Nomina/NuevoEmpleado" class="btn btn-primary">Nuevo empleado</a>
+
+        </div>
 
     </div>
     <br />
 
 
-    <div class="row">
 
 
-        <div class="col-md-2">
-            <label>Tipo de cliente</label>
-        </div>
-
-        <div class="col-md-2" style="text-align: right;">
-        </div>
-
-
-        <div class="col-md-8" style="text-align: right;">
-        </div>
-
-
-
-    </div>
-
-    <div class="row">
-
-
-        <div class="col-md-2">
-            <select id="IdTipoCliente" name="IdTipoCliente" class="form-control">
-                <option value="1">Cliente y Proveedor</option>
-                <option value="2">Cliente</option>
-                <option value="3">Proveedor</option>
-                <option value="4">Ninguno</option>
-            </select>
-        </div>
-
-        <div class="col-md-2" style="text-align: right;">
-            <a href="#" class="btn btn-primary" onclick="oForm.Consultar();" >Consultar</a>
-        </div>
-
-
-        <div class="col-md-8" style="text-align: right;">
-
-            <a href="/demo/Gestion/NuevoTercero" class="btn btn-primary">Nuevo tercero</a>
-
-        </div>
-
-
-
-    </div>
-    <br />
 
 
 
@@ -243,20 +212,27 @@
     <br />
 
 
+
+
+
+
+
     <div class="row">
 
         <div id="dvTable" class="col-md-12">
 
-            <table id='tblTerceros' class='table table-striped table-bordered no-footer dtr-inline collapsed' style='width:100%'>
+            <table id='tblEmpleados' class='table table-striped table-bordered no-footer dtr-inline collapsed' style='width:100%'>
                 <thead>
                     <tr>
-                        <th style='width:5%; text-align:center'>#</th>
-                        <th style='width:20%'>Nombre</th>
-                        <th style='width:30%'>Identificación</th>
-                        <th style='width:20%'>Telefonos</th>
-                        <th style='width:20%'>Dirección</th>
-                        <th style='width:5%' class="text-center">Editar</th>
-                        <th style='width:5%' class="text-center">Eliminar</th>
+                        
+                        <th style='text-align:center'>#</th>
+                        <th>Tipo de identificación</th>
+                        <th>Identificación</th>
+                        <th>Empleado</th>
+                        <th>Empezo</th>
+                        <th>Salario</th>
+                        <th class="text-center">Opciones</th>
+
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -266,6 +242,9 @@
 
     </div>
     <br />
+
+
+
 
 
 
@@ -338,85 +317,63 @@
 
     var oForm = new function () {
 
-        this.lstTerceros = [];
+        this.lstEmpleados = [];
         this.Url = null;
         this.UrlLoader = null;
-        this.IdTercero = null;
+        this.IdEmpleado = null;
 
 
         this.init = function () {
 
-            this.Consultar();
-
-
-
-        };
-
-
-
-
-
-        this.Consultar = function () {
-
-
             this.mostrarloader();
-
-
-
-            var jsData = '{"t":"' + $("#IdTipoCliente").val() + '"  }';
-
-            $.ajax({
-                url: this.Url + "ConsultarTerceros",
-                dataType: 'json',
-                contentType: "application/json",
-                type: "POST",
-                data: jsData,
-                success: function (data) {
-
-                    oForm.lstTerceros = data;
-                    oForm.mostrarTerceros();
-
-                }
-            });
+            this.mostrarEmpleados();
 
         };
 
 
+        this.mostrarEmpleados = function () {
 
-        this.mostrarTerceros = function () {
 
-            var table = $('#tblTerceros').DataTable();
+            var table = $('#tblEmpleados').DataTable();
             table.destroy(); 
 
             
 
             var htmlContent = "";
 
-            if (this.lstTerceros.length > 0) {
+            if (this.lstEmpleados.length > 0) {
 
-                for (var i = 0; i < this.lstTerceros.length; i++) {
+                for (var i = 0; i < this.lstEmpleados.length; i++) {
 
-                    var item = this.lstTerceros[i];
+                    var item = this.lstEmpleados[i];
 
                     htmlContent += "<tr>";
                     htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
-                    htmlContent += "<td>" + item.RazonSocial +"</td>";
-                    htmlContent += "<td>" + item.Identificacion +"</b></td>";
-                    htmlContent += "<td>" + item.Telefonos + "</td>";
-                    htmlContent += "<td>" + item.Direccion + "</td>";
-                    htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.Editar(this);' oData='" + JSON.stringify(item) + "' href='#' title='Editar'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";
+                    htmlContent += "<td>" + item.sTipoDocumento +"</td>";
+                    htmlContent += "<td>" + item.NumeroDocumento +"</b></td>";
+                    htmlContent += "<td>" + item.NombreCompleto +"</td>";
+                    htmlContent += "<td>" + item.sFechaInicioContrato + "</td>";
+                    htmlContent += "<td style='text-align:right' >$" + item.sSueldo + "</td>";
+                 
 
-                    if(item.SwTieneFacturas == 1){
-                        htmlContent += "<td></td>";
-                    }else{
-                        htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.mostrarEliminar("+ item.IdTercero +");' href='#' title='Editar'><i class='fa fa-trash' aria-hidden='true'></i></a></td>";
+                    // Opciones
+
+                    htmlContent += "<td class='text-center' >";
+
+                    htmlContent += "<a id='" + item.Consecutivo + "' class='btnOption' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#' title='Opciones'><i class='fa fa-bars' aria-hidden='true'></i></a>";
+                    htmlContent += "<div class='dropdown-menu' aria-labelledby='"+ item.Consecutivo +"'>";
+
+                    htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.Editar(" + item.IdEmpleado + ");'  >Editar</a>";
+
+
+                    if(item.SwTieneNominas == 0){
+
+                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.mostrarEliminar(" + item.IdEmpleado + ");' >Eliminar</a>";
+                    
                     }
 
-                    
-
-
-
                     htmlContent += "</tr>";
+
 
                 }
 
@@ -427,9 +384,9 @@
             }
 
             this.cerrarloader();
-            $("#tblTerceros tbody").html(htmlContent);
+            $("#tblEmpleados tbody").html(htmlContent);
 
-            $("#tblTerceros").DataTable({
+            $("#tblEmpleados").DataTable({
                 searching:true,
                 ordering:true,
                 paging:true,
@@ -443,9 +400,8 @@
 
         this.Editar = function (b) {
 
-            var oTercero = JSON.parse($(b).attr("oData"));
-            $("#IdTercero").val(oTercero.IdTercero);
-            document.getElementById("formTerceros").submit();
+            $("#IdEmpleado").val(b);
+            document.getElementById("formPagina").submit();
 
         };
 
@@ -465,15 +421,15 @@
 
         this.mostrarEliminar = function (id) {
 
-            this.IdTercero = id;
+            this.IdEmpleado = id;
 
-            for (var i = 0; i < this.lstTerceros.length; i++) {
+            for (var i = 0; i < this.lstEmpleados.length; i++) {
 
-                var item = this.lstTerceros[i];
+                var item = this.lstEmpleados[i];
           
-                if(item.IdTercero == id){
+                if(item.IdEmpleado == id){
                     
-                    $("#lblMensaje").html("¿Esta seguro que desea eliminar a " + item.RazonSocial + "?");
+                    $("#lblMensaje").html("¿Esta seguro que desea eliminar a " + item.NombreCompleto + "?");
                 
                 }
 
@@ -494,18 +450,18 @@
             this.cerrarAsistente();
             this.mostrarloader();
 
-            var jsData = '{"i":"' + this.IdTercero + '"  }';
+            var jsData = '{"i":"' + this.IdEmpleado + '"  }';
 
             $.ajax({
-                url: this.Url + "EliminarTercero",
+                url: this.Url + "EliminarEmpleado",
                 dataType: 'json',
                 contentType: "application/json",
                 type: "POST",
                 data: jsData,
                 success: function (data) {
 
-                    oForm.lstTerceros = data;
-                    oForm.mostrarTerceros();
+                    oForm.lstEmpleados = data;
+                    oForm.mostrarEmpleados();
 
                 }
             });
@@ -525,8 +481,8 @@
 
 <script type="text/javascript">
 
-    oForm.lstTerceros = null;
-    oForm.Url = "/demo/Gestion/";
+    oForm.lstEmpleados = [{"Consecutivo":1,"IdEmpleado":10110001,"IdEmpresa":1011,"IdTipoTrabajador":"01","IdSubTipoTrabajador":"00","IdTipoDocumento":13,"sTipoDocumento":"Cédula de ciudadanía","NumeroDocumento":"1","PrimerApellido":"R","SegundoApellido":"","PrimerNombre":"A","OtrosNombres":"R","NombreCompleto":"A R R ","IdPaisTrabajo":"169","IdDepartamento":91,"IdMunicipio":91263,"DireccionTrabajo":"CL","SwSalarioIntegral":0,"IdTipoContrato":2,"Sueldo":1200000.00,"sSueldo":"1.200.000,00","IdFormaPago":1,"IdMetodoPago":"13","IdBanco":0,"IdTipoCuenta":0,"NumeroCuenta":"","SwTieneNominas":1,"Email":null,"Telefono":null,"sFechaInicioContrato":"01/01/2022","sFechaFinalContrato":"01/01/1900","IdPeriocidad":0,"AuxilioTransporte":0,"sAuxilioTransporte":null,"Dias":-44560,"SwAltoRiesgo":0}];
+    oForm.Url = "/demo/Nomina/";
     oForm.UrlLoader = "/demo/Content/img/loader.gif";
 
 </script>

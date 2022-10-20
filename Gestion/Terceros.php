@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +65,7 @@
                 <div class="notifBtn">
                     
                 </div>
-                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">NombreUsuario </span> <i class="fa fa-caret-right"></i></a>
                 <div class="dropdownMenuUser collapse" id="collapseExample">
                     <ul>
                         <li><a href="#">Mi perfil</a></li>
@@ -85,16 +86,16 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">FACTURACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/index.php">Inicio</a></li>
                         <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
                         <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
                         <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
@@ -157,40 +158,106 @@
 
 
 
-<form class="col-md-12" method="post">
+<form id="formTerceros" name="formTerceros" class="col-md-12" method="post">
+
+
+    <input id="IdTercero" name="IdTercero" type="hidden" />
 
 
     <div class="row">
 
-        <div class="col-md-8">
+        <div class="col-md-12">
 
-            <h3>Tipo de unidades</h3>
+            <h3>Terceros</h3>
             <hr />
 
         </div>
 
+
+
+    </div>
+    <br />
+
+
+    <div class="row">
+
+
+        <div class="col-md-2">
+            <label>Tipo de cliente</label>
+        </div>
+
+        <div class="col-md-2" style="text-align: right;">
+        </div>
+
+
+        <div class="col-md-8" style="text-align: right;">
+        </div>
+
+
+
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-md-2">
+            <select id="IdTipoCliente" name="IdTipoCliente" class="form-control">
+                <option value="1">Cliente y Proveedor</option>
+                <option value="2">Cliente</option>
+                <option value="3">Proveedor</option>
+                <option value="4">Ninguno</option>
+            </select>
+        </div>
+
+        <div class="col-md-2" style="text-align: right;">
+            <a href="#" class="btn btn-primary" onclick="oForm.Consultar();" >Consultar</a>
+        </div>
+
+
         <div class="col-md-8" style="text-align: right;">
 
-            <input id="BtnAgregar" type="button" onclick="oForm.NuevoTipoUnidad();" class="btn btn-primary" value="Nuevo tipo de unidad" />
+            <a href="/demo/Gestion/NuevoTercero" class="btn btn-primary">Nuevo tercero</a>
+
+        </div>
+
+
+
+    </div>
+    <br />
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-12 text-center">
+
+            <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
 
         </div>
 
     </div>
     <br />
 
-    <div id="loader" class="spinner-border text-success text-center" style="width: 3rem; height: 3rem; text-align:center;" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
 
     <div class="row">
 
-        <div class="col-md-8">
+        <div id="dvTable" class="col-md-12">
 
-            <table id='tblTipoUnidades' class='table table-bordered table-striped' style='width:100%'>
+            <table id='tblTerceros' class='table table-striped table-bordered no-footer dtr-inline collapsed' style='width:100%'>
                 <thead>
                     <tr>
-                        <th style='width:5%; text-align:center' >#</th>
-                        <th style='width:95%' >Tipo de unidad</th>
+                        <th style='width:5%; text-align:center'>#</th>
+                        <th style='width:20%'>Nombre</th>
+                        <th style='width:30%'>Identificación</th>
+                        <th style='width:20%'>Telefonos</th>
+                        <th style='width:20%'>Dirección</th>
+                        <th style='width:5%' class="text-center">Editar</th>
+                        <th style='width:5%' class="text-center">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -201,66 +268,66 @@
     </div>
     <br />
 
+
+
+
+
+
 </form>
 
 
 
 
 
-<div id="mNuevo" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+
+<div id="mEliminar" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+
     <div class="modal-dialog modal-lg" role="document">
+
         <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="titModal">Nuevo tipo de unidad</h4>
+                <h4 class="titModal">Eliminar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+
 
             <div class="modal-body">
 
                 <div class="row">
                     <div class="col-md-12">
-                        <label>Descripción</label>
-                        <input class="form-control" name="Descripcion" id="Descripcion" type="text" maxlength="50">
+                       <label id="lblMensaje" ></label>
                     </div>
                 </div>
-                <br />
-
-
-                <div class="row">
-                    <div class="notification alert-danger col-md-12" id="vErrores" hidden>
-                        <div class="row">
-                            <div class="col-md-1 text-center"><i class="material-icons">warning</i></div>
-                            <div id="ErrorMessage" class="col-md-11">
-                                <span class="h4">¡Alerta!</span>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br />
 
             </div>
 
+
             <div class="modal-footer">
 
-                <button class="btn btn-secondary" type="submit" name="action" onclick="return oForm.cerrarModal();">
-                    Cerrar
-                </button>
+                <input type="button" id="btnCancelar" Onclick="return oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
 
-                <button class="btn btn-primary" type="submit" name="action" onclick="oForm.validate();">
+                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.Eliminar();">
                     Aceptar
                 </button>
 
             </div>
 
+
         </div>
+
     </div>
+
 </div>
 
 
 
 
 <script type="text/javascript">
+
 
     $(document).ready(function () {
 
@@ -269,48 +336,90 @@
     });
 
 
+
     var oForm = new function () {
 
-
-        this.lstUnidades = [];
+        this.lstTerceros = [];
         this.Url = null;
         this.UrlLoader = null;
-
+        this.IdTercero = null;
 
 
         this.init = function () {
 
-            this.mostrarUnidades();
+            this.Consultar();
+
+
 
         };
 
-        this.mostrarUnidades = function () {
 
 
-            var table = $('#tblTipoUnidades').DataTable();
+
+
+        this.Consultar = function () {
+
+
+            this.mostrarloader();
+
+
+
+            var jsData = '{"t":"' + $("#IdTipoCliente").val() + '"  }';
+
+            $.ajax({
+                url: this.Url + "ConsultarTerceros",
+                dataType: 'json',
+                contentType: "application/json",
+                type: "POST",
+                data: jsData,
+                success: function (data) {
+
+                    oForm.lstTerceros = data;
+                    oForm.mostrarTerceros();
+
+                }
+            });
+
+        };
+
+
+
+        this.mostrarTerceros = function () {
+
+            var table = $('#tblTerceros').DataTable();
             table.destroy(); 
 
-
-            $("#loader").hide();
+            
 
             var htmlContent = "";
 
-            if (this.lstUnidades.length > 0) {
+            if (this.lstTerceros.length > 0) {
 
-                for (var i = 0; i < this.lstUnidades.length; i++) {
+                for (var i = 0; i < this.lstTerceros.length; i++) {
 
-                    var item = this.lstUnidades[i];
+                    var item = this.lstTerceros[i];
 
                     htmlContent += "<tr>";
-
                     htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
-                    htmlContent += "<td>" + item.Descripcion + "</td>";
+                    htmlContent += "<td>" + item.RazonSocial +"</td>";
+                    htmlContent += "<td>" + item.Identificacion +"</b></td>";
+                    htmlContent += "<td>" + item.Telefonos + "</td>";
+                    htmlContent += "<td>" + item.Direccion + "</td>";
+                    htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.Editar(this);' oData='" + JSON.stringify(item) + "' href='#' title='Editar'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";
+
+                    if(item.SwTieneFacturas == 1){
+                        htmlContent += "<td></td>";
+                    }else{
+                        htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.mostrarEliminar("+ item.IdTercero +");' href='#' title='Editar'><i class='fa fa-trash' aria-hidden='true'></i></a></td>";
+                    }
+
+                    
+
+
 
                     htmlContent += "</tr>";
 
                 }
-
-                htmlContent += "</tbody></table>";
 
             } else {
 
@@ -318,11 +427,10 @@
 
             }
 
+            this.cerrarloader();
+            $("#tblTerceros tbody").html(htmlContent);
 
-
-            $("#tblTipoUnidades tbody").html(htmlContent);
-
-            $("#tblTipoUnidades").DataTable({
+            $("#tblTerceros").DataTable({
                 searching:true,
                 ordering:true,
                 paging:true,
@@ -332,95 +440,93 @@
                 }
             });
 
+        };
+
+        this.Editar = function (b) {
+
+            var oTercero = JSON.parse($(b).attr("oData"));
+            $("#IdTercero").val(oTercero.IdTercero);
+            document.getElementById("formTerceros").submit();
 
         };
 
-        this.NuevoTipoUnidad = function (){
+        this.mostrarloader = function () {
 
-            $("#vErrores").hide();
-
-            $("#Descripcion").val("");
-            
-            $("#mNuevo").modal({ show: true });
+            $("#loader").show();
+            $("#dvTable").hide();
 
         };
 
-        this.Guardar = function (){
-        
-            $("#mNuevo").modal("hide");
+        this.cerrarloader = function () {
 
-            var jsData = '{"d":"' + $("#Descripcion").val() + '" }';
+            $("#loader").hide();
+            $("#dvTable").show();
+
+        };
+
+        this.mostrarEliminar = function (id) {
+
+            this.IdTercero = id;
+
+            for (var i = 0; i < this.lstTerceros.length; i++) {
+
+                var item = this.lstTerceros[i];
+          
+                if(item.IdTercero == id){
+                    
+                    $("#lblMensaje").html("¿Esta seguro que desea eliminar a " + item.RazonSocial + "?");
+                
+                }
+
+            }
+
+            $("#mEliminar").modal({ show: true  });
+
+        };
+
+        this.cerrarAsistente = function () {
+
+            $("#mEliminar").modal("hide");
+
+        };
+
+        this.Eliminar = function () {
+
+            this.cerrarAsistente();
+            this.mostrarloader();
+
+            var jsData = '{"i":"' + this.IdTercero + '"  }';
 
             $.ajax({
-                url: this.Url + "NuevoTipoUnidad",
+                url: this.Url + "EliminarTercero",
                 dataType: 'json',
                 contentType: "application/json",
                 type: "POST",
                 data: jsData,
                 success: function (data) {
 
-                    oForm.lstUnidades = data;
-                    oForm.mostrarUnidades();
+                    oForm.lstTerceros = data;
+                    oForm.mostrarTerceros();
 
                 }
             });
 
-
-
-
-        
         };
 
-        this.cerrarModal = function (){
-
-            $("#mNuevo").modal("hide");
-
-        };
-
-        this.validate = function () {
-
-
-           var htmlContent = "";
-
-
-           if ($('#Descripcion').val().trim().length == 0) {
-
-                htmlContent += "<li>El campo descripción es obligatorio.</li>";
-
-            }
-
-           if (htmlContent.length > 0) {
-
-               this.showError(htmlContent);
-
-           }
-           else {
-
-               this.Guardar();
-           
-           }
-
-
-        };
-
-        this.showError = function (m) {
-
-            $("#ErrorMessage").html("<h5>¡Alerta!</h5>" + m);
-            $("#vErrores").show();
-
-        };
 
 
     }
+
 
 
 </script>
 
 
 
+
 <script type="text/javascript">
 
-    oForm.lstUnidades = [{"IdTipoUnidad":4,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO","Consecutivo":1},{"IdTipoUnidad":6,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO CUADRADO","Consecutivo":2},{"IdTipoUnidad":7,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO CUBICO","Consecutivo":3},{"IdTipoUnidad":11,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"GALON","Consecutivo":4},{"IdTipoUnidad":2,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"GRAMO","Consecutivo":5},{"IdTipoUnidad":3,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"KILOGRAMO","Consecutivo":6},{"IdTipoUnidad":12,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"LIBRAS","Consecutivo":7},{"IdTipoUnidad":1,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"LITRO","Consecutivo":8},{"IdTipoUnidad":9,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"METRO","Consecutivo":9},{"IdTipoUnidad":10,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"MILILITROS","Consecutivo":10},{"IdTipoUnidad":5,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"PULGADA","Consecutivo":11},{"IdTipoUnidad":8,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"UNIDAD","Consecutivo":12}];
+    oForm.lstTerceros = null;
     oForm.Url = "/demo/Gestion/";
     oForm.UrlLoader = "/demo/Content/img/loader.gif";
 

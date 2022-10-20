@@ -85,10 +85,10 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
@@ -206,7 +206,7 @@
 
 
 
-<form action="/demo/Gestion/NuevoProducto" class="col-md-12" method="post"><input name="__RequestVerificationToken" type="hidden" value="fTKpg-y0mbxA4ywra85AoDO5YQdqAGds9v-BK-O6v3GZ_O6HGOxwZwLspIXFvZj535nrsiP90zRoSzvq1k_-iPLzC-IpBPsfk3I82M7y-Dc1" /><input data-val="true" data-val-number="The field IdEmpresa must be a number." data-val-required="The IdEmpresa field is required." id="IdEmpresa" name="IdEmpresa" type="hidden" value="1011" />    <div class="row">
+<form action="../Controller/Create.php" class="col-md-12" method="post"><input name="__RequestVerificationToken" type="hidden" value="fTKpg-y0mbxA4ywra85AoDO5YQdqAGds9v-BK-O6v3GZ_O6HGOxwZwLspIXFvZj535nrsiP90zRoSzvq1k_-iPLzC-IpBPsfk3I82M7y-Dc1" /><input data-val="true" data-val-number="The field IdEmpresa must be a number." data-val-required="The IdEmpresa field is required." id="IdEmpresa" name="IdEmpresa" type="hidden" value="1011" />    <div class="row">
         <div class="col-md-12">
             <h3>Nuevo producto</h3>
             <hr />
@@ -256,20 +256,21 @@
     <div class="row">
         <div class="col-md-6">
             <label for="IdTipoUnidad" class="required">Tipo unidades</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoUnidad must be a number." data-val-required="The IdTipoUnidad field is required." id="IdTipoUnidad" name="IdTipoUnidad"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">LITRO</option>
-<option value="2">GRAMO</option>
-<option value="3">KILOGRAMO</option>
-<option value="4">CENTIMETRO</option>
-<option value="5">PULGADA</option>
-<option value="6">CENTIMETRO CUADRADO</option>
-<option value="7">CENTIMETRO CUBICO</option>
-<option value="8">UNIDAD</option>
-<option value="9">METRO</option>
-<option value="10">MILILITROS</option>
-<option value="11">GALON</option>
-<option value="12">LIBRAS</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoUnidad must be a number." data-val-required="The IdTipoUnidad field is required." id="IdTipoUnidad" name="IdTipoUnidad">
+                <option selected="selected" value="0">SELECCIONE</option>
+                <option value="1">LITRO</option>
+                <option value="2">GRAMO</option>
+                <option value="3">KILOGRAMO</option>
+                <option value="4">CENTIMETRO</option>
+                <option value="5">PULGADA</option>
+                <option value="6">CENTIMETRO CUADRADO</option>
+                <option value="7">CENTIMETRO CUBICO</option>
+                <option value="8">UNIDAD</option>
+                <option value="9">METRO</option>
+                <option value="10">MILILITROS</option>
+                <option value="11">GALON</option>
+                <option value="12">LIBRAS</option>
+            </select>
         </div>
 
         <div class="col-md-3">
@@ -279,10 +280,11 @@
 
         <div class="col-md-3">
             <label for="IdTipoMoneda" class="required">Tipo de moneda</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoMoneda must be a number." data-val-required="The IdTipoMoneda field is required." id="IdTipoMoneda" name="IdTipoMoneda"><option selected="selected" value="0">SELECCIONE</option>
-<option value="1">Pesos Colombianos</option>
-<option value="2">D&#243;lares Americanos</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoMoneda must be a number." data-val-required="The IdTipoMoneda field is required." id="IdTipoMoneda" name="IdTipoMoneda">
+                <option selected="selected" value="0">SELECCIONE</option>
+                <option value="1">Pesos Colombianos</option>
+                <option value="2">D&#243;lares Americanos</option>
+            </select>
         </div>
 
     </div>
@@ -308,22 +310,22 @@
             <div class="col-md-6">
                 <label for="ImpuestoVentas" class="required">Tarifa  Impuesto de Ventas</label>
                 <select class="form-control" data-val="true" data-val-number="The field IdTipoTarifa must be a number." data-val-required="The IdTipoTarifa field is required." id="IdTipoTarifa" name="IdTipoTarifa"><option selected="selected" value="-1">SELECCIONE</option>
-<option value="0">0%</option>
-<option value="5">5%</option>
-<option value="19">19%</option>
-<option value="16">16%</option>
-</select>
+                    <option value="0">0%</option>
+                    <option value="5">5%</option>
+                    <option value="19">19%</option>
+                    <option value="16">16%</option>
+                </select>
             </div>
 
             <div class="col-md-4">
                 <label for="ImpuestoConsumo" class="required">Tarifa Impuesto al Consumo</label>
                 <select class="form-control" data-val="true" data-val-number="The field IdTipoImpoconsumo must be a number." data-val-required="The IdTipoImpoconsumo field is required." id="IdTipoImpoconsumo" name="IdTipoImpoconsumo"><option value="-1">SELECCIONE</option>
-<option value="1">No aplica 0 %</option>
-<option value="2">Tarifa especial 2 %</option>
-<option value="3">Tarifa especial 4 %</option>
-<option value="4">Tarifa general 8 %</option>
-<option value="5">Tarifa especial 16 %</option>
-</select>
+                    <option value="1">No aplica 0 %</option>
+                    <option value="2">Tarifa especial 2 %</option>
+                    <option value="3">Tarifa especial 4 %</option>
+                    <option value="4">Tarifa general 8 %</option>
+                    <option value="5">Tarifa especial 16 %</option>
+                </select>
             </div>
 
             <div id="dvValorFijo" class="col-md-2">
@@ -410,13 +412,13 @@
 
         <div class="col-md-6">
 
-            <a href="/demo/Gestion/Productos">Cancelar, regresar al listado</a>
+            <a href="/demo/Gestion/Productos.php">Cancelar, regresar al listado</a>
 
         </div>
 
         <div class="col-md-6" style="text-align: right;">
 
-            <button class="btn btn-primary" type="submit" name="action">
+            <button class="btn btn-primary" type="submit" name="insert_producto">
                 Guardar
             </button>
 
@@ -725,20 +727,6 @@
                 <p>NOBUTIC - FACTURACIÓN ELECTRÓNICA</p>
                 <p>COLOMBIA</p>
                 <p>&copy; Todos los derechos reservados.</p>
-            </div>
-            <div class="col-sm-3 redes">
-                <p>Síguenos en:</p>
-                <div class="redesLogos">
-                    <a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
-                </div>
-            </div>
-            <div class="col-sm-3 copy">
-                <a href="#" target="_blank">
-                    <img src="/demo/Content/images/logoDeveloped.png" class="img-fluid" />
-                </a>
             </div>
         </div>
     </div>

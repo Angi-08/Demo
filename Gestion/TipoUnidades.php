@@ -1,3 +1,16 @@
+<?php 
+    session_start(); 
+
+    include_once '../includes/db.php';
+    $objeto = new DB();
+    $conexion = $objeto->connect();
+
+    $consulta = "SELECT * FROM unidades";
+    $resultado = $conexion->prepare($consulta);
+    $resultado->execute();
+    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,13 +77,13 @@
                 <div class="notifBtn">
                     
                 </div>
-                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">NombreUsuario </span> <i class="fa fa-caret-right"></i></a>
                 <div class="dropdownMenuUser collapse" id="collapseExample">
                     <ul>
                         <li><a href="#">Mi perfil</a></li>
                         
                         <li><a href="/demo/Inicio/CambiarClave">Cambiar Clave</a></li>
-                        <li><a href="/demo/Includes/logout.php">Cerrar Sesión</a></li>
+                        <li><a href="../Includes/logout.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,16 +98,16 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">FACTURACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/index.php">Inicio</a></li>
                         <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
                         <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
                         <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
@@ -157,85 +170,52 @@
 
 
 
-
-<form id="formPagina" name="formPagina" class="col-md-12" method="post">
-
-
-
-
-    <input id="IdEmpleado" name="IdEmpleado" type="hidden" />
-
-
-
-
-
+<form class="col-md-12" method="post">
 
 
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-8">
 
-            <h3>Empleados</h3>
+            <h3>Tipo de unidades</h3>
             <hr />
 
         </div>
 
-        <div class="col-md-12" style="text-align: right;">
+        <div class="col-md-8" style="text-align: right;">
 
-            <a href="/demo/Nomina/NuevoEmpleado" class="btn btn-primary">Nuevo empleado</a>
-
-        </div>
-
-    </div>
-    <br />
-
-
-
-
-
-
-
-
-
-
-    <div class="row">
-
-        <div class="col-md-12 text-center">
-
-            <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+            <input id="BtnAgregar" type="button" onclick="oForm.NuevoTipoUnidad();" class="btn btn-primary" value="Nuevo tipo de unidad" />
 
         </div>
 
     </div>
     <br />
 
-
-
-
-
-
+    <div id="loader" class="spinner-border text-success text-center" style="width: 3rem; height: 3rem; text-align:center;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
 
     <div class="row">
 
-        <div id="dvTable" class="col-md-12">
+        <div class="col-md-8">
 
-            <table id='tblEmpleados' class='table table-striped table-bordered no-footer dtr-inline collapsed' style='width:100%'>
+            <table id='tblTipoUnidades' class='table table-bordered table-striped' style='width:100%'>
                 <thead>
                     <tr>
-                        
-                        <th style='text-align:center'>#</th>
-                        <th>Tipo de identificación</th>
-                        <th>Identificación</th>
-                        <th>Empleado</th>
-                        <th>Empezo</th>
-                        <th>Salario</th>
-                        <th class="text-center">Opciones</th>
-
+                        <th style='width:5%; text-align:center' >#</th>
+                        <th style='width:95%' >Tipo de unidad</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                <?php
+                        foreach($data as $dat){
+                    ?>
+                    <tr role="row" class="odd">
+                        <td style="text-align:center" tabindex="0" class="sorting_1"><b><?php echo $dat['idunidad'] ?></b></td>
+                        <td><?php echo $dat['nombre'] ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
             </table>
 
         </div>
@@ -243,69 +223,66 @@
     </div>
     <br />
 
-
-
-
-
-
-
-
-
 </form>
 
 
 
 
 
-
-
-<div id="mEliminar" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
-
+<div id="mNuevo" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-
         <div class="modal-content">
-
+            <form method="POST" action="../Controller/Create.php">
             <div class="modal-header">
-                <h4 class="titModal">Eliminar</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h4 class="titModal">Nuevo tipo de unidad</h4>
             </div>
-
 
             <div class="modal-body">
 
                 <div class="row">
                     <div class="col-md-12">
-                       <label id="lblMensaje" ></label>
+                        <label>Descripción</label>
+                        <input class="form-control" name="Descripcion" id="Descripcion" type="text" maxlength="50">
                     </div>
                 </div>
+                <br />
+
+
+                <div class="row">
+                    <div class="notification alert-danger col-md-12" id="vErrores" hidden>
+                        <div class="row">
+                            <div class="col-md-1 text-center"><i class="material-icons">warning</i></div>
+                            <div id="ErrorMessage" class="col-md-11">
+                                <span class="h4">¡Alerta!</span>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
 
             </div>
 
-
             <div class="modal-footer">
 
-                <input type="button" id="btnCancelar" Onclick="return oForm.cerrarAsistente();" class="btn btn-secondary" value="Cancelar" />
+                <button class="btn btn-secondary" type="submit" name="insert_unidad">
+                    Cerrar
+                </button>
 
-                <button class="btn btn-primary" type="submit" name="action" onclick="return oForm.Eliminar();">
+                <button class="btn btn-primary" type="submit" name="action" onclick="oForm.validate();">
                     Aceptar
                 </button>
 
             </div>
 
-
         </div>
-
     </div>
-
 </div>
 
 
 
 
 <script type="text/javascript">
-
 
     $(document).ready(function () {
 
@@ -314,68 +291,44 @@
     });
 
 
-
     var oForm = new function () {
 
-        this.lstEmpleados = [];
+
+        this.lstUnidades = [];
         this.Url = null;
         this.UrlLoader = null;
-        this.IdEmpleado = null;
 
 
-        this.init = function () {
 
-            this.mostrarloader();
-            this.mostrarEmpleados();
+        
 
-        };
+        this.mostrarUnidades = function () {
 
 
-        this.mostrarEmpleados = function () {
-
-
-            var table = $('#tblEmpleados').DataTable();
+            var table = $('#tblTipoUnidades').DataTable();
             table.destroy(); 
 
-            
+
+            $("#loader").hide();
 
             var htmlContent = "";
 
-            if (this.lstEmpleados.length > 0) {
+            if (this.lstUnidades.length > 0) {
 
-                for (var i = 0; i < this.lstEmpleados.length; i++) {
+                for (var i = 0; i < this.lstUnidades.length; i++) {
 
-                    var item = this.lstEmpleados[i];
+                    var item = this.lstUnidades[i];
 
                     htmlContent += "<tr>";
+
                     htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
-                    htmlContent += "<td>" + item.sTipoDocumento +"</td>";
-                    htmlContent += "<td>" + item.NumeroDocumento +"</b></td>";
-                    htmlContent += "<td>" + item.NombreCompleto +"</td>";
-                    htmlContent += "<td>" + item.sFechaInicioContrato + "</td>";
-                    htmlContent += "<td style='text-align:right' >$" + item.sSueldo + "</td>";
-                 
-
-                    // Opciones
-
-                    htmlContent += "<td class='text-center' >";
-
-                    htmlContent += "<a id='" + item.Consecutivo + "' class='btnOption' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#' title='Opciones'><i class='fa fa-bars' aria-hidden='true'></i></a>";
-                    htmlContent += "<div class='dropdown-menu' aria-labelledby='"+ item.Consecutivo +"'>";
-
-                    htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.Editar(" + item.IdEmpleado + ");'  >Editar</a>";
-
-
-                    if(item.SwTieneNominas == 0){
-
-                        htmlContent += "<a class='dropdown-item' href='#' onclick='oForm.mostrarEliminar(" + item.IdEmpleado + ");' >Eliminar</a>";
-                    
-                    }
+                    htmlContent += "<td>" + item.Descripcion + "</td>";
 
                     htmlContent += "</tr>";
 
-
                 }
+
+                htmlContent += "</tbody></table>";
 
             } else {
 
@@ -383,10 +336,11 @@
 
             }
 
-            this.cerrarloader();
-            $("#tblEmpleados tbody").html(htmlContent);
 
-            $("#tblEmpleados").DataTable({
+
+            $("#tblTipoUnidades tbody").html(htmlContent);
+
+            $("#tblTipoUnidades").DataTable({
                 searching:true,
                 ordering:true,
                 paging:true,
@@ -396,93 +350,96 @@
                 }
             });
 
-        };
-
-        this.Editar = function (b) {
-
-            $("#IdEmpleado").val(b);
-            document.getElementById("formPagina").submit();
 
         };
 
-        this.mostrarloader = function () {
+        this.NuevoTipoUnidad = function (){
 
-            $("#loader").show();
-            $("#dvTable").hide();
+            $("#vErrores").hide();
 
-        };
-
-        this.cerrarloader = function () {
-
-            $("#loader").hide();
-            $("#dvTable").show();
+            $("#Descripcion").val("");
+            
+            $("#mNuevo").modal({ show: true });
 
         };
 
-        this.mostrarEliminar = function (id) {
+        this.Guardar = function (){
+        
+            $("#mNuevo").modal("hide");
 
-            this.IdEmpleado = id;
-
-            for (var i = 0; i < this.lstEmpleados.length; i++) {
-
-                var item = this.lstEmpleados[i];
-          
-                if(item.IdEmpleado == id){
-                    
-                    $("#lblMensaje").html("¿Esta seguro que desea eliminar a " + item.NombreCompleto + "?");
-                
-                }
-
-            }
-
-            $("#mEliminar").modal({ show: true  });
-
-        };
-
-        this.cerrarAsistente = function () {
-
-            $("#mEliminar").modal("hide");
-
-        };
-
-        this.Eliminar = function () {
-
-            this.cerrarAsistente();
-            this.mostrarloader();
-
-            var jsData = '{"i":"' + this.IdEmpleado + '"  }';
+            var jsData = '{"d":"' + $("#Descripcion").val() + '" }';
 
             $.ajax({
-                url: this.Url + "EliminarEmpleado",
+                url: this.Url + "NuevoTipoUnidad",
                 dataType: 'json',
                 contentType: "application/json",
                 type: "POST",
                 data: jsData,
                 success: function (data) {
 
-                    oForm.lstEmpleados = data;
-                    oForm.mostrarEmpleados();
+                    oForm.lstUnidades = data;
+                    oForm.mostrarUnidades();
 
                 }
             });
 
+
+
+
+        
+        };
+
+        this.cerrarModal = function (){
+
+            $("#mNuevo").modal("hide");
+
+        };
+
+        this.validate = function () {
+
+
+           var htmlContent = "";
+
+
+           if ($('#Descripcion').val().trim().length == 0) {
+
+                htmlContent += "<li>El campo descripción es obligatorio.</li>";
+
+            }
+
+           if (htmlContent.length > 0) {
+
+               this.showError(htmlContent);
+
+           }
+           else {
+
+               this.Guardar();
+           
+           }
+
+
+        };
+
+        this.showError = function (m) {
+
+            $("#ErrorMessage").html("<h5>¡Alerta!</h5>" + m);
+            $("#vErrores").show();
+
         };
 
 
-
     }
-
 
 
 </script>
 
 
 
-
 <script type="text/javascript">
 
-    oForm.lstEmpleados = [{"Consecutivo":1,"IdEmpleado":10110001,"IdEmpresa":1011,"IdTipoTrabajador":"01","IdSubTipoTrabajador":"00","IdTipoDocumento":13,"sTipoDocumento":"Cédula de ciudadanía","NumeroDocumento":"1","PrimerApellido":"R","SegundoApellido":"","PrimerNombre":"A","OtrosNombres":"R","NombreCompleto":"A R R ","IdPaisTrabajo":"169","IdDepartamento":91,"IdMunicipio":91263,"DireccionTrabajo":"CL","SwSalarioIntegral":0,"IdTipoContrato":2,"Sueldo":1200000.00,"sSueldo":"1.200.000,00","IdFormaPago":1,"IdMetodoPago":"13","IdBanco":0,"IdTipoCuenta":0,"NumeroCuenta":"","SwTieneNominas":1,"Email":null,"Telefono":null,"sFechaInicioContrato":"01/01/2022","sFechaFinalContrato":"01/01/1900","IdPeriocidad":0,"AuxilioTransporte":0,"sAuxilioTransporte":null,"Dias":-44560,"SwAltoRiesgo":0}];
-    oForm.Url = "/demo/Nomina/";
+    oForm.lstUnidades = [{"IdTipoUnidad":4,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO","Consecutivo":1},{"IdTipoUnidad":6,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO CUADRADO","Consecutivo":2},{"IdTipoUnidad":7,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"CENTIMETRO CUBICO","Consecutivo":3},{"IdTipoUnidad":11,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"GALON","Consecutivo":4},{"IdTipoUnidad":2,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"GRAMO","Consecutivo":5},{"IdTipoUnidad":3,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"KILOGRAMO","Consecutivo":6},{"IdTipoUnidad":12,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"LIBRAS","Consecutivo":7},{"IdTipoUnidad":1,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"LITRO","Consecutivo":8},{"IdTipoUnidad":9,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"METRO","Consecutivo":9},{"IdTipoUnidad":10,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"MILILITROS","Consecutivo":10},{"IdTipoUnidad":5,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"PULGADA","Consecutivo":11},{"IdTipoUnidad":8,"IdEmpresa":1011,"sRazonSocial":"EMPRESA DEMO SAS","Descripcion":"UNIDAD","Consecutivo":12}];
+    oForm.Url = "/demo/Gestion/";
     oForm.UrlLoader = "/demo/Content/img/loader.gif";
 
 </script>

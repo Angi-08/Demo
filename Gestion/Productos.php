@@ -1,3 +1,17 @@
+<?php
+    session_start();
+    include_once '../Includes/usuario.php';
+    include_once '../includes/db.php';
+    $objeto = new DB();
+    $conexion = $objeto->connect();
+    $consulta = "SELECT id, ref, p.nombre as nombrepro, u.nombre as nombreunidad, precio, descripcion FROM productos p INNER JOIN unidades u ON p.idunidad = u.idunidad ";
+    $resultado = $conexion->prepare($consulta);
+    $resultado->execute();
+    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +78,7 @@
                 <div class="notifBtn">
                     
                 </div>
-                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">Maria Alejandra Afanador </span> <i class="fa fa-caret-right"></i></a>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">NombreUsuario</span> <i class="fa fa-caret-right"></i></a>
                 <div class="dropdownMenuUser collapse" id="collapseExample">
                     <ul>
                         <li><a href="#">Mi perfil</a></li>
@@ -85,16 +99,16 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">FACTURACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/index.php">Inicio</a></li>
                         <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
                         <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
                         <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>
@@ -230,17 +244,7 @@
     </div>
     <br />
 
-    <div class="row">
-
-        <div class="col-md-12 text-center">
-
-            <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-
-        </div>
-
-    </div>
+    
     <br />
 
 
@@ -262,7 +266,27 @@
                         <th style="width:5%">Editar</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <?php
+                        foreach($data as $dat){
+                        ?>
+                        <tr>
+                            <td><?php echo $dat['id'] ?></td>
+                            <td><?php echo $dat['ref'] ?></td>
+                            <td><?php echo $dat['nombrepro'] ?></td>
+                            <td><?php echo $dat['nombreunidad'] ?></td>
+                            <td><?php echo $dat['precio'] ?></td>
+                            <td><?php echo $dat['descripcion'] ?></td>
+                            <td ALIGN="center">
+                                <a class="btnOption" ref="EditarProducto.php" title="Editar">
+                                    <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        ?>   
+                </tbody>
             </table>
 
         </div>
@@ -275,138 +299,6 @@
 </form>
 
 
-<script type="text/javascript">
-
-    $(document).ready(function () {
-
-        oForm.init();
-
-    });
-
-
-    var oForm = new function () {
-
-        this.lstProductos = [];
-        this.Url = null;
-
-
-
-
-        this.init = function () {
-
-            this.Consultar();
-
-        };
-
-
-        this.Consultar = function () {
-
-
-            this.mostrarloader();
-
-
-
-            var jsData = '{"t":"' + $("#IdTipoProducto").val() + '"  }';
-
-            $.ajax({
-                url: this.Url + "ConsultarProductos",
-                dataType: 'json',
-                contentType: "application/json",
-                type: "POST",
-                data: jsData,
-                success: function (data) {
-
-                    oForm.lstProductos = data;
-                    oForm.mostrarProductos();
-
-                }
-            });
-
-        };
-
-
-
-        this.mostrarProductos = function () {
-
-            var table = $('#tblProductos').DataTable();
-            table.destroy(); 
-
-            var htmlContent = "";
-
-            if (this.lstProductos.length > 0) {
-
-                for (var i = 0; i < this.lstProductos.length; i++) {
-
-                    var item = this.lstProductos[i];
-
-                    htmlContent += "<tr>";
-                    htmlContent += "<td style='text-align:center'><b>" + item.Consecutivo + "</b></td>";
-                    htmlContent += "<td>" + item.Referencia +"</td>";
-                    htmlContent += "<td>" + item.Nombre + "</td>";
-                    htmlContent += "<td>" + item.sUnidad + "</td>";
-                    htmlContent += "<td style='text-align:right' >" + item.sPrecioVenta + "</td>";
-                    htmlContent += "<td>" + item.Descripcion + "</td>";
-                    htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.Editar(this);' oData='" + JSON.stringify(item) + "' href='#' title='Editar'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";
-
-                    htmlContent += "</tr>";
-
-                }
-
-            } else {
-
-                htmlContent = "<Strong>No se han encontrado registros con los criterios de búsqueda seleccionados.</Strong>"
-
-            }
-
-
-            this.cerrarloader();
-            $("#tblProductos tbody").html(htmlContent);
-
-            $("#tblProductos").DataTable({
-                searching:true,
-                ordering:true,
-                paging:true,
-                responsive:true,
-                "language": {
-                    "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-                }
-            });
-
-
-        };
-
-        this.Editar = function (b) {
-
-            var oProducto = JSON.parse($(b).attr("oData"));
-            $("#IdProducto").val(oProducto.IdProducto);
-            document.getElementById("formProductos").submit();
-
-        };
-
-        this.mostrarloader = function () {
-
-            $("#loader").show();
-            $("#dvTable").hide();
-
-        };
-
-        this.cerrarloader = function () {
-
-            $("#loader").hide();
-            $("#dvTable").show();
-
-        };
-
-
-
-
-
-
-    }
-
-
-
-</script>
 
 
 
