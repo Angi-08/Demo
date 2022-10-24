@@ -39,7 +39,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.png">
 
 </head>
 
@@ -85,16 +85,16 @@
                 <li>
                     <a href="#">ADMINISTRACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Productos">Productos / Servicios</a></li>
-                        <li><a href="/demo/Gestion/TipoUnidades">Tipos de unidades</a></li>
-                        <li><a href="/demo/Gestion/Terceros">Terceros</a></li>
-                        <li><a href="/demo/Nomina/Empleados">Empleados</a></li>
+                        <li><a href="/demo/Gestion/Productos.php">Productos / Servicios</a></li>
+                        <li><a href="/demo/Gestion/TipoUnidades.php">Tipos de unidades</a></li>
+                        <li><a href="/demo/Gestion/Terceros.php">Terceros</a></li>
+                        <li><a href="/demo/Nomina/Empleados.php">Empleados</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">FACTURACIÓN</a>
                     <ul>
-                        <li><a href="/demo/Gestion/Inicio">Inicio</a></li>
+                        <li><a href="/demo/Gestion/Inicio.php">Inicio</a></li>
                         <li><a href="/demo/Gestion/NuevaFactura">Nueva factura</a></li>
                         <li><a href="/demo/Gestion/FacturasBorrador">Facturas borrador</a></li>
                         <li><a href="/demo/Gestion/FacturasFinalizadas">Facturas finalizadas</a></li>

@@ -1,7 +1,6 @@
-<?php include_once 'Includes/usuario.php'; ?>
-
 <?php
-include_once 'Includes/db.php';
+session_start();
+include_once '../Includes/db.php';
 $objeto = new DB();
 $conexion = $objeto->connect();
 $consulta = "SELECT f.idfactura AS id, referencia AS ref, r.tipo AS res, t.razonsocial AS nom, precio, estado 
@@ -53,7 +52,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.png">
 
 </head>
 

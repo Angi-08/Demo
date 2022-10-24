@@ -1,7 +1,7 @@
 <?php
     session_start();
+    include_once '../Includes/db.php';
     include_once '../Includes/usuario.php';
-    include_once '../includes/db.php';
     $objeto = new DB();
     $conexion = $objeto->connect();
     $consulta = "SELECT id, ref, p.nombre as nombrepro, u.nombre as nombreunidad, precio, descripcion FROM productos p INNER JOIN unidades u ON p.idunidad = u.idunidad ";
@@ -53,7 +53,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.png">
 
 </head>
 
@@ -78,7 +78,7 @@
                 <div class="notifBtn">
                     
                 </div>
-                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">NombreUsuario</span> <i class="fa fa-caret-right"></i></a>
+                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">$user->getnombre()</span> <i class="fa fa-caret-right"></i></a>
                 <div class="dropdownMenuUser collapse" id="collapseExample">
                     <ul>
                         <li><a href="#">Mi perfil</a></li>

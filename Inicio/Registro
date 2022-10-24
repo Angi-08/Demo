@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/demo/Content/css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.png">
 
 </head>
 
@@ -68,12 +68,12 @@
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="logout">Create Account</a></div>
+                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="logout.php">Create Account</a></div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="logout">¿Tienes una cuenta? Iniciar sesión</a></div>
+                                        <div class="small"><a href="logout.php">¿Tienes una cuenta? Iniciar sesión</a></div>
                                     </div>
                                 </div>
                             </div>

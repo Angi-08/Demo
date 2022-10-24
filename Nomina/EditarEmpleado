@@ -39,7 +39,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.5.4/dist/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/tabledit/jquery.tabledit.min.js"></script>
     <script type="text/javascript" src="/demo/Content/js/custom.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/demo/Content/images/favicon.png">
 
 </head>
 
@@ -731,7 +731,7 @@
                 <option value="96">M&#233;todo de pago solicitado no usado</option>
                 <option value="97">Clearing entre partners</option>
                 <option value="98">Cuentas de Ahorro de Tramite Simplificado (CATS)(Nequi, Daviplata, etc)</option>
-                <option value="ZZZ">Acuerdo mutuo</option>
+                <option value="100">Acuerdo mutuo</option>
             </select>
         </div>
 
