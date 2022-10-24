@@ -57,12 +57,15 @@
     }
 
     if (isset($_POST['insert_tercero'])) {
-        $IdTipoPersona = $_POST['IdTipoPersona'];
-        $IdPais =$_POST['IpPais'];
+        $TipoPersona = $_POST['IdTipoPersona'];
+        $IdPais =$_POST['IdPais'];
         $RazonSocial = $_POST['RazonSocial'];
-        $Nombres = $_POST['Nombre1' . 'Nombre2'];
-        $Apellidos =$_POST['Apellido1' . 'Apellido2'];
+        $pNombre = $_POST['Nombre1'];
+        $sNombre = $_POST['Nombre2'];
+        $pApellidos =$_POST['Apellido1'];
+        $sApellidos =$_POST['Apellido2'];
         $IdTipoIdentificacion = $_POST['IdTipoIdentificacion'];
+        $Identificacion = $_POST['Identificacion'];
         $Telefonos = $_POST['Telefonos'];
         $Email = $_POST['Email'];
         $Direccion = $_POST['Direccion'];
@@ -78,23 +81,39 @@
         $IdTipoImpuesto =$_POST['IdTipoImpuesto'];
         $IdTipoResponsabilidadFiscal = $_POST['IdTipoResponsabilidadFiscal'];
         $IdTipoRegimen = $_POST['IdTipoRegimen'];
-        $Retefuente = $_POST['Retefuente'];
+        //$Retefuente = $_POST['Retefuente'];
         $IdTipoPlazoCompraCredito = $_POST['IdTipoPlazoCompraCredito'];
         $SwCliente = $_POST['SwCliente'];
         $SwProveedor = $_POST['SwProveedor'];
 
-        $query = "INSERT INTO 
-                productos(id, tipoempresa, idepais, razonsocial, tipodoc, doc, tel, email, direccion, nombrecontacto, emailcontacto, telcontacto, iddep, idmun, codpos, barrio, tarifaReteIVA, tarifaReteICA, tipoimp, tiporesfiscal, regfiscal, idtarifaretefuente, numplazocompra, cliente, proveedor) 
-                VALUES (NULL, '$IdTipoPersona', '$IdPais', '$RazonSocial', '$IdTipoIdentificacion', '$Telefonos', '$Email', '$Direccion', '$NombreContacto', '$EmailContacto', '$TelefonosContacto', '$IdDepartamento', '$IdMunicipio', '$CodigoPostal', '$Barrio', '$IdTipoRetefuenteIVA', '$TarifaReteICA', '$IdTipoImpuesto', '$IdTipoResponsabilidadFiscal', '$IdTipoRegimen', '$Retefuente', '$IdTipoPlazoCompraCredito', '$SwCliente', '$SwProveedor')";
-        $result = $con->prepare($query);
-        $result->execute();
-        if(!$result) {
-            die("Query Failed.");
+        if($TipoPersona == "1"){
+            $query = "INSERT INTO 
+                terceros VALUES (NULL, '$TipoPersona', '$IdPais', '$RazonSocial', NULL, NULL, NULL, NULL, '$IdTipoIdentificacion', '$Identificacion','$Telefonos', '$Email', '$Direccion', '$NombreContacto', '$EmailContacto', '$TelefonosContacto', '$IdDepartamento', '$IdMunicipio', '$CodigoPostal', '$Barrio', '$IdTipoRetefuenteIVA', '$TarifaReteICA', '$IdTipoImpuesto', '$IdTipoResponsabilidadFiscal', '$IdTipoRegimen', '$IdTipoPlazoCompraCredito', '$SwCliente', '$SwProveedor')";
+            $result = $con->prepare($query);
+            $result->execute();
+            if(!$result) {
+                die("Query Failed.");
+            }
+
+            $_SESSION['message'] = 'Tercero registrado con exito';
+            $_SESSION['message_type'] = 'success';
+            header('Location: ../Gestion/Terceros.php');
+        }
+        else{
+            $query = "INSERT INTO terceros 
+                VALUES (NULL, '$TipoPersona', '$IdPais', NULL, '$pNombre', '$sNombre','$pApellido','$sApellido', '$IdTipoIdentificacion', '$Identificacion', '$Telefonos', '$Email', '$Direccion', '$NombreContacto', '$EmailContacto', '$TelefonosContacto', '$IdDepartamento', '$IdMunicipio', '$CodigoPostal', '$Barrio', '$IdTipoRetefuenteIVA', '$TarifaReteICA', '$IdTipoImpuesto', '$IdTipoResponsabilidadFiscal', '$IdTipoRegimen', '$IdTipoPlazoCompraCredito', '$SwCliente', '$SwProveedor')";
+            $result = $con->prepare($query);
+            $result->execute();
+            if(!$result) {
+                die("Query Failed.");
+            }
+
+            $_SESSION['message'] = 'Tercero registrado con exito';
+            $_SESSION['message_type'] = 'success';
+            header('Location: ../Gestion/Terceros.php');
         }
 
-        $_SESSION['message'] = 'Tercero registrado con exito';
-        $_SESSION['message_type'] = 'success';
-        header('Location: ../Gestion/Terceros.php');
+        
     }
 
     if(isset($_POST['insert_empleado'])){

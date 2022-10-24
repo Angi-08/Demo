@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    include_once '../Includes/db.php';
+    include_once '../Includes/usuario.php';
+    $objeto = new DB();
+    $conexion = $objeto->connect();
+    $consultaTerceros = "SELECT * FROM terceros";
+    $resultadoTerceros = $conexion->prepare($consultaTerceros);
+    $resultadoTerceros->execute();
+    $dataTerceros=$resultadoTerceros->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +25,8 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.dataTercerostables.net/1.10.20/css/jquery.dataTercerosTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.dataTercerostables.net/1.10.20/css/dataTercerosTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="/demo/Content/css/styles.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
@@ -28,12 +38,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/demo/Content/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="https://cdn.dataTercerostables.net/1.10.20/js/jquery.dataTercerosTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.dataTercerostables.net/1.10.20/js/dataTercerosTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.dataTercerostables.net/fixedheader/3.1.6/js/dataTercerosTables.fixedHeader.min.js"></script>
 
-    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.dataTercerostables.net/responsive/2.2.3/js/dataTercerosTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.dataTercerostables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
 
@@ -56,7 +66,7 @@
                 <img src="/demo/Content/images/logo.png" class="img-fluid" />
             </div>
             <div class="col-sm-3 headerUser text-right">
-                <div class="d-block d-sm-none mobileMenu" data-toggle="collapse" href="#navBar">
+                <div class="d-block d-sm-none mobileMenu" dataTerceros-toggle="collapse" href="#navBar">
                     <i class="fa fa-bars"></i>
                 </div>
                 <div class="homeBtn">
@@ -65,7 +75,7 @@
                 <div class="notifBtn">
                     
                 </div>
-                <a class="userMenu" data-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">NombreUsuario </span> <i class="fa fa-caret-right"></i></a>
+                <a class="userMenu" dataTerceros-toggle="collapse" href="#collapseExample"><i class="fa fa-user-circle"></i> <span class="nameOpts">NombreUsuario </span> <i class="fa fa-caret-right"></i></a>
                 <div class="dropdownMenuUser collapse" id="collapseExample">
                     <ul>
                         <li><a href="#">Mi perfil</a></li>
@@ -126,8 +136,8 @@
                 <li>
                     <a href="#">INFORMES</a>
                     <ul>
-                        <li><a href="/demo/Informes/Informe01">Consulta por cliente</a></li>
-                        <li><a href="/demo/Informes/Informe02">Consulta por articulo</a></li>
+                        <li><a href="/demo/Informes/Informe01">ConsultaTerceros por cliente</a></li>
+                        <li><a href="/demo/Informes/Informe02">ConsultaTerceros por articulo</a></li>
                         <li><a href="/demo/Informes/Informe03">Clientes frecuentes</a></li>
                         <li><a href="/demo/Informes/Informe04">Items mas vendidos</a></li>
                     </ul>
@@ -183,7 +193,7 @@
 
 
         <div class="col-md-2">
-            <label>Tipo de cliente</label>
+            <!-- <label>Tipo de cliente</label> -->
         </div>
 
         <div class="col-md-2" style="text-align: right;">
@@ -201,22 +211,22 @@
 
 
         <div class="col-md-2">
-            <select id="IdTipoCliente" name="IdTipoCliente" class="form-control">
+            <!-- <select id="IdTipoCliente" name="IdTipoCliente" class="form-control">
                 <option value="1">Cliente y Proveedor</option>
                 <option value="2">Cliente</option>
                 <option value="3">Proveedor</option>
                 <option value="4">Ninguno</option>
-            </select>
+            </select> -->
         </div>
 
         <div class="col-md-2" style="text-align: right;">
-            <a href="#" class="btn btn-primary" onclick="oForm.Consultar();" >Consultar</a>
+            <!-- <a href="#" class="btn btn-primary" onclick="oForm.ConsultaTercerosr();" >ConsultaTercerosr</a> -->
         </div>
 
 
         <div class="col-md-8" style="text-align: right;">
 
-            <a href="/demo/Gestion/NuevoTercero" class="btn btn-primary">Nuevo tercero</a>
+            <a href="/demo/Gestion/NuevoTercero.php" class="btn btn-primary">Nuevo tercero</a>
 
         </div>
 
@@ -234,9 +244,9 @@
 
         <div class="col-md-12 text-center">
 
-            <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+            <!-- <div id="loader" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
-            </div>
+            </div> -->
 
         </div>
 
@@ -260,7 +270,27 @@
                         <th style='width:5%' class="text-center">Eliminar</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                <?php foreach($dataTerceros as $dat){ ?>
+                    <tr>
+                        <td><?php echo $dat['id'] ?></td>
+                        <td><?php echo $dat['razonsocial'] ?></td>
+                        <td><?php echo $dat['doc'] ?></td>
+                        <td><?php echo $dat['tel'] ?></td>
+                        <td><?php echo $dat['direccion'] ?></td>
+                        <td ALIGN="center">
+                            <a class="btnOption" href="EditarTercero" title="Editar">
+                                <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td ALIGN="center">
+                            <a class="btnOption" ref="EliminarTercero" title="Editar">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <?php } ?>   
+                </tbody>
             </table>
 
         </div>
@@ -289,7 +319,7 @@
 
             <div class="modal-header">
                 <h4 class="titModal">Eliminar</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" dataTerceros-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -326,7 +356,7 @@
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 
     $(document).ready(function () {
@@ -347,7 +377,7 @@
 
         this.init = function () {
 
-            this.Consultar();
+            this.ConsultaTercerosr();
 
 
 
@@ -357,24 +387,24 @@
 
 
 
-        this.Consultar = function () {
+        this.ConsultaTercerosr = function () {
 
 
             this.mostrarloader();
 
 
 
-            var jsData = '{"t":"' + $("#IdTipoCliente").val() + '"  }';
+            var jsDataTerceros = '{"t":"' + $("#IdTipoCliente").val() + '"  }';
 
             $.ajax({
-                url: this.Url + "ConsultarTerceros",
-                dataType: 'json',
+                url: this.Url + "ConsultaTercerosrTerceros",
+                dataTercerosType: 'json',
                 contentType: "application/json",
                 type: "POST",
-                data: jsData,
-                success: function (data) {
+                dataTerceros: jsDataTerceros,
+                success: function (dataTerceros) {
 
-                    oForm.lstTerceros = data;
+                    oForm.lstTerceros = dataTerceros;
                     oForm.mostrarTerceros();
 
                 }
@@ -386,7 +416,7 @@
 
         this.mostrarTerceros = function () {
 
-            var table = $('#tblTerceros').DataTable();
+            var table = $('#tblTerceros').DataTercerosTable();
             table.destroy(); 
 
             
@@ -405,7 +435,7 @@
                     htmlContent += "<td>" + item.Identificacion +"</b></td>";
                     htmlContent += "<td>" + item.Telefonos + "</td>";
                     htmlContent += "<td>" + item.Direccion + "</td>";
-                    htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.Editar(this);' oData='" + JSON.stringify(item) + "' href='#' title='Editar'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";
+                    htmlContent += "<td class='text-center' ><a class='btnOption' onclick='oForm.Editar(this);' oDataTerceros='" + JSON.stringify(item) + "' href='#' title='Editar'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";
 
                     if(item.SwTieneFacturas == 1){
                         htmlContent += "<td></td>";
@@ -430,13 +460,13 @@
             this.cerrarloader();
             $("#tblTerceros tbody").html(htmlContent);
 
-            $("#tblTerceros").DataTable({
+            $("#tblTerceros").DataTercerosTable({
                 searching:true,
                 ordering:true,
                 paging:true,
                 responsive:true,
                 "language": {
-                    "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                    "url": "http://cdn.dataTercerostables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
                 }
             });
 
@@ -444,7 +474,7 @@
 
         this.Editar = function (b) {
 
-            var oTercero = JSON.parse($(b).attr("oData"));
+            var oTercero = JSON.parse($(b).attr("oDataTerceros"));
             $("#IdTercero").val(oTercero.IdTercero);
             document.getElementById("formTerceros").submit();
 
@@ -495,17 +525,17 @@
             this.cerrarAsistente();
             this.mostrarloader();
 
-            var jsData = '{"i":"' + this.IdTercero + '"  }';
+            var jsDataTerceros = '{"i":"' + this.IdTercero + '"  }';
 
             $.ajax({
                 url: this.Url + "EliminarTercero",
-                dataType: 'json',
+                dataTercerosType: 'json',
                 contentType: "application/json",
                 type: "POST",
-                data: jsData,
-                success: function (data) {
+                dataTerceros: jsDataTerceros,
+                success: function (dataTerceros) {
 
-                    oForm.lstTerceros = data;
+                    oForm.lstTerceros = dataTerceros;
                     oForm.mostrarTerceros();
 
                 }
@@ -519,7 +549,7 @@
 
 
 
-</script>
+</script> -->
 
 
 
