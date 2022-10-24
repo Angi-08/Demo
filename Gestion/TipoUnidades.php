@@ -190,10 +190,10 @@
 
     </div>
     <br />
-
+<!-- 
     <div id="loader" class="spinner-border text-success text-center" style="width: 3rem; height: 3rem; text-align:center;" role="status">
         <span class="sr-only">Loading...</span>
-    </div>
+    </div> -->
 
     <div class="row">
 
@@ -242,7 +242,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label>Descripción</label>
-                        <input class="form-control" name="Descripcion" id="Descripcion" type="text" maxlength="50">
+                        <input class="form-control" name="Descripcion" id="Descripcion" type="text" maxlength="50" required>
                     </div>
                 </div>
                 <br />
@@ -265,11 +265,11 @@
 
             <div class="modal-footer">
 
-                <button class="btn btn-secondary" type="submit" name="insert_unidad">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
                     Cerrar
                 </button>
 
-                <button class="btn btn-primary" type="submit" name="action" onclick="oForm.validate();">
+                <button class="btn btn-primary" type="submit" onclick="oForm.validate();" name="insert_unidad">
                     Aceptar
                 </button>
 

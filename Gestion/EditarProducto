@@ -201,7 +201,8 @@
 </script>
 
 
-<form action="/demo/Gestion/EditarProducto" class="col-md-12" method="post"><input name="__RequestVerificationToken" type="hidden" value="BIIOd9ls0PFU56_KJiO5QaGW413FTLcitosatVaJhbjd6cg46vgDQR9DjpB-PnLkcAiizYJbSXZWykCVv5pqBoKN5TmpHtZ1UgFMwjUAnQg1" /><input data-val="true" data-val-number="The field IdEmpresa must be a number." data-val-required="The IdEmpresa field is required." id="IdEmpresa" name="IdEmpresa" type="hidden" value="1011" /><input data-val="true" data-val-number="The field IdProducto must be a number." data-val-required="The IdProducto field is required." id="IdProducto" name="IdProducto" type="hidden" value="10110051" />    <div class="row">
+<form action="/demo/Gestion/EditarProducto" class="col-md-12" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="BIIOd9ls0PFU56_KJiO5QaGW413FTLcitosatVaJhbjd6cg46vgDQR9DjpB-PnLkcAiizYJbSXZWykCVv5pqBoKN5TmpHtZ1UgFMwjUAnQg1" /><input data-val="true" data-val-number="The field IdEmpresa must be a number." data-val-required="The IdEmpresa field is required." id="IdEmpresa" name="IdEmpresa" type="hidden" value="1011" /><input data-val="true" data-val-number="The field IdProducto must be a number." data-val-required="The IdProducto field is required." id="IdProducto" name="IdProducto" type="hidden" value="10110051" />    <div class="row">
         <div class="col-md-12">
             <h3>Editar producto</h3>
             <hr />
@@ -251,20 +252,21 @@
     <div class="row">
         <div class="col-md-6">
             <label for="IdTipoUnidad" class="required">Tipo unidades</label>
-            <select class="form-control" data-val="true" data-val-number="The field IdTipoUnidad must be a number." data-val-required="The IdTipoUnidad field is required." id="IdTipoUnidad" name="IdTipoUnidad"><option value="0">SELECCIONE</option>
-<option value="1">LITRO</option>
-<option selected="selected" value="2">GRAMO</option>
-<option value="3">KILOGRAMO</option>
-<option value="4">CENTIMETRO</option>
-<option value="5">PULGADA</option>
-<option value="6">CENTIMETRO CUADRADO</option>
-<option value="7">CENTIMETRO CUBICO</option>
-<option value="8">UNIDAD</option>
-<option value="9">METRO</option>
-<option value="10">MILILITROS</option>
-<option value="11">GALON</option>
-<option value="12">LIBRAS</option>
-</select>
+            <select class="form-control" data-val="true" data-val-number="The field IdTipoUnidad must be a number." data-val-required="The IdTipoUnidad field is required." id="IdTipoUnidad" name="IdTipoUnidad">
+                <option value="0">SELECCIONE</option>
+                <option value="1">LITRO</option>
+                <option selected="selected" value="2">GRAMO</option>
+                <option value="3">KILOGRAMO</option>
+                <option value="4">CENTIMETRO</option>
+                <option value="5">PULGADA</option>
+                <option value="6">CENTIMETRO CUADRADO</option>
+                <option value="7">CENTIMETRO CUBICO</option>
+                <option value="8">UNIDAD</option>
+                <option value="9">METRO</option>
+                <option value="10">MILILITROS</option>
+                <option value="11">GALON</option>
+                <option value="12">LIBRAS</option>
+            </select>
         </div>
 
         <div class="col-md-3">
