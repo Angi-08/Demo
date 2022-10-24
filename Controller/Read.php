@@ -14,4 +14,8 @@
         $query = $this->connect()->prepare('SELECT COUNT(*) FROM facturas');
     }
 
+    if(isset($_POST['buscar_retefuente'])){
+        $query = $this->connect()->prepare('SELECT * FROM reteciofuente');
+    }
+
 ?>

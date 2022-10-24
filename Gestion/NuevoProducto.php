@@ -1,3 +1,20 @@
+<?php
+include_once '../includes/db.php';
+$objeto = new DB();
+$conexion = $objeto->connect();
+
+
+$consultaReteFuente = "SELECT * FROM retenciofuente";
+$resultadoRetefuente = $conexion->prepare($consultaReteFuente);
+$resultadoRetefuente->execute();
+$dataRetefuente=$resultadoRetefuente->fetchAll(PDO::FETCH_ASSOC);
+
+$consultaTipoUnidad = "SELECT * FROM unidades";
+$resultadoTipoUnidad = $conexion->prepare($consultaTipoUnidad);
+$resultadoTipoUnidad->execute();
+$dataTipoUnidad=$resultadoTipoUnidad->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -206,7 +223,8 @@
 
 
 
-<form action="../Controller/Create.php" class="col-md-12" method="post"><input name="__RequestVerificationToken" type="hidden" value="fTKpg-y0mbxA4ywra85AoDO5YQdqAGds9v-BK-O6v3GZ_O6HGOxwZwLspIXFvZj535nrsiP90zRoSzvq1k_-iPLzC-IpBPsfk3I82M7y-Dc1" /><input data-val="true" data-val-number="The field IdEmpresa must be a number." data-val-required="The IdEmpresa field is required." id="IdEmpresa" name="IdEmpresa" type="hidden" value="1011" />    <div class="row">
+<form action="../Controller/Create.php" class="col-md-12" method="post">
+    <div class="row">
         <div class="col-md-12">
             <h3>Nuevo producto</h3>
             <hr />
@@ -258,18 +276,11 @@
             <label for="IdTipoUnidad" class="required">Tipo unidades</label>
             <select class="form-control" data-val="true" data-val-number="The field IdTipoUnidad must be a number." data-val-required="The IdTipoUnidad field is required." id="IdTipoUnidad" name="IdTipoUnidad">
                 <option selected="selected" value="0">SELECCIONE</option>
-                <option value="1">LITRO</option>
-                <option value="2">GRAMO</option>
-                <option value="3">KILOGRAMO</option>
-                <option value="4">CENTIMETRO</option>
-                <option value="5">PULGADA</option>
-                <option value="6">CENTIMETRO CUADRADO</option>
-                <option value="7">CENTIMETRO CUBICO</option>
-                <option value="8">UNIDAD</option>
-                <option value="9">METRO</option>
-                <option value="10">MILILITROS</option>
-                <option value="11">GALON</option>
-                <option value="12">LIBRAS</option>
+                <?php
+                    foreach($dataTipoUnidad as $dat){
+                        echo '<option value="'.$dat[idunidad].'">'.$dat[nombre].'</option>';
+                    }
+                ?>
             </select>
         </div>
 
@@ -347,6 +358,19 @@
             </div>
 
             <div class="col-md-5">
+                <label>Tarifa Retención en la fuente</label>
+                <select id="IdTipoRetefuente" name="IdTipoRetefuente" class="form-control">
+                    <option value="0">SELECCIONE</option>
+                    <?php
+                        foreach($dataRetefuente as $dat){
+                            echo '<option value="'.$dat[id].'">'.$dat[concepto].'</option>';
+                        }
+                    ?>
+                </select>
+
+            </div>
+
+            <!-- <div class="col-md-5">
                 <label for="IdTipoRetefuente" class="required">Tarifa  Retención en la Fuente</label>
                 <input id="IdTipoRetefuente" name="IdTipoRetefuente" value="0" hidden type="text" />
                 <input ReadOnly="true" class="form-control text-box single-line" data-val="true" data-val-required="El campo retefuente es obligatorio" id="Retefuente" name="Retefuente" onclick="oForm.Mostrar();" type="text" value="" />
@@ -354,7 +378,7 @@
 
             <div class="col-md-1">
                 <a class="btnOption BotonBuscar" href="#" title="Agregar" onclick="oForm.Mostrar();"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
+            </div> -->
 
         </div>
         <br />

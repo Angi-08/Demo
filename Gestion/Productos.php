@@ -235,7 +235,7 @@
 
         <div class="col-md-8" style="text-align: right;">
             
-            <a href="/demo/Gestion/NuevoProducto" class="btn btn-primary">Nuevo producto / servicio</a>
+            <a href="/demo/Gestion/NuevoProducto.php" class="btn btn-primary">Nuevo producto / servicio</a>
 
         </div>
 
